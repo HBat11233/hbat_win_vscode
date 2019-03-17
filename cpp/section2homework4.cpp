@@ -3,28 +3,17 @@
 using namespace std;
 
 template<class T>
-void InsertionSort(T arr[],int l,int r)
+void SelectionSort(T arr[],size_t length)
 {
-    int el=l,er=l;
-    for(int i=l+1;i<=r;++i)
+    int pos=0;
+    int cpos=pos;
+    while(pos<length)
     {
-        int tl=el,tr=er;
-        do
-        {
-            int b=(tl+tr)>>1;
-            if(arr[b]<arr[i])
-                tr=b-1;
-            else
-                tl=b+1;
-        }while(tl<=tr);
-        if(i!=tl)
-        {
-            int temp=arr[i];
-            for(int j=i;j>tl;--j)
-            arr[j]=arr[j-1];
-            arr[tl]=temp;
-        }
-        er++;
+        for(int i=pos+1;i<length;++i)
+            if(arr[i]<arr[cpos])
+                cpos=i;
+        swap(arr[pos++],arr[cpos]);
+            cpos=pos;
     }
 }
 
@@ -32,17 +21,18 @@ int main()
 {
     while(1)
     {
-        const int length=30;
+        const size_t length=30;
         int arr[length];
         srand(time(NULL));
         for(int i=0;i<length;++i)
             arr[i]=rand()%length;
+
         for(int i=0;i<length;++i)
             printf("%d ",arr[i]);
         cout<<endl;
             
         int a=time(NULL);
-        InsertionSort(arr,0,length-1);
+        SelectionSort(arr,length);
         int b=time(NULL);
         cout<<b-a<<endl;
         
@@ -52,5 +42,4 @@ int main()
         
        getchar();
     }
-    return 0;
 }
