@@ -1,0 +1,25 @@
+{
+  "pages":["pages/about/about","pages/news/news"],
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/news/news",
+        "text": "科协NEWS",
+        "iconPath": "images/2.png",
+        "selectedIconPath": "images/2-s.png"
+      },
+      {
+      "pagePath": "pages/about/about",
+      "text": "重大C院科协",
+      "iconPath": "images/1.png",
+      "selectedIconPath": "images/1-s.png"
+    }],
+    "color":"black",
+    "selectedColor": "red"
+  },
+  "window":{
+    "navigationBarTitleText": "重大C院科协",
+    "navigationBarBackgroundColor": "#00C3FF",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}

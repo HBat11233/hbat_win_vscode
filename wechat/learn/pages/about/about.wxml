@@ -1,0 +1,6 @@
+<!--pages/about/about.wxml-->
+<view class = "container">
+  <navigator url = "/pages/news/news" open-type='switchTab'>
+  <image class = 'logo' src = "/images/logo.jpg"></image>
+  </navigator>
+</view>

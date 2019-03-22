@@ -1,3 +1,5 @@
+//-----utf-8-----
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -43,3 +45,8 @@ int main()
        getchar();
     }
 }
+
+/*
+默认设置第一个为已知，如何从第二个开始到第n个作比较选着最小的。
+选择排序最好为 θ(n),最坏为 θ(n^2)
+*/

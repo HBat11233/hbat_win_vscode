@@ -1,0 +1,4 @@
+/* pages/news/news.wxss */
+.nav-color{
+  color:blue;
+}
