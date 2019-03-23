@@ -1,6 +1,27 @@
 /*--------------------------------------------------
     [SASS PLACEHOLDER]
 ----------------------------------------------------*/
+
+/*news*/
+.news-link {
+    color: #2590b0;
+    font-size: 17px;
+    font-weight: 540;
+    display: block;
+    line-height: 1.8;
+    padding: 3px 10px;
+    text-decoration: none;
+    transition: color .15s;
+    transition: background-color .15s;
+}
+
+.news-link:hover {
+    background-color: #fafafa;
+    color: #2590b0;
+    text-decoration: none;
+}
+
+
 /* Carousel Title */
 .carousel .carousel-title-v1, .carousel .carousel-title-v2, .carousel .carousel-title-v3 {
   font-size: 60px;
