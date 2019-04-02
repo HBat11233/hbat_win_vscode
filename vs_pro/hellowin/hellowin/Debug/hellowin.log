@@ -1,2 +1,3 @@
-﻿  hellowin.cpp
-  hellowin.vcxproj -> C:\Users\HBat\source\repos\hellowin\Debug\hellowin.exe
+﻿  stdafx.cpp
+  hellowin.cpp
+  hellowin.vcxproj -> D:\hbat_win_vscode\vs_pro\hellowin\Debug\hellowin.exe
