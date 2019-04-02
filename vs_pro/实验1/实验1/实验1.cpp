@@ -10,7 +10,6 @@
 HINSTANCE hInst;                                // 当前实例
 WCHAR szTitle[MAX_LOADSTRING];                  // 标题栏文本
 WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
-LPCWSTR stringToLPCWSTR(std::string orig);      // string转LPCWSTR
 
 // 此代码模块中包含的函数的前向声明:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -19,41 +18,41 @@ LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-                     _In_opt_ HINSTANCE hPrevInstance,
-                     _In_ LPWSTR    lpCmdLine,
-                     _In_ int       nCmdShow)
+	_In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPWSTR    lpCmdLine,
+	_In_ int       nCmdShow)
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
+	UNREFERENCED_PARAMETER(hPrevInstance);
+	UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // TODO: 在此处放置代码。
+	// TODO: 在此处放置代码。
 
-    // 初始化全局字符串
-    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-    LoadStringW(hInstance, IDC_MY1, szWindowClass, MAX_LOADSTRING);
-    MyRegisterClass(hInstance);
+	// 初始化全局字符串
+	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+	LoadStringW(hInstance, IDC_MY1, szWindowClass, MAX_LOADSTRING);
+	MyRegisterClass(hInstance);
 
-    // 执行应用程序初始化:
-    if (!InitInstance (hInstance, nCmdShow))
-    {
-        return FALSE;
-    }
+	// 执行应用程序初始化:
+	if (!InitInstance(hInstance, nCmdShow))
+	{
+		return FALSE;
+	}
 
-    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_MY1));
+	HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_MY1));
 
-    MSG msg;
+	MSG msg;
 
-    // 主消息循环:
-    while (GetMessage(&msg, nullptr, 0, 0))
-    {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
-    }
+	// 主消息循环:
+	while (GetMessage(&msg, nullptr, 0, 0))
+	{
+		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+	}
 
-    return (int) msg.wParam;
+	return (int)msg.wParam;
 }
 
 
@@ -65,23 +64,23 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 //
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
-    WNDCLASSEXW wcex;
+	WNDCLASSEXW wcex;
 
-    wcex.cbSize = sizeof(WNDCLASSEX);
+	wcex.cbSize = sizeof(WNDCLASSEX);
 
-    wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
-    wcex.cbClsExtra     = 0;
-    wcex.cbWndExtra     = 0;
-    wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MY1));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_MY1);
-    wcex.lpszClassName  = szWindowClass;
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+	wcex.style = CS_HREDRAW | CS_VREDRAW;
+	wcex.lpfnWndProc = WndProc;
+	wcex.cbClsExtra = 0;
+	wcex.cbWndExtra = 0;
+	wcex.hInstance = hInstance;
+	wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MY1));
+	wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_MY1);
+	wcex.lpszClassName = szWindowClass;
+	wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
-    return RegisterClassExW(&wcex);
+	return RegisterClassExW(&wcex);
 }
 
 //
@@ -96,20 +95,20 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   hInst = hInstance; // 将实例句柄存储在全局变量中
+	hInst = hInstance; // 将实例句柄存储在全局变量中
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW|WS_VSCROLL|WS_HSCROLL,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+	HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW | WS_VSCROLL | WS_HSCROLL,
+		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
-   if (!hWnd)
-   {
-      return FALSE;
-   }
+	if (!hWnd)
+	{
+		return FALSE;
+	}
 
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+	ShowWindow(hWnd, nCmdShow);
+	UpdateWindow(hWnd);
 
-   return TRUE;
+	return TRUE;
 }
 
 //
@@ -124,195 +123,204 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	static int 行间距,iVscrollPos,cyChar,cxChar,cxCaps;
+	static int 行间距, iVscrollPos, cyChar, cxChar, cxCaps;
 	static int cxClient, cyClient;
 	TEXTMETRIC tm;
 	std::string str;
 	LPCWSTR lpc;
-	const int 滚动条长度 = 150;
+	const int 滚动条长度 = 1000;
 	const int 滚动条起点 = 1;
 	const int 行间距最大 = 10;
 
-    switch (message)
-    {
+	switch (message)
+	{
 	case WM_CREATE:
-		{
-			HDC hdc = GetDC(hWnd);
-			GetTextMetrics(hdc, &tm);
-			cxChar = tm.tmAveCharWidth;
-			cxCaps = (tm.tmPitchAndFamily & 1 ? 3 : 2)*cxChar / 2;
-			cyChar = tm.tmHeight + tm.tmExternalLeading;
-			行间距 = 1;
-			SetScrollRange(hWnd, SB_HORZ, 滚动条起点, 行间距最大, TRUE);
-			SetScrollPos(hWnd, SB_HORZ, 0, TRUE);
-			iVscrollPos = 1;
-			SetScrollRange(hWnd, SB_VERT, 滚动条起点, 滚动条长度, TRUE);
-			SetScrollPos(hWnd, SB_VERT, 0, TRUE);
-			//InvalidateRect(hWnd, NULL, TRUE);   //不知道为啥没用
-			ReleaseDC(hWnd, hdc);
-			MoveWindow(hWnd, 0, 0, 640, 480, TRUE);
-		}
-		break;
-	case WM_SIZE: 
-		{
-			cxClient = LOWORD(lParam);
-			cyClient = HIWORD(lParam); 
-		}
-		break;
+	{
+		HDC hdc = GetDC(hWnd);
+		GetTextMetrics(hdc, &tm);
+		cxChar = tm.tmAveCharWidth;
+		cxCaps = (tm.tmPitchAndFamily & 1 ? 3 : 2)*cxChar / 2;
+		cyChar = tm.tmHeight + tm.tmExternalLeading;
+		行间距 = 1;
+		SetScrollRange(hWnd, SB_HORZ, 滚动条起点, 行间距最大, TRUE);
+		SetScrollPos(hWnd, SB_HORZ, 0, TRUE);
+		iVscrollPos = 1;
+		SetScrollRange(hWnd, SB_VERT, 滚动条起点, 滚动条长度, TRUE);
+		SetScrollPos(hWnd, SB_VERT, 0, TRUE);
+		//InvalidateRect(hWnd, NULL, TRUE);   //不知道为啥没用
+		ReleaseDC(hWnd, hdc);
+		MoveWindow(hWnd, 0, 0, 640, 480, TRUE);
+	}
+	break;
+	case WM_SIZE:
+	{
+		cxClient = LOWORD(lParam);
+		cyClient = HIWORD(lParam);
+	}
+	break;
 	case WM_HSCROLL:
+	{
+		switch (LOWORD(wParam))
 		{
-			switch (LOWORD(wParam))
-			{
-			case SB_LINELEFT:
-				行间距--;
-				break;
-			case SB_LINERIGHT:
-				行间距++;
-				break;
-			case SB_PAGELEFT:
-				行间距 -= cyClient / cyChar;
-				break;
-			case SB_PAGERIGHT:
-				行间距 += cyClient / cyChar;
-				break;
-			case SB_THUMBTRACK:
-				行间距 = HIWORD(wParam);
-				break;
-			}
-
-			行间距 = max(滚动条起点, min(行间距, 10));
-
-			//iVscrollPos = max(0, min(iVscrollPos, NUMLINES - 1));
-			if (行间距 != GetScrollPos(hWnd, SB_HORZ))
-			{
-				SetScrollPos(hWnd, SB_HORZ, 行间距, TRUE);
-				InvalidateRect(hWnd, NULL, TRUE);
-			}
+		case SB_LINELEFT:
+			行间距--;
+			break;
+		case SB_LINERIGHT:
+			行间距++;
+			break;
+		case SB_PAGELEFT:
+			行间距 -= cyClient / cyChar;
+			break;
+		case SB_PAGERIGHT:
+			行间距 += cyClient / cyChar;
+			break;
+		case SB_THUMBTRACK:
+			行间距 = HIWORD(wParam);
+			break;
 		}
-		break;
-	case WM_VSCROLL: 
+
+		行间距 = max(滚动条起点, min(行间距, 10));
+
+		if (行间距 != GetScrollPos(hWnd, SB_HORZ))
 		{
-			switch (LOWORD(wParam))
-			{
-			case SB_LINEUP:
-				iVscrollPos--;
-				break;
-			case SB_LINEDOWN:
-				iVscrollPos++;
-				break;
-			case SB_PAGEUP:
-				iVscrollPos -= cyClient / cyChar;
-				break;
-			case SB_PAGEDOWN:
-				iVscrollPos += cyClient / cyChar;
-				break;
-			case SB_THUMBTRACK:
-				iVscrollPos = HIWORD(wParam);
-				break;
-			}
-
-			iVscrollPos = max(滚动条起点, min(iVscrollPos, 滚动条长度));
-
-			//iVscrollPos = max(0, min(iVscrollPos, NUMLINES - 1));
-			if (iVscrollPos != GetScrollPos(hWnd, SB_VERT))
-			{
-				SetScrollPos(hWnd, SB_VERT, iVscrollPos, TRUE);
-				InvalidateRect(hWnd, NULL, TRUE);
-			}
+			SetScrollPos(hWnd, SB_HORZ, 行间距, TRUE);
+			InvalidateRect(hWnd, NULL, TRUE);
 		}
-		break;
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // 分析菜单选择:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 在此处添加使用 hdc 的任何绘图代码...
-			int i,j;
-			for (i = 0; i < cyClient / (cyChar+行间距) && i + iVscrollPos <= 150; ++i)
+	}
+	break;
+	case WM_VSCROLL:
+	{
+		switch (LOWORD(wParam))
+		{
+		case SB_LINEUP:
+			iVscrollPos--;
+			break;
+		case SB_LINEDOWN:
+			iVscrollPos++;
+			break;
+		case SB_PAGEUP:
+			iVscrollPos -= cyClient / cyChar;
+			break;
+		case SB_PAGEDOWN:
+			iVscrollPos += cyClient / cyChar;
+			break;
+		case SB_THUMBTRACK:
+			iVscrollPos = HIWORD(wParam);
+			break;
+		}
+
+		iVscrollPos = max(滚动条起点, min(iVscrollPos, 滚动条长度));
+
+		if (iVscrollPos != GetScrollPos(hWnd, SB_VERT))
+		{
+			SetScrollPos(hWnd, SB_VERT, iVscrollPos, TRUE);
+			InvalidateRect(hWnd, NULL, TRUE);
+		}
+	}
+	break;
+	case WM_COMMAND:
+	{
+		int wmId = LOWORD(wParam);
+		// 分析菜单选择:
+		switch (wmId)
+		{
+		case IDM_ABOUT:
+			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+			break;
+		case IDM_EXIT:
+			DestroyWindow(hWnd);
+			break;
+		default:
+			return DefWindowProc(hWnd, message, wParam, lParam);
+		}
+	}
+	break;
+	case WM_PAINT:
+	{
+		PAINTSTRUCT ps;
+		HDC hdc = BeginPaint(hWnd, &ps);
+		// TODO: 在此处添加使用 hdc 的任何绘图代码...
+		int i, j;
+		int temp;
+		for (i = 1; ((i - 1)*(行间距 + 1) - iVscrollPos + 1) < cyClient / cyChar && i <= 150; ++i)          //  ((i-1)*(行间距+1)-iVscrollPos+1)<cyClient/cyChar  这里每次循环都要重算且在i++后不要不乱优化
+		{
+			temp = cyChar * ((i - 1)*(行间距 + 1) - iVscrollPos + 1);
+			if (temp < 0)continue;
+			str = std::string("Hello World: ") + std::to_string(i);
+
+			//自动换行优化
+			int max行字符数 = cxClient / ((cxChar + cxCaps) / 2);
+			for (j = 0; j*max行字符数 + max行字符数 < str.size(); ++j, ++i)
 			{
-				str = std::string("Hello World: ")+std::to_string(i+iVscrollPos);
-				lpc = stringToLPCWSTR(str);
+				temp = cyChar * ((i - 1)*(行间距 + 1) - iVscrollPos + 1);
+				std::string tStr = str.substr(j*max行字符数, max行字符数);
+				std::wstring wstr(tStr.length(), L' ');   //初始化宽字节wstr
+				std::copy(tStr.begin(), tStr.end(), wstr.begin());    //将str复制到wstr
+				lpc = wstr.c_str();    //将wstr转换为C字符串的指针,然后赋值给path
 				int length = lstrlen(lpc);
-				//TextOut(hdc, 0, i*cyChar+i*行间距*cyChar, lpc, length);
+				TextOut(hdc, 0, temp, lpc, length);
 			}
-			i = 0;
-			str = std::string("1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNMM,./;'[]\-=`");
-			int max行字符数 = cxClient / ((cxChar+cxCaps)/2);
-			for (j = 0; j*max行字符数 + max行字符数 < str.size(); ++j,++i)
-			{
-				lpc = stringToLPCWSTR(str.substr(j*max行字符数, max行字符数));
-				int length = lstrlen(lpc);
-				TextOut(hdc, 0, i*cyChar + i * 行间距*cyChar - (i + iVscrollPos - 1), lpc, length);
-			}
-			lpc = stringToLPCWSTR(str.substr(j*max行字符数, str.size()- j * max行字符数));
+
+			temp = cyChar * ((i - 1)*(行间距 + 1) - iVscrollPos + 1);  //只能放在这里，放在上个循环前面与上循环重复并且下面缺少temp初始化
+
+			std::string tStr = str.substr(j*max行字符数, str.size() - j * max行字符数);
+			std::wstring wstr(tStr.length(), L' ');   //初始化宽字节wstr
+			std::copy(tStr.begin(), tStr.end(), wstr.begin());    //将str复制到wstr
+			lpc = wstr.c_str();    //将wstr转换为C字符串的指针,然后赋值给path
 			int length = lstrlen(lpc);
-			TextOut(hdc, 0, i*cyChar + i * 行间距*cyChar - (i + iVscrollPos - 1), lpc, length);
-            EndPaint(hWnd, &ps);
-        }
-        break;
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
+			TextOut(hdc, 0, temp, lpc, length);
+		}
+
+
+		//i = 0;
+		str = std::string("test:1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNMM,./;'[]\-=`");
+		int max行字符数 = cxClient / ((cxChar + cxCaps) / 2);
+		for (j = 0; j*max行字符数 + max行字符数 < str.size(); ++j, ++i)
+		{
+			temp = cyChar * ((i - 1)*(行间距 + 1) - iVscrollPos + 1);
+			std::string tStr = str.substr(j*max行字符数, max行字符数);
+			std::wstring wstr(tStr.length(), L' ');   //初始化宽字节wstr
+			std::copy(tStr.begin(), tStr.end(), wstr.begin());    //将str复制到wstr
+			lpc = wstr.c_str();    //将wstr转换为C字符串的指针,然后赋值给path
+			int length = lstrlen(lpc);
+			TextOut(hdc, 0, temp, lpc, length);
+		}
+
+		temp = cyChar * ((i - 1)*(行间距 + 1) - iVscrollPos + 1);  //只能放在这里，放在上个循环前面与上循环重复并且下面缺少temp初始化
+		std::string tStr = str.substr(j*max行字符数, str.size() - j * max行字符数);
+		std::wstring wstr(tStr.length(), L' ');   //初始化宽字节wstr
+		std::copy(tStr.begin(), tStr.end(), wstr.begin());    //将str复制到wstr
+		lpc = wstr.c_str();    //将wstr转换为C字符串的指针,然后赋值给path
+		int length = lstrlen(lpc);
+		TextOut(hdc, 0, temp, lpc, length);
+		EndPaint(hWnd, &ps);
+	}
+	break;
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+	}
+	return 0;
 }
 
 // “关于”框的消息处理程序。
 INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    UNREFERENCED_PARAMETER(lParam);
-    switch (message)
-    {
-    case WM_INITDIALOG:
-        return (INT_PTR)TRUE;
-
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return (INT_PTR)TRUE;
-        }
-        break;
-    }
-    return (INT_PTR)FALSE;
-}
-
-LPCWSTR stringToLPCWSTR(std::string orig)
-{
-	wchar_t *wcstring = 0;
-	try
+	UNREFERENCED_PARAMETER(lParam);
+	switch (message)
 	{
-		size_t origsize = orig.length() + 1;
-		const size_t newsize = 100;
-		size_t convertedChars = 0;
-		if (orig == "")
+	case WM_INITDIALOG:
+		return (INT_PTR)TRUE;
+
+	case WM_COMMAND:
+		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
 		{
-			wcstring = (wchar_t *)malloc(0);
-			mbstowcs_s(&convertedChars, wcstring, origsize, orig.c_str(), _TRUNCATE);
+			EndDialog(hDlg, LOWORD(wParam));
+			return (INT_PTR)TRUE;
 		}
-		else
-		{
-			wcstring = (wchar_t *)malloc(sizeof(wchar_t)*(orig.length() - 1));
-			mbstowcs_s(&convertedChars, wcstring, origsize, orig.c_str(), _TRUNCATE);
-		}
+		break;
 	}
-	catch (std::exception e) {}return wcstring;
+	return (INT_PTR)FALSE;
 }
