@@ -1,6 +1,6 @@
 <!--pages/about/about.wxml-->
-<view class = "container">
+<view class = "container" catchtap='f0'>
   <navigator url = "/pages/news/news" open-type='switchTab'>
-  <image class = 'logo' src = "/images/logo.jpg"></image>
+  <image class = 'logo' src = "http://www.ibacc.cn/CSALOGO/favicon.png"></image>
   </navigator>
 </view>

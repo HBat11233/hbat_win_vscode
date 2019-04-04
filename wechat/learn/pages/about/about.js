@@ -62,5 +62,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  f0: function () {
+    wx.request({
+      url: 'http://www.ibacc.cn/',
+      method: "GET",
+      data:{
+      },
+      header:{
+      },
+
+      success: function(res){
+        console.log(res)
+      },
+      fail: function(){
+        console.log("fail")
+      },
+      complete: function(){
+        console.log("complete")
+      }
+    })
   }
 })
