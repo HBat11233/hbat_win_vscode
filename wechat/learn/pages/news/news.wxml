@@ -2,7 +2,7 @@
 <view>
   <navigator url = "http://www.cs.cqu.edu.cn/info/1073/2534.htm" hover-class='nav-color'> news
   </navigator> 
-  <icon type="success" size="13"></icon>
+  <icon type="success" size="93"></icon>
   <view>
     <web-view src="http://www.ibacc.cn"></web-view>
   </view>
