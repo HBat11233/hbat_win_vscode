@@ -2,20 +2,61 @@
 .userinfo {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+.uesrinfo-head {
+  background-color: #f5bda4;
+  height: 218rpx;
+  width: 750rpx;
+  display: flex;
+}
+
+.uesrinfo-head-image {
+  height: 158rpx;
+  width: 158rpx;
+  background-color: #f86c5f;
+  border-style: solid;
+  border-width: 10rpx;
+  border-color: #ffffff; 
+  border-radius: 50%;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+}
+
+.userinfo-head-image-avatar {
+  width: 138rpx;
+  height: 138rpx;
+  margin: 10rpx 10rpx 10rpx 10rpx;
   border-radius: 50%;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.uesrinfo-head-text {
+  height: 178rpx;
+  width: 492rpx;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  display: flex;
+  flex-direction: column;
 }
 
-.usermotto {
-  margin-top: 200px;
+.userinfo-head-text-nickname {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.uesrinfo-head-text-area {
+  font-weight: bold;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  color: #ffffff;
+}
+
+.userinfo-second {
+  background-color: #f5bda4;
+  height: 157rpx;
+  width: 750rpx;
+}
+
+.record {
+  background-color: #f86c5f;
+  height: 850rpx;
+  width: 750rpx;
 }

@@ -1,13 +1,26 @@
 <!--index.wxml-->
-<view class="container">
+<view class="index-container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <view class="uesrinfo-head">
+        <view class="uesrinfo-head-image">
+          <image bindtap="bindViewTap" class="userinfo-head-image-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+        </view>
+        <view class="uesrinfo-head-text">
+          <text class="userinfo-head-text-nickname">用户名:{{userInfo.nickName}}</text>
+          <input class="uesrinfo-head-text-area" value="标签：" type="text"></input>
+        </view>
+      </view>
+      <view class="userinfo-second">
+        <text class="userinfo-second-headlth">健康等级</text>
+        <text class="userinfo-second-food">特别注意食物</text>
+      </view>
+      <view class="record">
+        <text class="record-h">饮食记录</text>
+        <text class="record-t">今日摄入标注</text>
+        
+      </view>
     </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
   </view>
 </view>

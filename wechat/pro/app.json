@@ -1,12 +1,38 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/community/community",
+    "pages/shopping/shopping",
+    "pages/myself/myself"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#020faa",
+    "navigationBarBackgroundColor": "#f86c5f",
     "navigationBarTitleText": "重医科app",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "ico/tab1.png",
+      "selectedIconPath": "ico/tab1s.png"
+    },{
+      "pagePath": "pages/community/community",
+      "text": "社区",
+      "iconPath": "ico/tab2.png",
+      "selectedIconPath": "ico/tab2s.png"
+    },{
+      "pagePath": "pages/shopping/shopping",
+      "text": "商城",
+      "iconPath": "ico/tab3.png",
+      "selectedIconPath": "ico/tab3s.png"
+    },{
+      "pagePath": "pages/myself/myself",
+      "text": "我的",
+      "iconPath": "ico/tab4.png",
+      "selectedIconPath": "ico/tab4s.png"
+    }]
   }
 }
