@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_1/project_1.srcs/sim_1/new/sim_sw2led.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_sw2led
+INFO: [VRFC 10-2458] undeclared symbol led, assumed default net type wire [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_1/project_1.srcs/sim_1/new/sim_sw2led.v:32]
+INFO: [VRFC 10-2458] undeclared symbol led1, assumed default net type wire [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_1/project_1.srcs/sim_1/new/sim_sw2led.v:33]
+INFO: [VRFC 10-2458] undeclared symbol led2, assumed default net type wire [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_1/project_1.srcs/sim_1/new/sim_sw2led.v:34]
+INFO: [VRFC 10-2458] undeclared symbol led3, assumed default net type wire [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_1/project_1.srcs/sim_1/new/sim_sw2led.v:35]
