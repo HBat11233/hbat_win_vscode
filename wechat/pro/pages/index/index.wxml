@@ -13,8 +13,15 @@
         </view>
       </view>
       <view class="userinfo-second">
-        <text class="userinfo-second-headlth">健康等级</text>
-        <text class="userinfo-second-food">特别注意食物</text>
+        <view class="userinfo-second-left">
+          <text class="userinfo-second-headlth">健康评级</text>
+          <view class="uesrinfo-second-left-im">
+            <image wx:for="{{headlthNumber}}" class="uesrinfo-second-headlthNumber" src='../../ico/health.png'></image>
+          </view>
+        </view>
+        <view class="userinfo-second-right">
+          <text class="userinfo-second-food">特别注意食物</text>
+        </view>
       </view>
       <view class="record">
         <text class="record-h">饮食记录</text>

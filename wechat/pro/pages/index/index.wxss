@@ -1,4 +1,7 @@
 /**index.wxss**/
+.index-container {
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -53,6 +56,39 @@
   background-color: #f5bda4;
   height: 157rpx;
   width: 750rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.userinfo-second-left {
+  width: 218rpx;
+  height: 157rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo-second-headlth {
+  color: white;
+}
+
+.uesrinfo-second-left-im {
+  margin: 30rpx 10rpx 30rpx 10rpx;
+}
+
+.uesrinfo-second-headlthNumber {
+  width: 39rpx;
+  height: 40.4rpx;
+}
+
+.userinfo-second-food {
+  color: white;
+}
+
+.userinfo-second-right {
+  width: 532rpx;
+  height: 157rpx;
+  text-align: center;
 }
 
 .record {
