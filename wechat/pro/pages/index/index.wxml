@@ -20,13 +20,17 @@
           </view>
         </view>
         <view class="userinfo-second-right">
-          <text class="userinfo-second-food">特别注意食物</text>
+          <text class="userinfo-second-food">特别注意食物：</text>
         </view>
       </view>
+
+
       <view class="record">
         <text class="record-h">饮食记录</text>
         <text class="record-t">今日摄入标注</text>
-        
+        <view class="record-index">
+          <canvas canvas-id="indexCanvas" style="width:710rpx; height:310rpx;"></canvas>
+        </view>
       </view>
     </block>
   </view>

@@ -95,4 +95,24 @@
   background-color: #f86c5f;
   height: 850rpx;
   width: 750rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.record-h {
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  color: white;
+}
+
+.record-t {
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  color: white;
+  font-size: 28rpx;
+}
+
+.record-index {
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  width: 710rpx;
+  height: 310rpx;
+  background-color: white;
 }

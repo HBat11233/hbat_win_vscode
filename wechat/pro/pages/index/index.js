@@ -50,5 +50,15 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  onReady(e) {
+    const context = wx.createCanvasContext('indexCanvas')
+    context.setStrokeStyle('#ff0000')
+    context.setLineWidth(5)
+    context.moveTo(40,30)
+    context.lineTo(80,60);
+    context.stroke()
+    context.draw()
+    console.log("success")
+  },
 })
