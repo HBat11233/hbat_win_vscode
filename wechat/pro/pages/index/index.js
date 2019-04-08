@@ -7,7 +7,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    headlthNumber: [1,2,3,4,5]
+    headlthNumber: [1,2,3,4,5],
+    fristInformation:false
   },
   //事件处理函数
   bindViewTap: function() {

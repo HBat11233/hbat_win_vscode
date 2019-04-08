@@ -1,2 +1,2 @@
 <!--pages/shopping/shopping.wxml-->
-<text>pages/shopping/shopping.wxml</text>
+<text class='shopping-container'>商城应用升级中，敬请期待......</text>

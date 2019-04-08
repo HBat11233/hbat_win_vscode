@@ -2,6 +2,12 @@
 .index-container {
 }
 
+.inputInformation {
+  width: 750rpx;
+  height: 1200rpx;
+  background-color: #f5bda4;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -115,4 +121,8 @@
   width: 710rpx;
   height: 310rpx;
   background-color: white;
+}
+
+.nar-hover{
+  color:black;
 }

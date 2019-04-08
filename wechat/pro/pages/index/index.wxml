@@ -3,35 +3,48 @@
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <view class="uesrinfo-head">
-        <view class="uesrinfo-head-image">
-          <image bindtap="bindViewTap" class="userinfo-head-image-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
-        </view>
-        <view class="uesrinfo-head-text">
-          <text class="userinfo-head-text-nickname">用户名:{{userInfo.nickName}}</text>
-          <input class="uesrinfo-head-text-area" value="标签：" type="text"></input>
-        </view>
+      <view wx:if="{{!fristInformation}}" class="inputInformation">
+      <input value='姓名'></input>
+      <input value='年龄'></input>
+      <input value='病名'></input>
+      <input value='病龄'></input>
+      <input value='身高'></input>
+      <input value='体重'></input>
+      <button>submit</button>
       </view>
-      <view class="userinfo-second">
-        <view class="userinfo-second-left">
-          <text class="userinfo-second-headlth">健康评级</text>
-          <view class="uesrinfo-second-left-im">
-            <image wx:for="{{headlthNumber}}" class="uesrinfo-second-headlthNumber" src='../../ico/health.png'></image>
+      <block wx:else>
+        <view class="uesrinfo-head">
+          <view class="uesrinfo-head-image">
+            <image bindtap="bindViewTap" class="userinfo-head-image-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+          </view>
+          <view class="uesrinfo-head-text">
+            <text class="userinfo-head-text-nickname">用户名:{{userInfo.nickName}}</text>
+            <input class="uesrinfo-head-text-area" value="标签：" type="text"></input>
           </view>
         </view>
-        <view class="userinfo-second-right">
-          <text class="userinfo-second-food">特别注意食物：</text>
+        <view class="userinfo-second">
+          <view class="userinfo-second-left">
+            <text class="userinfo-second-headlth">健康评级</text>
+            <view class="uesrinfo-second-left-im">
+              <image wx:for="{{headlthNumber}}" class="uesrinfo-second-headlthNumber" src='../../ico/health.png'></image>
+            </view>
+          </view>
+          <view class="userinfo-second-right">
+            <text class="userinfo-second-food">特别注意食物：</text>
+          </view>
         </view>
-      </view>
 
 
-      <view class="record">
-        <text class="record-h">饮食记录</text>
-        <text class="record-t">今日摄入标注</text>
-        <view class="record-index">
-          <canvas canvas-id="indexCanvas" style="width:710rpx; height:310rpx;"></canvas>
+        <view class="record">
+          <navigator  url='/pages/diet-records/diet-records' style=' margin: 10rpx 20rpx 10rpx 20rpx;color: white;' hover-class='nar-hover'>饮食记录</navigator>
+          <text class="record-t">今日摄入标注</text>
+          <navigator url='/pages/diet-records/diet-records'>
+            <view class="record-index">
+              <canvas canvas-id="indexCanvas" style="width:710rpx; height:310rpx;"></canvas>
+            </view>
+          </navigator>
         </view>
-      </view>
+      </block>
     </block>
   </view>
 </view>

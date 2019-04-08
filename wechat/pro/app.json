@@ -1,10 +1,13 @@
 {
   "pages":[
+    
     "pages/index/index",
     "pages/logs/logs",
     "pages/community/community",
     "pages/shopping/shopping",
-    "pages/myself/myself"
+    "pages/myself/myself",
+    "pages/diet-records/diet-records"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,36 @@
+.search-box-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f57d73;
+  height:75rpx;
+}
+
+.nutrient-feedback-container{
+  background-color: #f5bda4;
+  height:550rpx;
+
+}
+
+.feedback-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.specific-target-container{
+  display: flex;
+  justify-content: space-between;
+  color: #ec776d;
+  font-size:35rpx;
+}
+
+.atenfood-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 550rpx;
+  background-color: #f86c5f;
+}

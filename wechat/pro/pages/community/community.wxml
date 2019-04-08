@@ -1,2 +1,2 @@
 <!--pages/community/community.wxml-->
-<text>pages/community/community.wxml</text>
+<text class='community-container'>社区应用升级中，敬请期待......</text>

@@ -1,0 +1,25 @@
+<view class='search-box-container'>
+  <text style='color:white'>搜索食物营养</text> 
+</view>
+
+<view class='nutrient-feedback-container'>
+  <view class='feedback-container'>
+    <text style='font-weight:bold ;font-size:60rpx;color:white'>饮食记录</text>
+    <text style='font-weight:bold ;font-size:40rpx;color:white'>今日摄入指标</text>
+  </view>
+
+  <view class='specific-target-container'>
+    <text>营养素</text> 
+    <text>摄入情况</text>
+    <text>限制值</text>
+  </view>
+
+ 
+  <view>
+  
+  </view>
+</view>
+
+<view class='atenfood-container'>
+  <text style='color:white; font-weight:bold; font-size:60rpx'>已添加食物</text>
+</view>
