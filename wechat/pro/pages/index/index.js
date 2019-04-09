@@ -1,6 +1,16 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var wxCharts = require('../../utils/wxcharts.js');
+var columnChart = null;
+var chartData = {
+  main: {
+    title: '摄入指标',
+    data: [898, 1287, 34, 98],
+    categories: ['能量', '碳水化合物', '蛋白质', '脂肪']
+  }
+};
+var data0=true;  //输出柱状图单位
 
 Page({
   data: {
@@ -8,7 +18,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     headlthNumber: [1,2,3,4,5],
-    fristInformation:false
+    fristInformation:false,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -52,14 +62,51 @@ Page({
       hasUserInfo: true
     })
   },
-  onReady(e) {
-    const context = wx.createCanvasContext('indexCanvas')
-    context.setStrokeStyle('#ff0000')
-    context.setLineWidth(5)
-    context.moveTo(40,30)
-    context.lineTo(80,60);
-    context.stroke()
-    context.draw()
-    console.log("success")
+  submitData: function(event) {
+    this.setData({ fristInformation: true })
   },
+  onReady: function (e) {
+    var windowWidth = 320;
+    try {
+      var res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+    } catch (e) {
+      console.error('getSystemInfoSync failed!');
+    }
+
+    columnChart = new wxCharts({
+      canvasId: 'columnCanvas',
+      type: 'column',
+      animation: true,  //是否动画显示
+      categories: chartData.main.categories,  // (饼图、圆环图不需要) 数据类别分类
+      legend:false,
+      series: [{
+        color: '#f5bda4',
+        name: '指标',
+        data: chartData.main.data,
+        format: function (val, name) {
+          var temp = 'g';
+          if(data0) {
+            temp= 'kj';
+            data0=false;
+          }
+          return val.toFixed(2) + temp;
+        }
+      }],
+      yAxis: {
+        disabled :true
+      },
+      xAxis: {
+        disableGrid: false,
+        type: 'calibration'
+      },
+      extra: {
+        column: {
+          width: 30
+        }
+      },
+      width: windowWidth,
+      height: 200
+    });
+  }
 })

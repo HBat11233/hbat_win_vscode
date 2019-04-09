@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import "/pages/lib/weui.wxss";
+
 .index-container {
 }
 
@@ -6,6 +8,16 @@
   width: 750rpx;
   height: 1200rpx;
   background-color: #f5bda4;
+  display: flex;
+  flex-direction: column;
+}
+
+.informationInput {
+  margin: 10rpx;
+}
+
+button {
+  margin: 30rpx;
 }
 
 .userinfo {
@@ -119,8 +131,7 @@
 .record-index {
   margin: 10rpx 20rpx 10rpx 20rpx;
   width: 710rpx;
-  height: 310rpx;
-  background-color: white;
+  height: 400rpx;
 }
 
 .nar-hover{
