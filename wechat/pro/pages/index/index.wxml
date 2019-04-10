@@ -36,13 +36,21 @@
 
 
         <view class="record">
-          <navigator  url='/pages/diet-records/diet-records' style=' margin: 10rpx 20rpx 10rpx 20rpx;color: white;' hover-class='nar-hover'>饮食记录</navigator>
+          <navigator  url='/pages/diet-records/diet-records' class='record-h' hover-class='nar-hover'>饮食记录</navigator>
           <text class="record-t">今日摄入标注</text>
-          <navigator url='/pages/diet-records/diet-records'>
-            <view class="record-index">
-              <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler" style="width:710rpx; height:400rpx;"></canvas>
-            </view>
-          </navigator>
+          <view class="record-index">
+            <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler" style="width:710rpx; height:400rpx;"></canvas>
+          </view>
+          <view class="divLine"></view>
+          <text class='record-h'>营养师建议：</text>
+          <view class="divLine"></view>
+          <text class='record-h'>每日打卡：</text>
+          <view class='cards'>
+            <view class='card'>1</view>
+            <view class='card'>2</view>
+            <view class='card'>3</view>
+            <view class='card'>4</view>
+          </view>
         </view>
       </block>
     </block>

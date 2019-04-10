@@ -111,7 +111,7 @@ button {
 
 .record {
   background-color: #f86c5f;
-  height: 850rpx;
+  height: auto;
   width: 750rpx;
   display: flex;
   flex-direction: column;
@@ -136,4 +136,29 @@ button {
 
 .nar-hover{
   color:black;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.divLine{
+ background: #E0E3DA;
+ width: 730rpx;
+ height: 5rpx;
+ margin-left: 10rpx;
+ margin-right: 10rpx;
+}
+
+.cards {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  width: 135rpx;
+  height: 175rpx;
+  background-color: rgb(238, 168, 189);
+  margin: auto;
+  border-radius: 10%;
 }
