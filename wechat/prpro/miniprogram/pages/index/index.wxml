@@ -2,6 +2,7 @@
 <view class="index-container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:elif="{{!hasOpenId}}" class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
     <block wx:else>
       <view wx:if="{{!fristInformation}}" class="inputInformation">
         <input placeholder='姓名' type='text' class="informationInput weui-input weui-cell weui-cell_input weui-cells" name='name' value='{{psData.name}}' bindinput='namechange'/>
@@ -14,6 +15,10 @@
         <modal title="{{pslog.title}}" hidden="{{pslog.hidden}}" no-cancel bindconfirm="confirm">{{pslog.content}}</modal>
       </view>
       <block wx:else>
+        <navigator style='background: #f86c5f; display:flex; flex-direction:row;' url='../search/search'>
+          <input disabled='true' type='text' confirm-type='search' placeholder='食品名' class='weui-cell_input' style='margin:10rpx; background: #ffffff; width:670rpx;'></input>
+          <icon type='search' style='margin-top:10rpx;'></icon>
+        </navigator>
         <view class="uesrinfo-head">
           <view class="uesrinfo-head-image">
             <image bindtap="bindViewTap" class="userinfo-head-image-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
@@ -38,7 +43,7 @@
 
         <view class="record">
           <navigator  url='/pages/diet-records/diet-records' class='record-h' hover-class='nar-hover'>饮食记录</navigator>
-          <text class="record-t">今日摄入标注</text>
+          <text class="record-t">建议摄入标注</text>
           <view class="record-index">
             <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler" style="width:710rpx; height:400rpx;"></canvas>
           </view>

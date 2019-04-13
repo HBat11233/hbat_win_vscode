@@ -1,0 +1,49 @@
+<navigator style='background: #f86c5f; display:flex; flex-direction:row;' url='../search/search'>
+  <input disabled='true' type='text' confirm-type='search' placeholder='搜索食物营养' class='weui-cell_input' style='margin:10rpx; background: #ffffff; width:670rpx;'></input>
+  <icon type='search' style='margin-top:10rpx;'></icon>
+</navigator>
+
+<view class='nutrient-feedback-container'>
+  <view class='feedback-container'>
+    <text style='font-weight:bold ;font-size:60rpx;color:white'>饮食记录</text>
+    <text style='font-weight:bold ;font-size:40rpx;color:white'>今日摄入指标</text>
+  </view>
+
+  <view class='specific-target-container'>
+    <text>2275cal</text>
+    <text>65g</text>
+    <text>170g</text>
+    <text>341.25g</text>
+    <text>42g</text>
+    <text>300mg</text>
+  </view>
+
+  <view class='specific-intake-container'>
+    <canvas canvas-id='canvas' style='width:750rpx;height:700rpx'></canvas>
+  </view>
+</view>
+
+<view class='atenfoodlist-container'>
+  <view style="width:750rpx; height:aotu; background:#f57d93;">
+    <swiper>
+      <swiper-item wx:for='{{food1}}'>
+        <text>ID:{{index+1}}</text>
+        <view style='display:flex; flex-direction:column; width:750rpx; background:#f5bda4'>
+          {{item.name}}
+        </view>
+      </swiper-item>
+    </swiper>
+    <input type="number" bindinput="addFoodList" placeholder="添加食物ID"  confirm-type="send" class='weui-cell_input' style='margin:10rpx; background: #ffffff; width:730rpx;'/>
+    <button type="primary" bindtap="onAddId" style="margin: 10rpx; ">添加</button>
+  </view>
+  <text style='color:white; font-weight:bold; font-size:60rpx'>已添加食物</text>
+
+  <view class='atenfoodIandT-container'>
+    <block wx:if='!(foodlist.length === 0)' wx:for="{{foodlist}}">
+      <image class='atenfoodI-container' src='/ico/health.png'></image>
+      <view class='atenfoodT-container'>
+       <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+</view>

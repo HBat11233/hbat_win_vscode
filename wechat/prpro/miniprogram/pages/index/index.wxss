@@ -1,0 +1,164 @@
+/**index.wxss**/
+@import "/pages/lib/weui.wxss";
+
+.index-container {
+}
+
+.inputInformation {
+  width: 750rpx;
+  height: 1200rpx;
+  background-color: #f5bda4;
+  display: flex;
+  flex-direction: column;
+}
+
+.informationInput {
+  margin: 10rpx;
+}
+
+button {
+  margin: 30rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.uesrinfo-head {
+  background-color: #f5bda4;
+  height: 218rpx;
+  width: 750rpx;
+  display: flex;
+}
+
+.uesrinfo-head-image {
+  height: 158rpx;
+  width: 158rpx;
+  background-color: #f86c5f;
+  border-style: solid;
+  border-width: 10rpx;
+  border-color: #ffffff; 
+  border-radius: 50%;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+}
+
+.userinfo-head-image-avatar {
+  width: 138rpx;
+  height: 138rpx;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  border-radius: 50%;
+}
+
+.uesrinfo-head-text {
+  height: 178rpx;
+  width: 492rpx;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo-head-text-nickname {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.uesrinfo-head-text-area {
+  font-weight: bold;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  color: #ffffff;
+}
+
+.userinfo-second {
+  background-color: #f5bda4;
+  height: 157rpx;
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.userinfo-second-left {
+  width: 218rpx;
+  height: 157rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo-second-headlth {
+  color: white;
+}
+
+.uesrinfo-second-left-im {
+  margin: 30rpx 10rpx 30rpx 10rpx;
+}
+
+.uesrinfo-second-headlthNumber {
+  width: 39rpx;
+  height: 40.4rpx;
+}
+
+.userinfo-second-food {
+  color: white;
+}
+
+.userinfo-second-right {
+  width: 532rpx;
+  height: 157rpx;
+  text-align: center;
+}
+
+.record {
+  background-color: #f86c5f;
+  height: auto;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.record-h {
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  color: white;
+}
+
+.record-t {
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  color: white;
+  font-size: 28rpx;
+}
+
+.record-index {
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  width: 710rpx;
+  height: 400rpx;
+}
+
+.nar-hover{
+  color:black;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.divLine{
+ background: #E0E3DA;
+ width: 730rpx;
+ height: 5rpx;
+ margin-left: 10rpx;
+ margin-right: 10rpx;
+}
+
+.cards {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  width: 135rpx;
+  height: 175rpx;
+  background-color: rgb(238, 168, 189);
+  margin: auto;
+  border-radius: 10%;
+}

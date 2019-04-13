@@ -1,0 +1,14 @@
+/* pages/search/search.wxss */
+.search-container {
+  width: 750rpx;
+  height: auto;
+  background-color: #f86c5f;
+}
+
+.indexWindow {
+  margin: 10rpx;
+  width: 730rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,75 @@
+@import "/pages/lib/weui.wxss";
+
+.search-box-container{
+  display: flex;
+  flex-direction: column;
+  background-color: #f57d73;
+  height:140rpx;
+  width: 750rpx;
+}
+
+.nutrient-feedback-container{
+  background-color: #f5bda4;
+  height:700rpx;
+}
+
+.feedback-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 150rpx;
+}
+
+.specific-target-container{
+  display: flex;
+  justify-content: space-between;
+  color: #ec776d;
+  font-size:30rpx;
+  height: 50rpx;
+  margin: 1rpx 50rpx;
+}
+
+
+.specific-intake-container{
+  width: 450rpx;
+  height: 500rpx;
+}
+
+
+.atenfoodlist-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700rpx;
+  background-color: #f86c5f;
+}
+
+
+.atenfoodIandT-container{
+  display: flex;
+  width: 740rpx;
+  height: 250rpx;
+}
+
+.atenfoodI-container{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.atenfoodT-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.inputInformation {
+  width: 750rpx;
+  height: 1200rpx;
+  background-color: #f5bda4;
+  display: flex;
+  flex-direction: column;
+}
+
+.informationInput {
+  margin: 20rpx;
+}
