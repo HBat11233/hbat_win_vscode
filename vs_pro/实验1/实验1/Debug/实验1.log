@@ -1,5 +1,7 @@
-﻿  实验1.cpp
-d:\hbat_win_vscode\vs_pro\实验1\实验1\实验1.cpp(253): warning C4018: “<”: 有符号/无符号不匹配
-d:\hbat_win_vscode\vs_pro\实验1\实验1\实验1.cpp(276): warning C4129: “-”: 不可识别的字符转义序列
-d:\hbat_win_vscode\vs_pro\实验1\实验1\实验1.cpp(278): warning C4018: “<”: 有符号/无符号不匹配
-  实验1.vcxproj -> D:\hbat_win_vscode\vs_pro\实验1\Debug\实验1.exe
+﻿  stdafx.cpp
+  实验1.cpp
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\实验1\实验1\实验1.cpp(253): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\实验1\实验1\实验1.cpp(276): warning C4129: “-”: 不可识别的字符转义序列
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\实验1\实验1\实验1.cpp(278): warning C4018: “<”: 有符号/无符号不匹配
+  LINK : 没有找到 C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\实验1\Debug\实验1.exe 或上一个增量链接没有生成它；正在执行完全链接
+  实验1.vcxproj -> C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\实验1\Debug\实验1.exe
