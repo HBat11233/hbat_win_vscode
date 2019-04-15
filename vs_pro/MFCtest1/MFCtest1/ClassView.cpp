@@ -326,16 +326,5 @@ void CClassView::OnChangeVisualStyle()
 void CClassView::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
-	static INT count;
-	static CPoint p0;
-	if (count == 0)
-	{
-		p0 = point;
-		count++;
-	}
-	else
-	{
-
-	}
 	CDockablePane::OnLButtonDown(nFlags, point);
 }

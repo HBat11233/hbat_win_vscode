@@ -28,6 +28,7 @@ BEGIN_MESSAGE_MAP(CMFCtest1View, CView)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CMFCtest1View::OnFilePrintPreview)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
+	ON_WM_LBUTTONDOWN()
 END_MESSAGE_MAP()
 
 // CMFCtest1View 构造/析构
@@ -76,6 +77,19 @@ void CMFCtest1View::OnDraw(CDC* pDC)
 
 	pDC->MoveTo(p0);
 	pDC->LineTo(p1);
+
+	for (CLine t : VCLine)
+		t.Draw(pDC);
+	
+	
+	DOUBLE r = 100, pi = 3.1415;
+	for (DOUBLE i = 0; i < 2; i+=0.01)
+	{
+		CLine t;
+		t.MoveTo(CPoint(0, 0));
+		int x = r * cos(pi*i), y = r * sin(pi*i);
+		t.LineTo(pDC,CPoint(x,y));
+	}
 
 	// TODO: 在此处为本机数据添加绘制代码
 }
@@ -143,3 +157,28 @@ CMFCtest1Doc* CMFCtest1View::GetDocument() const // 非调试版本是内联的
 
 
 // CMFCtest1View 消息处理程序
+
+
+void CMFCtest1View::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	static INT count;
+	static CPoint p0;
+	if (count == 0)
+	{
+		p0 = point;
+		count++;
+	}
+	else
+	{
+		CDC *pDC = GetDC();
+		CRect rect;
+		GetClientRect(&rect);
+		CLine p(p0, point), p2(CPoint(p0.x - rect.Width() / 2, -(p0.y - rect.Height() / 2)), CPoint(point.x - rect.Width() / 2, -(point.y - rect.Height() / 2)));
+		p.Draw(pDC);
+		VCLine.push_back(p2);
+		count = 0;
+		ReleaseDC(pDC);
+	}
+	CView::OnLButtonDown(nFlags, point);
+}

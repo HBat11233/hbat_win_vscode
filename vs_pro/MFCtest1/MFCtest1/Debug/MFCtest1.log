@@ -1,2 +1,3 @@
 ﻿  MFCtest1View.cpp
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\mfctest1view.cpp(90): warning C4244: “初始化”: 从“DOUBLE”转换到“int”，可能丢失数据
   MFCtest1.vcxproj -> C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest1\Debug\MFCtest1.exe

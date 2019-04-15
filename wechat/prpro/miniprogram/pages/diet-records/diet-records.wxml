@@ -10,16 +10,15 @@
   </view>
 
   <view class='specific-target-container'>
-    <text>2275cal</text>
+    <text>2275kcal</text>
     <text>65g</text>
     <text>170g</text>
     <text>341.25g</text>
     <text>42g</text>
     <text>300mg</text>
   </view>
-
   <view class='specific-intake-container'>
-    <canvas canvas-id='canvas' style='width:750rpx;height:700rpx'></canvas>
+    <canvas canvas-id='canvas' style="width:710rpx; height:700rpx;"></canvas>
   </view>
 </view>
 

@@ -10,7 +10,7 @@ var chartData = {
     categories: ['能量', '碳水化合物', '蛋白质', '脂肪' ,'胆固醇' , '膳食纤维']
   }
 };
-var data0=true;  //输出柱状图单位
+var data0=0;  //输出柱状图单位
 
 Page({
   data: {
@@ -109,10 +109,13 @@ Page({
         data: chartData.main.data,
         format: function (val, name) {
           var temp = 'g';
-          if(data0) {
-            temp= 'kj';
-            data0=false;
-          }
+          if(!data0)
+            temp = 'kcal';
+          if(data0===4)
+            temp = 'mg';
+          data0 = data0 + 1;
+          if(data0===6)
+            data0=0;
           return val.toFixed(2) + temp;
         }
       }],

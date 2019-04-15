@@ -11,7 +11,7 @@ var chartDatas = {
     categories: ['能量', '蛋白质', '脂肪','碳水化合物','不溶性膳食纤维','胆固醇']
   }
 };
-var data0 = true;  //输出柱状图单位
+var data0 = 0;  //输出柱状图单位
 
 Page({
   data:{
@@ -39,13 +39,14 @@ Page({
   },
 
   onReady:function(e){
-    var windowWidth = 320;
+    var windowWidth = 350;
     try {
       var res = wx.getSystemInfoSync();
       windowWidth = res.windowWidth;
     } catch (e) {
       console.error('getSystemInfoSync failed!');
     }
+    console.log(windowWidth);
     columnCharts = new wxCharts({
       canvasId: 'canvas',
       type: 'column',
@@ -58,10 +59,13 @@ Page({
         data: chartDatas.main.data,
         format: function (val, name) {
           var temp = 'g';
-          if (data0) {
-            temp = 'kj';
-            data0 = false;
-          }
+          if (!data0) 
+            temp = 'kcal';
+          if (data0===5)
+            temp='mg';
+            data0=data0+1;
+          if (data0 === 6)
+            data0 = 0;
           return val.toFixed() + temp;
         }
       }],
@@ -78,7 +82,7 @@ Page({
           height:30
         }
       },
-      width: 380,
+      width: windowWidth,
       height: 250
     })
   },

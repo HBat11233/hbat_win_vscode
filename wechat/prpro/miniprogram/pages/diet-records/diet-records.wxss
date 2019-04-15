@@ -32,8 +32,9 @@
 
 
 .specific-intake-container{
-  width: 450rpx;
-  height: 500rpx;
+  width: 750rpx;
+  height: 700rpx;
+  background: #f5bda4;
 }
 
 
