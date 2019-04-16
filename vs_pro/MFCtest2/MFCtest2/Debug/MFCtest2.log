@@ -1,8 +1,2 @@
-﻿  stdafx.cpp
-  ChildFrm.cpp
-  MainFrm.cpp
-  MFCtest2.cpp
-  MFCtest2Doc.cpp
-  MFCtest2View.cpp
-  正在生成代码...
-  MFCtest2.vcxproj -> C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest2\Debug\MFCtest2.exe
+﻿  MFCtest2View.cpp
+  MFCtest2.vcxproj -> D:\hbat_win_vscode\vs_pro\MFCtest2\Debug\MFCtest2.exe
