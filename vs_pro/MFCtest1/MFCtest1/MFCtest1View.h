@@ -6,6 +6,7 @@
 #include <vector>
 #include "CLine.h"
 #include <cmath>
+#include "MainFrm.h"
 
 class CMFCtest1View : public CView
 {
@@ -48,6 +49,11 @@ protected:
 public:
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	std::vector<CLine> VCLine;
+	CLine line;
+	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
+//	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
+	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	bool lbutton;
 };
 
 #ifndef _DEBUG  // MFCtest1View.cpp 中的调试版本

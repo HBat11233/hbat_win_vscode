@@ -29,13 +29,18 @@ BEGIN_MESSAGE_MAP(CMFCtest1View, CView)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
 	ON_WM_LBUTTONDOWN()
+	ON_WM_LBUTTONUP()
+	//	ON_WM_LBUTTONDBLCLK()
+	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
 // CMFCtest1View 构造/析构
 
 CMFCtest1View::CMFCtest1View() noexcept
+	:lbutton(FALSE)
 {
 	// TODO: 在此处添加构造代码
+	line.SetColor(0x0000ff, 0x00ff00);
 
 }
 
@@ -80,15 +85,32 @@ void CMFCtest1View::OnDraw(CDC* pDC)
 
 	for (CLine t : VCLine)
 		t.Draw(pDC);
-	
-	
+
+	CLine t;
 	DOUBLE r = 100, pi = 3.1415;
-	for (DOUBLE i = 0; i < 2; i+=0.01)
+
+	t.SetColor(0xff0000, 0x00ff00);
+	for (DOUBLE i = 0; i < 2; i += 0.01)
 	{
-		CLine t;
 		t.MoveTo(CPoint(0, 0));
 		int x = r * cos(pi*i), y = r * sin(pi*i);
-		t.LineTo(pDC,CPoint(x,y));
+		t.LineTo(pDC, CPoint(x, y));
+	}
+
+	t.SetColor(0x0000ff, 0x00ff00);
+	for (DOUBLE i = 0; i < 2; i += 0.01)
+	{
+		t.MoveTo(CPoint(-200, 0));
+		int x = -200 + r * cos(pi*i), y = r * sin(pi*i);
+		t.LineTo(pDC, CPoint(x, y));
+	}
+
+	t.SetColor(0x0000ff,0xff0000);
+	for (DOUBLE i = 0; i < 2; i += 0.01)
+	{
+		t.MoveTo(CPoint(200, 0));
+		int x = 200 + r * cos(pi*i), y = r * sin(pi*i);
+		t.LineTo(pDC, CPoint(x, y));
 	}
 
 	// TODO: 在此处为本机数据添加绘制代码
@@ -162,23 +184,46 @@ CMFCtest1Doc* CMFCtest1View::GetDocument() const // 非调试版本是内联的
 void CMFCtest1View::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
-	static INT count;
-	static CPoint p0;
-	if (count == 0)
-	{
-		p0 = point;
-		count++;
-	}
-	else
-	{
-		CDC *pDC = GetDC();
-		CRect rect;
-		GetClientRect(&rect);
-		CLine p(p0, point), p2(CPoint(p0.x - rect.Width() / 2, -(p0.y - rect.Height() / 2)), CPoint(point.x - rect.Width() / 2, -(point.y - rect.Height() / 2)));
-		p.Draw(pDC);
-		VCLine.push_back(p2);
-		count = 0;
-		ReleaseDC(pDC);
-	}
+	line.MoveTo(point);
+	lbutton = TRUE;
 	CView::OnLButtonDown(nFlags, point);
+}
+
+
+void CMFCtest1View::OnLButtonUp(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	CPoint p0 = line.getB();
+	CRect rect;
+	GetClientRect(&rect);
+	CLine p2(CPoint(p0.x - rect.Width() / 2, -(p0.y - rect.Height() / 2)), CPoint(point.x - rect.Width() / 2, -(point.y - rect.Height() / 2)));
+	p2.SetColor(0x0000ff, 0x00ff00);
+	VCLine.push_back(p2);
+	CDC *pDC = GetDC();
+	line.LineTo(pDC, point);
+	lbutton = FALSE;
+	CView::OnLButtonUp(nFlags, point);
+}
+
+
+//void CMFCtest1View::OnLButtonDblClk(UINT nFlags, CPoint point)
+//{
+//	// TODO: 在此添加消息处理程序代码和/或调用默认值
+//	CDC *pDC = GetDC();
+//	CPoint t = line.getB();
+//	line.LineTo(pDC, point);
+//	line.MoveTo(t);
+//	CView::OnLButtonDblClk(nFlags, point);
+//}
+
+
+void CMFCtest1View::OnMouseMove(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	CString str;
+	CRect rect;
+	GetClientRect(&rect);
+	str.Format(_T("当前鼠标位置：%d，%d"), point.x - rect.Width() / 2, -(point.y - rect.Height() / 2));
+	((CMainFrame *)GetParent())->SetMessageText(str);
+	CView::OnMouseMove(nFlags, point);
 }
