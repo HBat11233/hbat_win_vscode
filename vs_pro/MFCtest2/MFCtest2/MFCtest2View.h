@@ -55,9 +55,12 @@ private:
 	CBitmap* MemBitmap;
 	// //point集合
 	std::vector<CPoint> buttonS;
+	COLORREF SeedClr;
+	BOOL bFill;
 public:
 	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
 	VOID myFill();
+	VOID OnDrawpic();
 };
 
 #ifndef _DEBUG  // MFCtest2View.cpp 中的调试版本
@@ -71,4 +74,10 @@ public:
 	double x;
 	double k;
 	int ymax;
+	MFCcaet(double x = 0,double k = 0,int ymax = 0)
+		:x(x),k(k),ymax(ymax){}
+	bool operator < (MFCcaet &b)
+	{
+		return x < b.x;
+	}
 }CAET;

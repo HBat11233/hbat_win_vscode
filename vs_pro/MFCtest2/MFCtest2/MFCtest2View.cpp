@@ -35,7 +35,7 @@ END_MESSAGE_MAP()
 // CMFCtest2View 构造/析构
 
 CMFCtest2View::CMFCtest2View() noexcept
-	:buttonBool(FALSE), MemDC(NULL), MemBitmap(NULL)
+	:buttonBool(FALSE), MemDC(NULL), MemBitmap(NULL),bFill(false)
 {
 	// TODO: 在此处添加构造代码
 }
@@ -76,20 +76,20 @@ void CMFCtest2View::OnDraw(CDC* pDC)
 	MemDC->FillSolidRect(rect, RGB(255, 255, 255));
 
 	//绘图
-	
+
+	myFill();
+
 	int length = buttonS.size();
-	
-	if (length > 0)
+
+	if (length)
 	{
 		MemDC->MoveTo(buttonS[0]);
 		for (int i = 1; i < length; ++i)
 			MemDC->LineTo(buttonS[i]);
-		if (buttonBool)
-
-			MemDC->LineTo(buttonM);
 	}
 
-
+	if (buttonBool)
+		MemDC->LineTo(buttonM);
 
 
 	//将内存中的图拷贝到屏幕上进行显示
@@ -186,7 +186,8 @@ void CMFCtest2View::OnMouseMove(UINT nFlags, CPoint point)
 	}
 	else
 		buttonM = point;
-	if (buttonBool)Invalidate(TRUE);
+	//if (buttonBool)Invalidate(TRUE);
+	OnDraw(GetDC());
 	CView::OnMouseMove(nFlags, point);
 }
 
@@ -211,18 +212,96 @@ VOID CMFCtest2View::myFill()
 {
 	// TODO: 在此处添加实现代码
 
-	if (buttonS.size() == 0)return;
+	size_t length = buttonS.size();
+
+	if (length == 0 || length==1 || (*buttonS.rbegin()) != (*buttonS.begin()))return;
+
+	if (!bFill)OnDrawpic();
+
+	CPen *pen = new CPen;
+	CPen * OldPen;
+
+	pen->CreatePen(PS_SOLID, 1, SeedClr);
+
+	OldPen = MemDC->SelectObject(pen);
 
 	GetClientRect(&rect);
 
 	std::vector<CAET>caet;
 	std::vector< std::vector<CAET> >cbucket;
 	CPoint minp = buttonS[0], maxp = buttonS[0];
+	bool t=false;
+
+	if (MemDC == NULL)
+	{
+		MemDC = GetDC();
+		t = true;
+	}
+
+
 	for (CPoint i : buttonS)
 	{
 		if (i.y < minp.y)minp = i;
 		if (i.y > maxp.y)maxp = i;
 	}
 	cbucket.resize(maxp.y - minp.y + 1);
+	for (int i = 0; i+1 < length; ++i)
+	{
+		double x, k;
+		int ymax,ymin;
+		if ((buttonS[i].y - buttonS[i + 1].y) == 0)continue;
+		k = (buttonS[i].x - buttonS[i + 1].x) / double(buttonS[i].y - buttonS[i + 1].y);
+		if (buttonS[i].y > buttonS[i + 1].y)
+		{
+			x = buttonS[i + 1].x;
+			ymax = buttonS[i].y;
+			ymin = buttonS[i + 1].y;
+		}
+		else
+		{
+			x = buttonS[i].x;
+			ymax = buttonS[i + 1].y;
+			ymin = buttonS[i].y;
+		}
+		for (int j = ymin-minp.y; j < ymax - minp.y; ++j, x += k)
+			cbucket[j].push_back(CAET(x, k, ymax));
+	}
+	for (std::vector<CAET> & i : cbucket)
+		std::sort(i.begin(), i.end());
+	int count = 0;
+	for (std::vector<CAET> & i : cbucket)
+	{
+		for (int j = 0; j+1 < i.size(); j += 2)
+		{
+			MemDC->MoveTo(round(i[j].x), count+minp.y);
+			MemDC->LineTo(round(i[j + 1].x), count+minp.y);
+		}
+		count++;
+	}
+
+	MemDC->SelectObject(OldPen);
+	
+	pen->DeleteObject();
+	delete pen;
+
+	pen = NULL;
+
+	MemDC = t ? NULL : MemDC;
+	return;
+}
+
+
+VOID CMFCtest2View::OnDrawpic()
+{
+	// TODO: 在此处添加实现代码.
+	CColorDialog ccd(SeedClr, CC_SOLIDCOLOR);
+	if (IDOK == ccd.DoModal())
+		SeedClr = ccd.GetColor();
+	else
+		return;
+	if (IDOK == MessageBox(TEXT("请在区域内部选取种子点"), TEXT("提示"), MB_OKCANCEL))
+		bFill = TRUE;
+	else
+		return;
 	return;
 }
