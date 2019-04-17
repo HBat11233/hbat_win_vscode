@@ -210,7 +210,19 @@ void CMFCtest2View::OnRButtonDown(UINT nFlags, CPoint point)
 VOID CMFCtest2View::myFill()
 {
 	// TODO: 在此处添加实现代码
-	std::vector<CPoint> que(buttonS);
 
+	if (buttonS.size() == 0)return;
+
+	GetClientRect(&rect);
+
+	std::vector<CAET>caet;
+	std::vector< std::vector<CAET> >cbucket;
+	CPoint minp = buttonS[0], maxp = buttonS[0];
+	for (CPoint i : buttonS)
+	{
+		if (i.y < minp.y)minp = i;
+		if (i.y > maxp.y)maxp = i;
+	}
+	cbucket.resize(maxp.y - minp.y + 1);
 	return;
 }

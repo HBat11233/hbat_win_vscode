@@ -65,3 +65,10 @@ inline CMFCtest2Doc* CMFCtest2View::GetDocument() const
    { return reinterpret_cast<CMFCtest2Doc*>(m_pDocument); }
 #endif
 
+typedef struct MFCcaet
+{
+public:
+	double x;
+	double k;
+	int ymax;
+}CAET;
