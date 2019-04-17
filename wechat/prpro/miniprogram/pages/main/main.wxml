@@ -1,0 +1,4 @@
+<!--pages/main/main.wxml-->
+<view class='main-container'>
+<image src='../../ico/main.png' mode='widthFix'></image>
+</view>

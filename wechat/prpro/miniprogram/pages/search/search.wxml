@@ -8,7 +8,7 @@
     <view class='indexWindow'>
       <view wx:for='{{food1}}'>
         <title>{{index+1}}</title>
-        <view style='display:flex; flex-direction:column; width:750rpx; background:#{{195594+index*5}}'>
+        <view style='display:flex; flex-direction:column; width:750rpx;'>
           <text wx:for='{{food1Index}}' wx:for-item='itemIndex' wx:if='{{!(index === 0)}}' style='margin: 5rpx;'>{{itemIndex}}:{{item[itemIndex]}}</text>
         </view>
       </view>
