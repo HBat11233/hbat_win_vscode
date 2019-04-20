@@ -1,4 +1,0 @@
-<!--pages/maps/maps.wxml-->
-<view class='container'>
-  <map style='width: 750rpx; height: 800rpx;'></map>
-</view>
