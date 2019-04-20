@@ -1,4 +1,2 @@
 <!--pages/maps/maps.wxml-->
-<view class='container'>
-  <map style='width: 750rpx; height: 800rpx;'></map>
-</view>
+<map style='width: 750rpx; height: 800rpx;' longitude='106.17' latitude='29.36'></map>
