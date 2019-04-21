@@ -1,3 +1,4 @@
 {
-    "files.defaultLanguage": "python"
+    "files.defaultLanguage": "python",
+    "C_Cpp.errorSquiggles": "Disabled"
 }

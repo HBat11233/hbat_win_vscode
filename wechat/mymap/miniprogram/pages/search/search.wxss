@@ -1,0 +1,7 @@
+/* pages/search/search.wxss */
+
+.map{
+  width: 700rpx;
+  height: 1000rpx;
+  margin: 25rpx;
+}

@@ -1,0 +1,13 @@
+<!--pages/search/search.wxml-->
+<view class='container'>
+  <map 
+    id="map"
+    longitude='{{longitude}}'
+    latitude='{{latitude}}'
+    class='map'
+    show-compass='true'
+    markers="{{markers}}"
+    circles="{{circles}}"
+    ></map>
+  <button bindtap='updataLocation'>更新位置信息</button>
+</view>
