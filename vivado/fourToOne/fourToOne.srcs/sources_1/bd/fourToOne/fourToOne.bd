@@ -1,0 +1,169 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a100tcsg324-1",
+      "name": "fourToOne",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "myOr_0": "",
+      "myAnd_0": "",
+      "myNot_0": "",
+      "myAnd_1": "",
+      "myAnd_2": "",
+      "myAnd_3": "",
+      "myNot_1": ""
+    },
+    "ports": {
+      "x": {
+        "direction": "I"
+      },
+      "y": {
+        "direction": "I"
+      },
+      "a": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "b": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "c": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "d": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "o": {
+        "direction": "O",
+        "left": "2",
+        "right": "0"
+      }
+    },
+    "components": {
+      "myOr_0": {
+        "vlnv": "xilinx.com:user:myOr:1.0",
+        "xci_name": "fourToOne_myOr_0_0"
+      },
+      "myAnd_0": {
+        "vlnv": "xilinx.com:user:myAnd:1.0",
+        "xci_name": "fourToOne_myAnd_0_0"
+      },
+      "myNot_0": {
+        "vlnv": "xilinx.com:user:myNot:1.0",
+        "xci_name": "fourToOne_myNot_0_0"
+      },
+      "myAnd_1": {
+        "vlnv": "xilinx.com:user:myAnd:1.0",
+        "xci_name": "fourToOne_myAnd_1_0"
+      },
+      "myAnd_2": {
+        "vlnv": "xilinx.com:user:myAnd:1.0",
+        "xci_name": "fourToOne_myAnd_2_0"
+      },
+      "myAnd_3": {
+        "vlnv": "xilinx.com:user:myAnd:1.0",
+        "xci_name": "fourToOne_myAnd_3_0"
+      },
+      "myNot_1": {
+        "vlnv": "xilinx.com:user:myNot:1.0",
+        "xci_name": "fourToOne_myNot_1_0"
+      }
+    },
+    "nets": {
+      "myOr_0_o": {
+        "ports": [
+          "myOr_0/o",
+          "o"
+        ]
+      },
+      "myAnd_0_od": {
+        "ports": [
+          "myAnd_0/od",
+          "myOr_0/a"
+        ]
+      },
+      "myAnd_1_od": {
+        "ports": [
+          "myAnd_1/od",
+          "myOr_0/b"
+        ]
+      },
+      "myAnd_2_od": {
+        "ports": [
+          "myAnd_2/od",
+          "myOr_0/c"
+        ]
+      },
+      "myAnd_3_od": {
+        "ports": [
+          "myAnd_3/od",
+          "myOr_0/d"
+        ]
+      },
+      "x_1": {
+        "ports": [
+          "x",
+          "myNot_0/a",
+          "myAnd_1/s1",
+          "myAnd_3/s1"
+        ]
+      },
+      "y_1": {
+        "ports": [
+          "y",
+          "myNot_1/a",
+          "myAnd_2/s2",
+          "myAnd_3/s2"
+        ]
+      },
+      "a_1": {
+        "ports": [
+          "a",
+          "myAnd_0/d"
+        ]
+      },
+      "b_1": {
+        "ports": [
+          "b",
+          "myAnd_1/d"
+        ]
+      },
+      "d_1": {
+        "ports": [
+          "d",
+          "myAnd_2/d"
+        ]
+      },
+      "c_1": {
+        "ports": [
+          "c",
+          "myAnd_3/d"
+        ]
+      },
+      "myNot_0_b": {
+        "ports": [
+          "myNot_0/b",
+          "myAnd_0/s1",
+          "myAnd_2/s1"
+        ]
+      },
+      "myNot_1_b": {
+        "ports": [
+          "myNot_1/b",
+          "myAnd_0/s2",
+          "myAnd_1/s2"
+        ]
+      }
+    }
+  }
+}

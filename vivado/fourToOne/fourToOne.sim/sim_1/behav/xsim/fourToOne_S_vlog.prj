@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../fourToOne.srcs/sources_1/new/fourToOne.v" \
+"../../../../fourToOne.srcs/sim_1/new/fourToOne_S.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
