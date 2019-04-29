@@ -1,5 +1,32 @@
-﻿  MFCtest1View.cpp
-d:\hbat_win_vscode\vs_pro\mfctest1\mfctest1\mfctest1view.cpp(96): warning C4244: “初始化”: 从“DOUBLE”转换到“int”，可能丢失数据
-d:\hbat_win_vscode\vs_pro\mfctest1\mfctest1\mfctest1view.cpp(104): warning C4244: “初始化”: 从“DOUBLE”转换到“int”，可能丢失数据
-d:\hbat_win_vscode\vs_pro\mfctest1\mfctest1\mfctest1view.cpp(112): warning C4244: “初始化”: 从“DOUBLE”转换到“int”，可能丢失数据
-  MFCtest1.vcxproj -> D:\hbat_win_vscode\vs_pro\MFCtest1\Debug\MFCtest1.exe
+﻿  stdafx.cpp
+  CLine.cpp
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(37): warning C4244: “初始化”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(39): warning C4244: “=”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(40): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(61): warning C4244: “初始化”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(63): warning C4244: “=”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(64): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(87): warning C4244: “初始化”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(89): warning C4244: “=”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(90): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(113): warning C4244: “初始化”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(115): warning C4244: “=”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(116): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(139): warning C4244: “初始化”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(141): warning C4244: “=”: 从“DOUBLE”转换到“COLOR24”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\cline.cpp(142): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  ChildFrm.cpp
+  ClassView.cpp
+  FileView.cpp
+  MFCtest1.cpp
+  MFCtest1Doc.cpp
+  MFCtest1View.cpp
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\mfctest1view.cpp(96): warning C4244: “初始化”: 从“DOUBLE”转换到“int”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\mfctest1view.cpp(104): warning C4244: “初始化”: 从“DOUBLE”转换到“int”，可能丢失数据
+c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\mfctest1\mfctest1\mfctest1view.cpp(112): warning C4244: “初始化”: 从“DOUBLE”转换到“int”，可能丢失数据
+  MainFrm.cpp
+  OutputWnd.cpp
+  PropertiesWnd.cpp
+  ViewTree.cpp
+  正在生成代码...
+  MFCtest1.vcxproj -> C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest1\Debug\MFCtest1.exe
