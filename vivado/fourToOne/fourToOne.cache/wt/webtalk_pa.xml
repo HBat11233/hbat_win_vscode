@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Apr 25 17:01:52 2019">
+<application name="pa" timeStamp="Tue Apr 30 04:06:27 2019">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="f2aa33a08deb4901952f8fd5548e7f82" type="ProjectID"/>
 <property name="ProjectIteration" value="2" type="ProjectIteration"/>
@@ -18,14 +18,15 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="AddSources" value="3" type="JavaHandler"/>
-<property name="CoreView" value="1" type="JavaHandler"/>
+<property name="CoreView" value="2" type="JavaHandler"/>
 <property name="CreateBlockDesign" value="1" type="JavaHandler"/>
 <property name="EditUndo" value="1" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="1" type="JavaHandler"/>
 <property name="LaunchProgramFpga" value="1" type="JavaHandler"/>
 <property name="NewProject" value="2" type="JavaHandler"/>
+<property name="OpenBlockDesign" value="2" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="2" type="JavaHandler"/>
-<property name="OpenProject" value="2" type="JavaHandler"/>
+<property name="OpenProject" value="4" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="1" type="JavaHandler"/>
 <property name="RunBitgen" value="1" type="JavaHandler"/>
 <property name="RunSynthesis" value="2" type="JavaHandler"/>
@@ -53,10 +54,10 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="FPGAChooser_FPGA_TABLE" value="1" type="GuiHandlerData"/>
 <property name="FPGAChooser_PACKAGE" value="1" type="GuiHandlerData"/>
 <property name="FPGAChooser_SPEED" value="1" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="21" type="GuiHandlerData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="25" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="27" type="GuiHandlerData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="28" type="GuiHandlerData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="2" type="GuiHandlerData"/>
-<property name="GettingStartedView_OPEN_PROJECT" value="2" type="GuiHandlerData"/>
+<property name="GettingStartedView_OPEN_PROJECT" value="4" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_IN" value="31" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_OUT" value="45" type="GuiHandlerData"/>
 <property name="HCodeEditor_BLANK_OPERATIONS" value="1" type="GuiHandlerData"/>
@@ -66,8 +67,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_SAVE_DESIGN" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_SIMULATION_RELAUNCH" value="2" type="GuiHandlerData"/>
 <property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="4" type="GuiHandlerData"/>
+<property name="PAViews_CODE" value="1" type="GuiHandlerData"/>
 <property name="PAViews_IP_CATALOG" value="1" type="GuiHandlerData"/>
-<property name="PAViews_PROJECT_SUMMARY" value="3" type="GuiHandlerData"/>
+<property name="PAViews_PROJECT_SUMMARY" value="5" type="GuiHandlerData"/>
 <property name="ProgramDebugTab_PROGRAM_DEVICE" value="1" type="GuiHandlerData"/>
 <property name="ProgramFpgaDialog_PROGRAM" value="1" type="GuiHandlerData"/>
 <property name="ProjectNameChooser_PROJECT_NAME" value="1" type="GuiHandlerData"/>
@@ -85,17 +87,19 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SrcChooserPanel_CREATE_FILE" value="2" type="GuiHandlerData"/>
 <property name="SystemBuilderMenu_CREATE_PORT" value="2" type="GuiHandlerData"/>
 <property name="SystemBuilderView_ADD_IP" value="9" type="GuiHandlerData"/>
-<property name="SystemBuilderView_PINNING" value="4" type="GuiHandlerData"/>
+<property name="SystemBuilderView_PINNING" value="7" type="GuiHandlerData"/>
+<property name="SystemTreeView_SYSTEM_TREE" value="2" type="GuiHandlerData"/>
 <property name="TaskBanner_CLOSE" value="1" type="GuiHandlerData"/>
+<property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="1" type="GuiHandlerData"/>
 <property name="TouchpointSurveyDialog_YES" value="1" type="GuiHandlerData"/>
 <property name="WaveformView_GOTO_LAST_TIME" value="5" type="GuiHandlerData"/>
 <property name="WaveformView_GOTO_TIME_0" value="4" type="GuiHandlerData"/>
 <property name="WaveformView_PREVIOUS_TRANSITION" value="1" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="9" type="GuiMode"/>
+<property name="GuiMode" value="2" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="8" type="TclMode"/>
+<property name="TclMode" value="1" type="TclMode"/>
 </item>
 </section>
 </application>
