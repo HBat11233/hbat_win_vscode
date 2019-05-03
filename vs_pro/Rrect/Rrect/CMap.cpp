@@ -35,7 +35,7 @@ int CMap::draw(HDC hdc, HBRUSH hbr,int x[],int y[],int len)
 	// TODO: 在此处添加实现代码.
 	RECT All;
 	SetRect(&All, 0, 0, this->x, this->y);
-	HBRUSH thbr = CreateSolidBrush(RGB(0, 255, 255));
+	static HBRUSH thbr = CreateSolidBrush(RGB(0, 255, 255));
 	FillRect(hdc, &All,thbr);
 	
 	//初始化数据，判断是否由完整的一行
