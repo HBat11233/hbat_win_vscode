@@ -16,5 +16,5 @@ while True:
                         routing_key='hello',  # queue名字
                         body='0')  # 消息内容
     print("0")
-    time.sleep(5)
+    time.sleep(20)
 connection.close()  # 队列关闭
