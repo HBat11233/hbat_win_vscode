@@ -5,11 +5,46 @@ import time
 from selenium import webdriver
 import re
 import json
+import os
 
 driver = webdriver.Chrome('./chromedriver')  # Optional argument, if not specified will search path.
-driver.get('http://acm.cqu.edu.cn/contest_show.php?cid=286#standing')
+driver.get('http://acm.cqu.edu.cn/contest_show.php?cid=287#standing')
+
+#登陆
+mens =driver.find_element_by_class_name('btn-navbar')
+try:
+    mens.click()
+except:
+    pass
+time.sleep(0.5)
+login=driver.find_element_by_id('loginbutton')
+login=login.find_element_by_tag_name('a')
+login.click()
+time.sleep(0.5)
+username = driver.find_element_by_id('username')
+username.send_keys('cqupc19_150')
+time.sleep(0.5)
+password = driver.find_element_by_id('password')
+password.send_keys('ATfCRtbr')
+time.sleep(0.5)
+login=driver.find_element_by_id('logindialog')
+login=login.find_element_by_name('login')
+login.click()
+time.sleep(4)
+settings=driver.find_element_by_id('cset_a')
+settings.click()
+time.sleep(0.5)
+settings=driver.find_element_by_name('shownum')
+settings.click()
+time.sleep(0.5)
+login=driver.find_element_by_id('csetform')
+login=login.find_element_by_name('login')
+login.click()
+time.sleep(0.5)
+
+
 mydriver = webdriver.Chrome('./chromedriver')
-mydriver.get('file:///C:/Users/HBat/Documents/GitHub/hbat_win_vscode/python/0.html')
+mydriver.get('file:///{0}/0.html'.format(os.getcwd()))
 ac_que=[]
 file_name = 'ac_que.json' #通过扩展名指定文件存储的数据为json格式
 with open(file_name,'r') as file_object:
@@ -33,6 +68,9 @@ def callback(ch, method, properties, body):
         json.dump(ac_que,file_object)
     driver.refresh()
     time.sleep(1)
+    clickuser=driver.find_element_by_id('stat_dis_user')
+    clickuser.click()
+    time.sleep(0.5)
     html=driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     temp=soup.find_all('div',class_='rankcontainer')
