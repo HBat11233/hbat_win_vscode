@@ -1,0 +1,9 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sim_1/new/testAddOne.v,1557305944,verilog,,,,testAddOne,,,,,,,,
+C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addFour.v,1557305752,verilog,,C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addOne.v,,addFour,,,,,,,,
+C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addOne.v,1557298729,verilog,,C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/buMa.v,,addOne,,,,,,,,
+C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/buMa.v,1557305999,verilog,,C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sim_1/new/testAddOne.v,,buMa,,,,,,,,
