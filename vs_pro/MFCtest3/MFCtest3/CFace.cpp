@@ -15,6 +15,8 @@ CFace::~CFace()
 
 bool CFace::SetEn(int en)
 {
+	if (En == en)return false;
+	clear();
 	En = en;
 	point = new CP3[En];
 	Eque = new std::pair<int, int>[En];

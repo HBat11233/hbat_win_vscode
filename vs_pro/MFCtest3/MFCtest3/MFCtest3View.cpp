@@ -29,6 +29,8 @@ BEGIN_MESSAGE_MAP(CMFCtest3View, CView)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
 	ON_WM_TIMER()
 	ON_COMMAND(ID_FUN_RUN, &CMFCtest3View::OnFunRun)
+	ON_COMMAND(ID_FUN_32772, &CMFCtest3View::OnFun32772)
+	ON_COMMAND(ID_FUN_32773, &CMFCtest3View::OnFun32773)
 END_MESSAGE_MAP()
 
 // CMFCtest3View 构造/析构
@@ -37,11 +39,15 @@ CMFCtest3View::CMFCtest3View() noexcept
 {
 	// TODO: 在此处添加构造代码
 	ReadPoint();
+	ReadFace();
 	Theta = 0;
-	Phi = 0;
+	Phi = 90;
 	R = 1000;
-	d = 100;
+	d = 1000;
+	initK();
 	bRun = false;
+	ty = false;
+	xz = false;
 }
 
 CMFCtest3View::~CMFCtest3View()
@@ -73,7 +79,7 @@ void CMFCtest3View::OnDraw(CDC* pDC)
 	pDC->SetViewportExt(rect.Width(), -rect.Height());//设置视区范围，x轴水平向右，y轴垂直向上
 	pDC->SetViewportOrg(rect.Width() / 2, rect.Height() / 2);//客户区中心
 	CDC memDC;//内存DC
-	CBitmap NewBitMap, * pOldBitmap;//内存中临时位图
+	CBitmap NewBitMap, *pOldBitmap;//内存中临时位图
 	memDC.CreateCompatibleDC(pDC);//创建一个与显示pDC兼容的内存
 	NewBitMap.CreateCompatibleBitmap(pDC, rect.Width(), rect.Height());//创建兼容位图
 	pOldBitmap = memDC.SelectObject(&NewBitMap);//将兼容位图选入memDC
@@ -83,7 +89,6 @@ void CMFCtest3View::OnDraw(CDC* pDC)
 	memDC.SetViewportExt(rect.Width(), -rect.Height());
 	memDC.SetViewportOrg(rect.Width() / 2, rect.Height() / 2);
 	rect.OffsetRect(-rect.Width() / 2, -rect.Height() / 2);
-	ReadFace();
 	DrawCuboid(&memDC);
 	pDC->BitBlt(rect.left, rect.top, rect.Width(), rect.Height(), &memDC, -rect.Width() / 2, -rect.Height() / 2, SRCCOPY);
 	memDC.SelectObject(pOldBitmap);//恢复位图
@@ -93,7 +98,7 @@ void CMFCtest3View::OnDraw(CDC* pDC)
 
 // CMFCtest3View 打印
 
-BOOL CMFCtest3View::OnPreparePrinting(CPrintInfo* pInfo)
+BOOL CMFCtest3View::OnPreparePrinting(CPrintInfo * pInfo)
 {
 	// 默认准备
 	return DoPreparePrinting(pInfo);
@@ -118,7 +123,7 @@ void CMFCtest3View::AssertValid() const
 	CView::AssertValid();
 }
 
-void CMFCtest3View::Dump(CDumpContext& dc) const
+void CMFCtest3View::Dump(CDumpContext & dc) const
 {
 	CView::Dump(dc);
 }
@@ -142,65 +147,82 @@ int CMFCtest3View::ReadPoint()
 	point[1] = CP3(a, -a, -a);
 	point[2] = CP3(a, a, -a);
 	point[3] = CP3(-a, a, -a);
-	point[4] = CP3(-a, -a, a); 
-	point[5] = CP3(a, -a, a); 
-	point[6] = CP3(a, a, a); 
+	point[4] = CP3(-a, -a, a);
+	point[5] = CP3(a, -a, a);
+	point[6] = CP3(a, a, a);
 	point[7] = CP3(-a, a, a);
 	return 8;
 }
 
 int CMFCtest3View::ReadFace()
-{	
+{
 	// TODO: 在此处添加实现代码.
 	for (int i = 0; i < 6; ++i)
 		face[i].SetEn(4);
-	CP3* t = new CP3[4];
-	std::pair<int, int>* p = new std::pair<int, int>[4];
-	face[0].SetPoint(point);
+	CP3 * t = new CP3[4];
+	std::pair<int, int> * p = new std::pair<int, int>[4];\
 	p[0] = std::pair<int, int>(0, 1);
 	p[1] = std::pair<int, int>(1, 2);
 	p[2] = std::pair<int, int>(2, 3);
 	p[3] = std::pair<int, int>(3, 0);
+	
+	face[0].SetPoint(point);
 	face[0].SetPair(p);
+	
 	face[1].SetPoint(point + 4);
 	face[1].SetPair(p);
+	
 	t[0] = point[0];
 	t[1] = point[1];
 	t[2] = point[5];
 	t[3] = point[4];
 	face[2].SetPoint(t);
 	face[2].SetPair(p);
+	
 	t[0] = point[2];
 	t[1] = point[3];
 	t[2] = point[7];
 	t[3] = point[6];
 	face[3].SetPoint(t);
 	face[3].SetPair(p);
+	
 	t[0] = point[0];
 	t[1] = point[3];
-	t[2] = point[4];
-	t[3] = point[7];
+	t[2] = point[7];
+	t[3] = point[4];
 	face[4].SetPoint(t);
 	face[4].SetPair(p);
+	
 	t[0] = point[1];
 	t[1] = point[2];
-	t[2] = point[5];
-	t[3] = point[6];
+	t[2] = point[6];
+	t[3] = point[5];
 	face[5].SetPoint(t);
 	face[5].SetPair(p);
+	
+	delete[] t;
+	delete[] p;
+	t = NULL;
+	p = NULL;
 	return 6;
 }
 
 
-bool CMFCtest3View::DrawCuboid(CDC *pDC)
+bool CMFCtest3View::DrawCuboid(CDC * pDC)
 {
 	// TODO: 在此处添加实现代码.
 	for (int i = 0; i < 6; ++i)
+	{
+		srand(i*600);
+		CPen pen(PS_SOLID, 1, RGB(rand()%256, rand() % 256, rand() % 256));
+		pDC->SelectObject(pen);
 		for (int j = 0; j < 4; ++j)
 		{
 			pDC->MoveTo(face[i].point[face[i].Eque[j].first].toCPoint());
 			pDC->LineTo(face[i].point[face[i].Eque[j].second].toCPoint());
 		}
+		DeleteObject(pen);
+	}
 	return false;
 }
 
@@ -224,35 +246,48 @@ void CMFCtest3View::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
 	initK();
-	Theta++;
-	Phi++;
-	MathMatrix cub;
-	cub.init(8, 4, point);
-	MathMatrix T;
-	int** t = new int* [4];
-	for (int i = 0; i < 4; ++i)
-		t[i] = new int[4];
-	t[0][0] = k[3];
-	t[0][1] = -k[4];
-	t[0][2] = 0;
-	t[0][3] = -k[5] / d;
-	t[1][0] = 0;
-	t[1][1] = k[0];
-	t[1][2] = 0;
-	t[1][3] = -k[2] / d;
-	t[2][0] = -k[1];
-	t[2][1] = k[6];
-	t[2][2] = 0;
-	t[2][3] = -k[7] / d;
-	t[3][0] = 0;
-	t[3][1] = 0;
-	t[3][2] = 0;
-	t[3][3] = 1 + R / d;
-	T.init(4, 4, t);
-	cub = cub * T;
-	cub.toCP3(point);
-	CDC* pDC = GetDC();
+	Theta += 1;
+	Phi	  += 1;
+	if (xz || ty)
+	{
+		ReadPoint();
+		MathMatrix cub;
+		cub.init(8, 4, point);
+		MathMatrix T;
+		double** t = new double* [4];
+		for (int i = 0; i < 4; ++i)
+			t[i] = new double[4];
+		if (xz)
+		{
+			t[0][0] = 1;		t[0][1] = 0;							t[0][2] = 0;							t[0][3] = 0;
+			t[1][0] = 0;		t[1][1] = k[2] * k[3] - k[0] * k[1];	t[1][2] = k[0] * k[3] + k[1] * k[2];    t[1][3] = 0;
+			t[2][0] = 0;		t[2][1] = -(k[0] * k[3] + k[1] * k[2]);	t[2][2] = k[2] * k[3] - k[0] * k[1];	t[2][3] = 0;
+			t[3][0] = 0;		t[3][1] = 0;							t[3][2] = 0;						    t[3][3] = 1;
+			T.init(4, 4, t);
+			cub = cub * T;
+			T.clear();
+		}
+		if (ty)
+		{
+			t[0][0] = k[2];		t[0][1] = -k[7];	t[0][2] = 0;	t[0][3] = -k[5] / d;
+			t[1][0] = 0;		t[1][1] = k[1];		t[1][2] = 0;	t[1][3] = -k[3] / d;
+			t[2][0] = -k[0];	t[2][1] = -k[6];	t[2][2] = 0;	t[2][3] = -k[4] / d;
+			t[3][0] = 0;		t[3][1] = 0;		t[3][2] = 0;	t[3][3] = R / d;
+			T.init(4, 4, t);
+			cub = cub * T;
+			T.clear();
+		}
+		for (int i = 0; i < 4; ++i)
+			delete[] t[i];
+		delete[] t;
+		t = NULL;
+		cub.toCP3(point);
+		cub.clear();
+		ReadFace();
+	}
+	CDC * pDC = GetDC();
 	OnDraw(pDC);
+	ReleaseDC(pDC);
 	CView::OnTimer(nIDEvent);
 }
 
@@ -262,7 +297,21 @@ void CMFCtest3View::OnFunRun()
 	// TODO: 在此添加命令处理程序代码
 	bRun = !bRun;
 	if (bRun)
-		SetTimer(1, 150, NULL);
+		SetTimer(1, 15, NULL);
 	else
 		KillTimer(1);
+}
+
+
+void CMFCtest3View::OnFun32772()
+{
+	// TODO: 在此添加命令处理程序代码
+	xz = !xz;
+}
+
+
+void CMFCtest3View::OnFun32773()
+{
+	// TODO: 在此添加命令处理程序代码
+	ty = !ty;
 }

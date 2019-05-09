@@ -14,15 +14,18 @@ MathMatrix::~MathMatrix()
 }
 
 MathMatrix::MathMatrix(MathMatrix& m)
+	:lenx(0), leny(0), matrix(NULL)
 {
 	init(m.lenx, m.leny, m.matrix);
 }
 
-bool MathMatrix::init(int x, int y, int** m)
+bool MathMatrix::init(int x, int y, double** m)
 {
-	matrix = new int*[x];
+	lenx = x;
+	leny = y;
+	matrix = new double*[x];
 	for (int i = 0; i < x; ++i)
-		matrix[i] = new int[y];
+		matrix[i] = new double[y];
 	if (m != NULL)
 		for (int i = 0; i < x; ++i)
 			for (int j = 0; j < y; ++j)
@@ -36,9 +39,11 @@ bool MathMatrix::init(int x, int y, int** m)
 
 bool MathMatrix::init(int x, int y, CP3* p)
 {
-	matrix = new int* [x];
+	lenx = x;
+	leny = y;
+	matrix = new double* [x];
 	for (int i = 0; i < x; ++i)
-		matrix[i] = new int[y];
+		matrix[i] = new double[y];
 	for(int i=0;i<x;++i)
 		for (int j = 0; j < y; ++j)
 		{
@@ -51,7 +56,8 @@ bool MathMatrix::init(int x, int y, CP3* p)
 				matrix[i][j] = p[i].y;
 				break;
 			case 2:
-				matrix[i][j] = p[i].y;
+				matrix[i][j] = p[i].z;
+				break;
 			default:
 				matrix[i][j] = 1;
 				break;
@@ -79,8 +85,15 @@ MathMatrix MathMatrix::operator*(MathMatrix&m)
 	for (int i = 0; i < this->lenx; ++i)
 		for (int j = 0; j < m.leny; ++j)
 			for (int k = 0; k < this->leny; ++k)
-				ans.matrix[i][j] += this->matrix[i][k] * m.matrix[k][j];
+				ans.matrix[i][j] += this->matrix[i][k] * m.matrix[k][j]; 
 	return ans;
+}
+
+MathMatrix& MathMatrix::operator=(MathMatrix& m)
+{
+	this->clear();
+	this->init(m.lenx,m.leny,m.matrix);
+	return *this;
 }
 
 
@@ -98,6 +111,6 @@ bool MathMatrix::toCP3(CP3* p)
 {
 	// TODO: 在此处添加实现代码.
 	for (int i = 0; i < lenx; ++i)
-		p[i] = CP3(matrix[i][0], matrix[i][1], matrix[i][2]);
+		p[i] = CP3(round(matrix[i][0] / matrix[i][3]), round(matrix[i][1] / matrix[i][3]), round(matrix[i][2]) / matrix[i][3]);
 	return false;
 }

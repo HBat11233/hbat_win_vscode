@@ -4,11 +4,12 @@
 
 #pragma once
 
-class CMainFrame : public CMDIFrameWnd
+class CMainFrame : public CFrameWnd
 {
-	DECLARE_DYNAMIC(CMainFrame)
-public:
+	
+protected: // 仅从序列化创建
 	CMainFrame() noexcept;
+	DECLARE_DYNCREATE(CMainFrame)
 
 // 特性
 public:
