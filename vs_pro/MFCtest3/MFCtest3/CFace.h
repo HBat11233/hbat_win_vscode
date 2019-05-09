@@ -5,7 +5,7 @@
 
 class CFace
 {
-private:
+public:
 	int En;
 	CP3* point;
 	std::pair<int, int> *Eque;

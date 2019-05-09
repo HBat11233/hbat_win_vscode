@@ -6,6 +6,7 @@
 
 #include "CP3.h"
 #include "CFace.h"
+#include "MathMatrix.h"
 
 class CMFCtest3View : public CView
 {
@@ -48,6 +49,18 @@ public:
 private:
 	CP3 point[8];
 	CFace face[6];
+	double k[8];
+	int Theta;
+	int Phi;
+	int R;
+	int d;
+	const double PI = 3.1415926;
+	bool bRun;
+public:
+	bool DrawCuboid(CDC* pDC);
+	bool initK();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnFunRun();
 };
 
 #ifndef _DEBUG  // MFCtest3View.cpp 中的调试版本

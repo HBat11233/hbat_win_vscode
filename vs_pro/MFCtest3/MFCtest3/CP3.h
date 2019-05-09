@@ -7,5 +7,6 @@ public:
 	int x;
 	int y;
 	int z;
+	CPoint toCPoint();
 };
 

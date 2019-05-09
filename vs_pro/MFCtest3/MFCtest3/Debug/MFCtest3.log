@@ -1,0 +1,15 @@
+﻿  ChildFrm.cpp
+  MFCtest3.cpp
+  MFCtest3Doc.cpp
+  MFCtest3View.cpp
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(235): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(236): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(238): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(240): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(242): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(243): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(244): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\MFCtest3\MFCtest3View.cpp(246): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  MainFrm.cpp
+  正在生成代码...
+  MFCtest3.vcxproj -> C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest3\Debug\MFCtest3.exe
