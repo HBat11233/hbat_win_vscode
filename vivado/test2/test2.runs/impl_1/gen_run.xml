@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557469224">
-  <File Type="OPT-HWDEF" Name="bigWork.hwdef"/>
-  <File Type="ROUTE-BUS-SKEW" Name="bigWork_bus_skew_routed.rpt"/>
-  <File Type="PA-DCP" Name="bigWork.dcp"/>
-  <File Type="BITSTR-BMM" Name="bigWork_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="bigWork_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="bigWork_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="bigWork_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="bigWork.tcl"/>
-  <File Type="OPT-TIMING" Name="bigWork_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="bigWork_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="bigWork_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="bigWork_reports.tcl"/>
-  <File Type="OPT-DRC" Name="bigWork_drc_opted.rpt"/>
-  <File Type="PWROPT-DCP" Name="bigWork_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="bigWork_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="bigWork_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="bigWork_placed.dcp"/>
-  <File Type="PLACE-IO" Name="bigWork_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="bigWork_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="bigWork_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="bigWork_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="bigWork_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="bigWork_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="bigWork_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="bigWork_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="bigWork_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="bigWork.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="bigWork_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="bigWork_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="bigWork_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="bigWork.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="bigWork_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="bigWork_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="bigWork_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="bigWork_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="bigWork_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="bigWork_drc_routed.pb"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557481593">
+  <File Type="OPT-HWDEF" Name="endwork.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW" Name="endwork_bus_skew_routed.rpt"/>
+  <File Type="PA-DCP" Name="endwork.dcp"/>
+  <File Type="BITSTR-BMM" Name="endwork_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="endwork_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="endwork_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="endwork_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="endwork.tcl"/>
+  <File Type="OPT-TIMING" Name="endwork_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="endwork_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="endwork_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="endwork_reports.tcl"/>
+  <File Type="OPT-DRC" Name="endwork_drc_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="endwork_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="endwork_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="endwork_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="endwork_placed.dcp"/>
+  <File Type="PLACE-IO" Name="endwork_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="endwork_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="endwork_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="endwork_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="endwork_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="endwork_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="endwork_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="endwork_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="endwork_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="endwork.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="endwork_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="endwork_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="endwork_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="endwork.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="endwork_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="endwork_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="endwork_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="endwork_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="endwork_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="endwork_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="bigWork.ltx"/>
-  <File Type="ROUTE-DRC-RPX" Name="bigWork_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="bigWork.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="bigWork_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="bigWork_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-SYSDEF" Name="bigWork.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="bigWork_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="bigWork_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="bigWork_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="bigWork_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="bigWork_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="bigWork_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="bigWork_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="bigWork_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="bigWork_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="bigWork_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="bigWork_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="bigWork_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="bigWork_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="bigWork_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="bigWork_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="bigWork_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="bigWork_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="bigWork_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="bigWork.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="bigWork_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="bigWork.rbt"/>
-  <File Type="BITSTR-NKY" Name="bigWork.nky"/>
-  <File Type="BG-BGN" Name="bigWork.bgn"/>
-  <File Type="BG-DRC" Name="bigWork.drc"/>
-  <File Type="RDI-RDI" Name="bigWork.vdi"/>
+  <File Type="BITSTR-LTX" Name="endwork.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="endwork_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="endwork.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="endwork_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="endwork_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="endwork.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="endwork_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="endwork_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="endwork_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="endwork_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="endwork_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="endwork_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="endwork_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="endwork_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="endwork_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="endwork_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="endwork_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="endwork_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="endwork_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="endwork_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="endwork_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="endwork_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="endwork_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="endwork_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="endwork.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="endwork_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="endwork.rbt"/>
+  <File Type="BITSTR-NKY" Name="endwork.nky"/>
+  <File Type="BG-BGN" Name="endwork.bgn"/>
+  <File Type="BG-DRC" Name="endwork.drc"/>
+  <File Type="RDI-RDI" Name="endwork.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -86,13 +86,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/buMa.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/bigWork.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -100,15 +93,51 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/buMa.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/show.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/endwork.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fourToSeven.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="bigWork"/>
+      <Option Name="TopModule" Val="endwork"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/end.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/end.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

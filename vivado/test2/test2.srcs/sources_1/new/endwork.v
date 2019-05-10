@@ -31,7 +31,9 @@ module endwork(
     output npre,
     input clk
     );
-    wire [3:0] te1;
-    wire [6:0] te2,te3,te4;
-    
+    wire [3:0] ta,tb,te;
+    bigWork t1(a,b,o,fpre,te,pre,npre);
+    assign ta=a;
+    assign tb=b;
+    show t2(ta,tb,te,ans,se,clk);
 endmodule

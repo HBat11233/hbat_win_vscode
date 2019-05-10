@@ -21,12 +21,18 @@
 
 
 module testAddOne( );
-reg[3:0] a,b;
-wire[3:0] ans,pre;
-wire npre;
-reg o,fpre;
+reg [3:0] a;
+    reg [3:0] b;
+    reg [0:0] o;
+    reg [0:0] fpre;
+    wire [6:0] ans;
+    wire [7:0] se;
+    wire [3:0] pre;
+    wire npre;
+    reg clk;
 
-bigWork t(a,b,o,fpre,ans,pre,npre);
+
+endwork t(a,b,o,fpre,ans,pre,npre);
 //buMa t(a,ans);
 
 initial begin
@@ -37,6 +43,7 @@ initial begin
     b={$random}%16;
     o={$random}%2;
     fpre={$random}%2;
+    clk={$random}%2;
     end
 end
     

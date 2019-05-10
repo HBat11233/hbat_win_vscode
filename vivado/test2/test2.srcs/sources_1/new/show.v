@@ -63,7 +63,11 @@ module show(
                         15: ans=7'b0111000;
                     endcase
                 end
-            3'b001:se=8'b10111111;
+            3'b001:
+            begin
+                se=8'b10111111;
+                ans=~0;
+                end
             3'b010:
                 begin
                     se=8'b11011111;
@@ -86,10 +90,26 @@ module show(
                         15: ans=7'b0111000;
                     endcase
                 end
-            3'b011:se=8'b11101111;
-            3'b100:se=8'b11110111;
-            3'b101:se=8'b11111011;
-            3'b110:se=8'b11111101;
+            3'b011:
+            begin
+            se=8'b11101111;
+            ans=~0;
+                end
+            3'b100:
+            begin
+            se=8'b11110111;
+            ans=~0;
+                end
+            3'b101:
+            begin
+            se=8'b11111011;
+            ans=~0;
+                end
+            3'b110:
+            begin
+            se=8'b11111101;
+            ans=~0;
+                end
             3'b111:
             begin
                 se=8'b11111110;

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557469166">
-  <File Type="PA-TCL" Name="bigWork.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="bigWork_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="bigWork_reports.tcl"/>
-  <File Type="RDS-RDS" Name="bigWork.vds"/>
-  <File Type="RDS-UTIL" Name="bigWork_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="bigWork_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="bigWork.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="bigWork_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="bigWork_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557481555">
+  <File Type="PA-TCL" Name="endwork.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="endwork_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="endwork_reports.tcl"/>
+  <File Type="RDS-RDS" Name="endwork.vds"/>
+  <File Type="RDS-UTIL" Name="endwork_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="endwork_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="endwork.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="endwork_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="endwork_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/addFour.v">
@@ -25,13 +25,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/buMa.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/bigWork.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -39,15 +32,51 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/buMa.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/show.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/endwork.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fourToSeven.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="bigWork"/>
+      <Option Name="TopModule" Val="endwork"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/end.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/end.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
