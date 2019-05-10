@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557300287">
-  <File Type="PA-TCL" Name="addFour.tcl"/>
-  <File Type="REPORTS-TCL" Name="addFour_reports.tcl"/>
-  <File Type="RDS-RDS" Name="addFour.vds"/>
-  <File Type="RDS-UTIL" Name="addFour_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="addFour_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="addFour.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557460169">
+  <File Type="PA-TCL" Name="bigWork.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="bigWork_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="bigWork_reports.tcl"/>
+  <File Type="RDS-RDS" Name="bigWork.vds"/>
+  <File Type="RDS-UTIL" Name="bigWork_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="bigWork_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="bigWork.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="bigWork_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="bigWork_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/addFour.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/addOne.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -15,7 +25,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/addFour.v">
+    <File Path="$PSRCDIR/sources_1/new/buMa.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bigWork.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -24,7 +41,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="addFour"/>
+      <Option Name="TopModule" Val="bigWork"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

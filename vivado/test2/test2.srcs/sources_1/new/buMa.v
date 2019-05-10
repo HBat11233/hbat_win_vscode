@@ -24,15 +24,8 @@ module buMa(
     input [3:0] a,
     output [3:0] b
     );
-    wire [3:0] t,p,s;
-    assign p[3]=a[3];
-    assign p[2]=~a[2];
-    assign p[1]=~a[1];
-    assign p[0]=~a[0];
-    addFour tp(p,0,s,t,1);
-    assign t[3]=a[3];
-    assign t[2]=a[3];
-    assign t[1]=a[3];
-    assign t[0]=a[3];
-    assign b=(~t&a)|(t&s);
+    assign b[3]=(a[3]&a[0])|(a[3]&a[2]&~a[1])|(a[3]&a[1]);
+    assign b[2]=(a[2]&~a[1]&~a[0])|(~a[3]&a[2]&a[0])|(~a[3]&a[2]&a[1])|(a[3]&~a[2]&a[0])|(a[3]&~a[2]&a[1]);
+    assign b[1]=(~a[3]&a[1])|(a[3]&~a[1]&a[0])|(a[3]&a[1]&~a[0]);
+    assign b[0]=a[0];
 endmodule
