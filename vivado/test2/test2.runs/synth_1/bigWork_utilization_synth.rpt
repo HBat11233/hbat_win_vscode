@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Fri May 10 11:49:48 2019
-| Host         : DESKTOP-91J4R11 running 64-bit major release  (build 9200)
+| Date         : Fri May 10 14:19:51 2019
+| Host         : DESKTOP-7B8EHDG running 64-bit major release  (build 9200)
 | Command      : report_utilization -file bigWork_utilization_synth.rpt -pb bigWork_utilization_synth.pb
 | Design       : bigWork
 | Device       : 7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   10 |     0 |     63400 |  0.02 |
-|   LUT as Logic          |   10 |     0 |     63400 |  0.02 |
+| Slice LUTs*             |   13 |     0 |     63400 |  0.02 |
+|   LUT as Logic          |   13 |     0 |     63400 |  0.02 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |    0 |     0 |    126800 |  0.00 |
 |   Register as Flip Flop |    0 |     0 |    126800 |  0.00 |
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   18 |     0 |       210 |  8.57 |
+| Bonded IOB                  |   19 |     0 |       210 |  9.05 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -147,9 +147,9 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | IBUF     |   10 |                  IO |
-| OBUF     |    8 |                  IO |
-| LUT6     |    5 |                 LUT |
-| LUT5     |    3 |                 LUT |
+| OBUF     |    9 |                  IO |
+| LUT6     |    7 |                 LUT |
+| LUT5     |    4 |                 LUT |
 | LUT3     |    3 |                 LUT |
 | LUT4     |    2 |                 LUT |
 +----------+------+---------------------+

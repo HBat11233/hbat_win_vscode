@@ -39,6 +39,6 @@ module bigWork(
     addFour t3(ta,tb2,an,pr,fpre);
     buMa t4(an,ans);
     assign pre=pr;
-    assign npre=pr[2]|pr[3];
+    assign npre=pr[2]^pr[3];
    
 endmodule

@@ -1,10 +1,12 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addFour.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addFour.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module addFour
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addOne.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addOne.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module addOne
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/bigWork.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/bigWork.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bigWork
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/buMa.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/buMa.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module buMa
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sim_1/new/testAddOne.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/sim_1/new/testAddOne.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testAddOne
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
