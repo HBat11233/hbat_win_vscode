@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri May 10 17:46:40 2019
-# Process ID: 33712
+# Start of session at: Mon May 13 13:00:23 2019
+# Process ID: 33976
 # Current directory: D:/hbat_win_vscode/vivado/test2/test2.runs/impl_1
 # Command line: vivado.exe -log endwork.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source endwork.tcl -notrace
 # Log file: D:/hbat_win_vscode/vivado/test2/test2.runs/impl_1/endwork.vdi

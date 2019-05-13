@@ -23,16 +23,12 @@
 module testAddOne( );
 reg [3:0] a;
     reg [3:0] b;
-    reg [0:0] o;
     reg [0:0] fpre;
-    wire [6:0] ans;
-    wire [7:0] se;
-    wire [3:0] pre;
+    wire [3:0] ans;
     wire npre;
-    reg clk;
 
 
-endwork t(a,b,o,fpre,ans,pre,npre);
+addFour t(a,b,ans,npre,fpre);
 //buMa t(a,ans);
 
 initial begin
@@ -41,9 +37,7 @@ initial begin
     #100
     a={$random}%16;
     b={$random}%16;
-    o={$random}%2;
     fpre={$random}%2;
-    clk={$random}%2;
     end
 end
     

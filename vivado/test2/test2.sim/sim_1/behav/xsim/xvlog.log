@@ -2,19 +2,5 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/tes
 INFO: [VRFC 10-311] analyzing module addFour
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/addOne.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module addOne
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/bigWork.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module bigWork
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/buMa.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module buMa
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/endwork.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module endwork
-WARNING: [VRFC 10-2292] extra semicolon is not allowed here in this dialect. Use SystemVerilog mode [D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/endwork.v:35]
-INFO: [VRFC 10-2458] undeclared symbol tt, assumed default net type wire [D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/endwork.v:38]
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/show.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module show
-WARNING: [VRFC 10-3676] redeclaration of ansi port 'se' is not allowed [D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/show.v:32]
-WARNING: [VRFC 10-3676] redeclaration of ansi port 'ans' is not allowed [D:/hbat_win_vscode/vivado/test2/test2.srcs/sources_1/new/show.v:33]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.srcs/sim_1/new/testAddOne.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testAddOne
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hbat_win_vscode/vivado/test2/test2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
