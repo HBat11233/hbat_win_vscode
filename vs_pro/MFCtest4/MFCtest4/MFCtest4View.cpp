@@ -4,6 +4,7 @@
 
 #include "pch.h"
 #include "framework.h"
+#include "earth.h"
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
 #ifndef SHARED_HANDLERS
@@ -17,6 +18,8 @@
 #define new DEBUG_NEW
 #endif
 
+
+earth me;
 
 // CMFCtest4View
 
@@ -78,7 +81,11 @@ void CMFCtest4View::OnDraw(CDC* pDC)
 	rect.OffsetRect(-rect.Width() / 2, -rect.Height() / 2);
 	
 	//绘图代码
-
+	if (!me.R)
+		me.init(5, 5, 100);
+	if(me.R)
+		for (int i = 0; i < me.len; ++i)
+			me.que[i].DrawCFace(&memDC);
 	pDC->BitBlt(rect.left, rect.top, rect.Width(), rect.Height(), &memDC, -rect.Width() / 2, -rect.Height() / 2, SRCCOPY);
 	memDC.SelectObject(pOldBitmap);//恢复位图
 	NewBitMap.DeleteObject();//删除位图
