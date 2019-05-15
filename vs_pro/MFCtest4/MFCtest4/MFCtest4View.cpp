@@ -5,9 +5,11 @@
 #include "pch.h"
 #include "framework.h"
 #include "earth.h"
+#include "CVector.h"
 #include "MathMatrix.h"
 
 earth myearth;
+CVector S(CP3(0,0,-100));
 
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
@@ -40,7 +42,9 @@ END_MESSAGE_MAP()
 CMFCtest4View::CMFCtest4View() noexcept
 {
 	// TODO: 在此处添加构造代码
-
+	Theta = 90;
+	Phi = 0;
+	initk();
 }
 
 CMFCtest4View::~CMFCtest4View()
@@ -85,10 +89,15 @@ void CMFCtest4View::OnDraw(CDC* pDC)
 	
 	//绘图代码
 	if(!myearth.R)
-		myearth.init(100, 100, 300);
+		myearth.init(80, 80, 300);
 	if (myearth.R)
 		for (int i = 0; i < myearth.len; ++i)
-			myearth.que[i].DrawCFace(&memDC);
+		{
+			CVector n;
+			n.init(myearth.que[i]);
+			if(n*S)
+				myearth.que[i].DrawCFace(&memDC);
+		}
 
 	pDC->BitBlt(rect.left, rect.top, rect.Width(), rect.Height(), &memDC, -rect.Width() / 2, -rect.Height() / 2, SRCCOPY);
 	memDC.SelectObject(pOldBitmap);//恢复位图
@@ -146,14 +155,120 @@ void CMFCtest4View::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	MathMatrix T;
 	switch (nChar)
 	{
-	case VK_LEFT:
+	case VK_DOWN:
+		for (int i = 0; i < myearth.len; ++i)
+		{
+			cub.init(myearth.que[i].En,4, myearth.que[i].point);
+			double** t = new double* [4];
+			for (int j = 0; j < 4; ++j)
+				t[j] = new double[4];
+			Theta = 10;
+			Phi = 0;
+			initk();
+			t[0][0] = 1;		t[0][1] = 0;							t[0][2] = 0;							t[0][3] = 0;
+			t[1][0] = 0;		t[1][1] = k[2] * k[3] - k[0] * k[1];	t[1][2] = k[0] * k[3] + k[1] * k[2];    t[1][3] = 0;
+			t[2][0] = 0;		t[2][1] = -(k[0] * k[3] + k[1] * k[2]);	t[2][2] = k[2] * k[3] - k[0] * k[1];	t[2][3] = 0;
+			t[3][0] = 0;		t[3][1] = 0;							t[3][2] = 0;						    t[3][3] = 1;
+			T.init(4, 4, t);
+			cub = cub * T;
+			cub.toCP3(myearth.que[i].point);
+			cub.clear();
+			T.clear();
+			for (int j = 0; j < 4; ++j)
+				delete[] t[j];
+			delete[] t;
+		}
 		break;
 	case VK_RIGHT:
+		for (int i = 0; i < myearth.len; ++i)
+		{
+			cub.init(myearth.que[i].En, 4, myearth.que[i].point);
+			double** t = new double* [4];
+			for (int j = 0; j < 4; ++j)
+				t[j] = new double[4];
+			Theta = -10;
+			Phi = 0;
+			initk();
+			t[0][0] = k[2] * k[3] - k[0] * k[1];		t[0][1] = 0;		t[0][2] = k[0] * k[3] + k[1] * k[2];	t[0][3] = 0;
+			t[1][0] = 0;								t[1][1] = 1;		t[1][2] = 0;							t[1][3] = 0;
+			t[2][0] = -(k[0] * k[3] + k[1] * k[2]);		t[2][1] = 0;		t[2][2] = k[2] * k[3] - k[0] * k[1];	t[2][3] = 0;
+			t[3][0] = 0;								t[3][1] = 0;		t[3][2] = 0;						    t[3][3] = 1;
+			T.init(4, 4, t);
+			cub = cub * T;
+			cub.toCP3(myearth.que[i].point);
+			cub.clear();
+			T.clear();
+			for (int j = 0; j < 4; ++j)
+				delete[] t[j];
+			delete[] t;
+		}
 		break;
 	case VK_UP:
+		for (int i = 0; i < myearth.len; ++i)
+		{
+			cub.init(myearth.que[i].En, 4, myearth.que[i].point);
+			double** t = new double* [4];
+			for (int j = 0; j < 4; ++j)
+				t[j] = new double[4];
+			Theta = -10;
+			Phi = 0;
+			initk();
+			t[0][0] = 1;		t[0][1] = 0;							t[0][2] = 0;							t[0][3] = 0;
+			t[1][0] = 0;		t[1][1] = k[2] * k[3] - k[0] * k[1];	t[1][2] = k[0] * k[3] + k[1] * k[2];    t[1][3] = 0;
+			t[2][0] = 0;		t[2][1] = -(k[0] * k[3] + k[1] * k[2]);	t[2][2] = k[2] * k[3] - k[0] * k[1];	t[2][3] = 0;
+			t[3][0] = 0;		t[3][1] = 0;							t[3][2] = 0;						    t[3][3] = 1;
+			T.init(4, 4, t);
+			cub = cub * T;
+			cub.toCP3(myearth.que[i].point);
+			cub.clear();
+			T.clear();
+			for (int j = 0; j < 4; ++j)
+				delete[] t[j];
+			delete[] t;
+		}
 		break;
-	case VK_DOWN:
+	case VK_LEFT:
+		for (int i = 0; i < myearth.len; ++i)
+		{
+			cub.init(myearth.que[i].En, 4, myearth.que[i].point);
+			double** t = new double* [4];
+			for (int j = 0; j < 4; ++j)
+				t[j] = new double[4];
+			Theta = 10;
+			Phi = 0;
+			initk();
+			t[0][0] = k[2] * k[3] - k[0] * k[1];		t[0][1] = 0;		t[0][2] = k[0] * k[3] + k[1] * k[2];	t[0][3] = 0;
+			t[1][0] = 0;								t[1][1] = 1;		t[1][2] = 0;							t[1][3] = 0;
+			t[2][0] = -(k[0] * k[3] + k[1] * k[2]);		t[2][1] = 0;		t[2][2] = k[2] * k[3] - k[0] * k[1];	t[2][3] = 0;
+			t[3][0] = 0;								t[3][1] = 0;		t[3][2] = 0;						    t[3][3] = 1;
+			T.init(4, 4, t);
+			cub = cub * T;
+			cub.toCP3(myearth.que[i].point);
+			cub.clear();
+			T.clear();
+			for (int j = 0; j < 4; ++j)
+				delete[] t[j];
+			delete[] t;
+		}
 		break;
 	}
+	CDC* pDC = GetDC();
+	OnDraw(pDC);
+	ReleaseDC(pDC);
 	CView::OnKeyDown(nChar, nRepCnt, nFlags);
+}
+
+
+bool CMFCtest4View::initk()
+{
+	// TODO: 在此处添加实现代码.
+	k[0] = sin(PI * Theta / 180);
+	k[1] = sin(PI * Phi / 180);
+	k[2] = cos(PI * Theta / 180);
+	k[3] = cos(PI * Phi / 180);
+	k[4] = k[1] * k[2];
+	k[5] = k[1] * k[0];
+	k[6] = k[3] * k[2];
+	k[7] = k[3] * k[0];
+	return false;
 }

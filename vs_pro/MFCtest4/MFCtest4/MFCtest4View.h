@@ -42,6 +42,12 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+	bool initk();
+public:
+	const double PI = 3.1415926;
+	double Theta;
+	double Phi;
+	double k[8];
 };
 
 #ifndef _DEBUG  // MFCtest4View.cpp 中的调试版本

@@ -189,6 +189,7 @@
   <ItemGroup>
     <ClInclude Include="CFace.h" />
     <ClInclude Include="CP3.h" />
+    <ClInclude Include="CVector.h" />
     <ClInclude Include="earth.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
@@ -203,6 +204,7 @@
   <ItemGroup>
     <ClCompile Include="CFace.cpp" />
     <ClCompile Include="CP3.cpp" />
+    <ClCompile Include="CVector.cpp" />
     <ClCompile Include="earth.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MathMatrix.cpp" />
