@@ -73,20 +73,20 @@ bool earth::CreateCFace(CP3** cp3)
 		//设置北极三角
 		que[i].SetEn(3);
 		t[0] = ncp;
-		t[1] = cp3[m-2][i];
-		t[2] = cp3[m-2][(i+1)%n];
+		t[1] = cp3[0][i];
+		t[2] = cp3[0][(i+1)%n];
 		que[i].SetPoint(t);
 		que[i].SetPair(p);
 		//设置南极三角
 		que[i+n].SetEn(3);
 		t[0] = scp;
-		t[1] = cp3[1][(i) % n];
-		t[2] = cp3[1][(i + 1) % n];
+		t[1] = cp3[0][(i + n) % n];
+		t[2] = cp3[0][(i + 1+n) % n];
 		que[i+n].SetPoint(t);
 		que[i+n].SetPair(p);
 	}
 	delete[] t;
-	delete[] p;/*
+	delete[] p;
 	//转换四边形
 	t = new CP3[4];
 	p = new std::pair<int, int>[4];
@@ -97,16 +97,16 @@ bool earth::CreateCFace(CP3** cp3)
 	for (int i = 1; i < m - 1; ++i)
 		for (int j = 0; j < n; ++j)
 		{
- 			t[0] = cp3[i][j];
+			t[0] = cp3[i][j];
 			t[1] = cp3[i][j + 1];
 			t[2] = cp3[i - 1][j + 1];
 			t[3] = cp3[i - 1][j];
-			que[(i + 1) * n + j].SetEn(4);
-			que[(i + 1) * n + j].SetPair(p);
-			que[(i + 1) * n + j].SetPoint(t);
+			que[(i + 1) * n + j + 1].SetEn(4);
+			que[(i + 1) * n + j + 1].SetPair(p);
+			que[(i + 1) * n + j + 1].SetPoint(t);
 		}
 	delete[] t;
-	delete[] p;*/
+	delete[] p;
 	t = NULL;
 	p = NULL;
 	return false;
