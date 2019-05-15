@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1556571366">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557734554">
+  <File Type="OPT-HWDEF" Name="fourToOne.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW" Name="fourToOne_bus_skew_routed.rpt"/>
+  <File Type="PA-DCP" Name="fourToOne.dcp"/>
   <File Type="BITSTR-BMM" Name="fourToOne_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="fourToOne_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="fourToOne_timing_summary_init.rpt"/>
@@ -10,7 +13,6 @@
   <File Type="ROUTE-PWR-SUM" Name="fourToOne_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="fourToOne_reports.tcl"/>
   <File Type="OPT-DRC" Name="fourToOne_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="fourToOne.hwdef"/>
   <File Type="PWROPT-DCP" Name="fourToOne_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="fourToOne_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="fourToOne_timing_summary_pwropted.rpt"/>
@@ -22,7 +24,6 @@
   <File Type="PLACE-CTRL" Name="fourToOne_control_sets_placed.rpt"/>
   <File Type="PLACE-SIMILARITY" Name="fourToOne_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="fourToOne_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="fourToOne.bgn"/>
   <File Type="PLACE-TIMING" Name="fourToOne_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="fourToOne_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="fourToOne.bin"/>
@@ -52,7 +53,6 @@
   <File Type="ROUTE-TIMING-RPX" Name="fourToOne_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="fourToOne_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="fourToOne_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="fourToOne_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="fourToOne_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="fourToOne_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="fourToOne_postroute_physopt.dcp"/>
@@ -66,6 +66,7 @@
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="fourToOne_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="fourToOne.rbt"/>
   <File Type="BITSTR-NKY" Name="fourToOne.nky"/>
+  <File Type="BG-BGN" Name="fourToOne.bgn"/>
   <File Type="BG-DRC" Name="fourToOne.drc"/>
   <File Type="RDI-RDI" Name="fourToOne.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
