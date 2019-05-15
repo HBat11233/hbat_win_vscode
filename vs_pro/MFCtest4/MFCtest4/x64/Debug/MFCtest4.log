@@ -1,6 +1,0 @@
-﻿  MFCtest4.cpp
-  MFCtest4View.cpp
-  earth.cpp
-D:\hbat_win_vscode\vs_pro\MFCtest4\MFCtest4\earth.cpp(50): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-  正在生成代码...
-  MFCtest4.vcxproj -> D:\hbat_win_vscode\vs_pro\MFCtest4\x64\Debug\MFCtest4.exe
