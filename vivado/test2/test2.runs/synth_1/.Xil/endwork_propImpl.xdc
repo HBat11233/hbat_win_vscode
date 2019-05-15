@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.srcs/constrs_1/new/end.xdc rfile:../../../test2.srcs/constrs_1/new/end.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/hbat_win_vscode/vivado/test2/test2.srcs/constrs_1/new/end.xdc rfile:../../../test2.srcs/constrs_1/new/end.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN E3 [get_ports clk]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]

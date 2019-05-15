@@ -60,19 +60,25 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/fourToOne/fourToOne.runs/impl_1/fourToOne.dcp
-  set_property webtalk.parent_dir C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/fourToOne/fourToOne.cache/wt [current_project]
-  set_property parent.project_path C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/fourToOne/fourToOne.xpr [current_project]
-  set_property ip_repo_paths C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/fourToOne/IP [current_project]
+  create_project -in_memory -part xc7a100tcsg324-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+  set_property webtalk.parent_dir D:/hbat_win_vscode/vivado/fourToOne/fourToOne.cache/wt [current_project]
+  set_property parent.project_path D:/hbat_win_vscode/vivado/fourToOne/fourToOne.xpr [current_project]
+  set_property ip_repo_paths D:/hbat_win_vscode/vivado/fourToOne/IP [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/fourToOne/fourToOne.cache/ip [current_project]
+  set_property ip_output_repo D:/hbat_win_vscode/vivado/fourToOne/fourToOne.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  add_files -quiet D:/hbat_win_vscode/vivado/fourToOne/fourToOne.runs/synth_1/fourToOne.dcp
+  read_xdc D:/hbat_win_vscode/vivado/fourToOne/fourToOne.srcs/constrs_1/new/fourToOne.xdc
+  link_design -top fourToOne -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {

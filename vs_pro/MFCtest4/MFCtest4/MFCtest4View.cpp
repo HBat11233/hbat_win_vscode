@@ -5,10 +5,6 @@
 #include "pch.h"
 #include "framework.h"
 #include "earth.h"
-#include "MathMatrix.h"
-
-earth myearth;
-
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
 #ifndef SHARED_HANDLERS
@@ -34,7 +30,6 @@ BEGIN_MESSAGE_MAP(CMFCtest4View, CView)
 	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
-	ON_WM_KEYDOWN()
 END_MESSAGE_MAP()
 
 // CMFCtest4View 构造/析构
@@ -86,12 +81,11 @@ void CMFCtest4View::OnDraw(CDC* pDC)
 	rect.OffsetRect(-rect.Width() / 2, -rect.Height() / 2);
 	
 	//绘图代码
-	if(!myearth.R)
-		myearth.init(100, 100, 300);
-	if (myearth.R)
-		for (int i = 0; i < myearth.len; ++i)
-			myearth.que[i].DrawCFace(&memDC);
-
+	if (!me.R)
+		me.init(5, 5, 100);
+	if(me.R)
+		for (int i = 0; i < me.len; ++i)
+			me.que[i].DrawCFace(&memDC);
 	pDC->BitBlt(rect.left, rect.top, rect.Width(), rect.Height(), &memDC, -rect.Width() / 2, -rect.Height() / 2, SRCCOPY);
 	memDC.SelectObject(pOldBitmap);//恢复位图
 	NewBitMap.DeleteObject();//删除位图
@@ -139,23 +133,3 @@ CMFCtest4Doc* CMFCtest4View::GetDocument() const // 非调试版本是内联的
 
 
 // CMFCtest4View 消息处理程序
-
-
-void CMFCtest4View::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
-{
-	// TODO: 在此添加消息处理程序代码和/或调用默认值
-	MathMatrix cub;
-	MathMatrix T;
-	switch (nChar)
-	{
-	case VK_LEFT:
-		break;
-	case VK_RIGHT:
-		break;
-	case VK_UP:
-		break;
-	case VK_DOWN:
-		break;
-	}
-	CView::OnKeyDown(nChar, nRepCnt, nFlags);
-}

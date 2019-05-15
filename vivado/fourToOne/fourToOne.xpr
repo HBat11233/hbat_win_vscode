@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/fourToOne/fourToOne.xpr">
+<Project Version="7" Minor="39" Path="D:/hbat_win_vscode/vivado/fourToOne/fourToOne.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6f4bdaa1a3a0440b921952379d9b4d26"/>
