@@ -2,13 +2,13 @@
   CFace.cpp
   CP3.cpp
   earth.cpp
-C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest4\MFCtest4\earth.cpp(41): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\MFCtest4\MFCtest4\earth.cpp(50): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
   MainFrm.cpp
   MathMatrix.cpp
-C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest4\MFCtest4\MathMatrix.cpp(105): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest4\MFCtest4\MathMatrix.cpp(114): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\MFCtest4\MFCtest4\MathMatrix.cpp(105): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\MFCtest4\MFCtest4\MathMatrix.cpp(114): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
   MFCtest4.cpp
   MFCtest4Doc.cpp
   MFCtest4View.cpp
   正在生成代码...
-  MFCtest4.vcxproj -> C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\MFCtest4\Debug\MFCtest4.exe
+  MFCtest4.vcxproj -> D:\hbat_win_vscode\vs_pro\MFCtest4\Debug\MFCtest4.exe

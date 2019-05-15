@@ -3,18 +3,22 @@
 
 
 earth::earth()
+	:n(0),m(0),R(0),len(0),que(NULL)
 {
 }
 
 
 earth::~earth()
 {
+	clear();
 }
 
 
 bool earth::init(int n, int m, int R)
 {
 	// TODO: 在此处添加实现代码.
+	if (len)
+		clear();
 	this->n = n;
 	this->m = m;
 	this->R = R;
@@ -30,15 +34,21 @@ bool earth::init(int n, int m, int R)
 CP3** earth::CreateCP3()
 {
 	// TODO: 在此处添加实现代码.
+	const double PI = 3.1415926;
 	CP3** cp3;
 	cp3 = new CP3 * [m - 1];
 	for (int i = 0; i < m - 1; ++i)
 		cp3[i] = new CP3[n];
-	double dx = 360.0 / n;
-	double dy = 180.0 / m;
-	for (int i = 1; i < m ; ++i)
+	double dx = 2 * PI / n;
+	double dy = PI / m;
+	for (int i = 1; i < m; ++i)
 		for (int j = 0; j < n; ++j)
-			cp3[i-1][j] = CP3(round(R * sin(i * dy) * sin(j * dx)),round(R*cos(i*dy)),round(R*sin(i*dy)*cos(j*dx)));
+		{
+			//int a = round(R * sin(i * dy) * sin(j * dx));
+			//int b = round(R * cos(i * dy));
+			//int c = round(R * sin(i * dy) * cos(j * dx));
+			cp3[i - 1][j] = CP3(round(R * sin(i * dy) * sin(j * dx)), round(R * cos(i * dy)), round(R * sin(i * dy) * cos(j * dx)));
+		}
 	return cp3;
 }
 
@@ -74,14 +84,14 @@ bool earth::CreateCFace(CP3** cp3)
 		que[i].SetEn(3);
 		t[0] = ncp;
 		t[1] = cp3[0][i];
-		t[2] = cp3[0][(i+1)%n];
+		t[2] = cp3[0][(i + 1) % n];
 		que[i].SetPoint(t);
 		que[i].SetPair(p);
 		//设置南极三角
 		que[i+n].SetEn(3);
 		t[0] = scp;
-		t[1] = cp3[0][(i + n) % n];
-		t[2] = cp3[0][(i + 1+n) % n];
+		t[1] = cp3[m-2][(i) % n];
+		t[2] = cp3[m-2][(i + 1) % n];
 		que[i+n].SetPoint(t);
 		que[i+n].SetPair(p);
 	}
@@ -98,12 +108,12 @@ bool earth::CreateCFace(CP3** cp3)
 		for (int j = 0; j < n; ++j)
 		{
 			t[0] = cp3[i][j];
-			t[1] = cp3[i][j + 1];
-			t[2] = cp3[i - 1][j + 1];
+			t[1] = cp3[i][(j + 1)%n];
+			t[2] = cp3[i - 1][(j + 1)%n];
 			t[3] = cp3[i - 1][j];
-			que[(i + 1) * n + j + 1].SetEn(4);
-			que[(i + 1) * n + j + 1].SetPair(p);
-			que[(i + 1) * n + j + 1].SetPoint(t);
+			que[(i + 1) * n + j].SetEn(4);
+			que[(i + 1) * n + j].SetPair(p);
+			que[(i + 1) * n + j].SetPoint(t);
 		}
 	delete[] t;
 	delete[] p;
