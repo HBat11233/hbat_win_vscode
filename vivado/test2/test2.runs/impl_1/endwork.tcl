@@ -66,10 +66,10 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   reset_param project.defaultXPMLibraries 
-  open_checkpoint D:/hbat_win_vscode/vivado/test2/test2.runs/impl_1/endwork.dcp
-  set_property webtalk.parent_dir D:/hbat_win_vscode/vivado/test2/test2.cache/wt [current_project]
-  set_property parent.project_path D:/hbat_win_vscode/vivado/test2/test2.xpr [current_project]
-  set_property ip_output_repo D:/hbat_win_vscode/vivado/test2/test2.cache/ip [current_project]
+  open_checkpoint C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.runs/impl_1/endwork.dcp
+  set_property webtalk.parent_dir C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.cache/wt [current_project]
+  set_property parent.project_path C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.xpr [current_project]
+  set_property ip_output_repo C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/test2/test2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   close_msg_db -file init_design.pb
 } RESULT]
