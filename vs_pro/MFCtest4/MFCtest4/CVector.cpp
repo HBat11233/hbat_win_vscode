@@ -27,11 +27,11 @@ bool CVector::init(CP3 p)
 	return false;
 }
 
-bool CVector::init(CFace p)
+bool CVector::init(CFace& p)
 {
 	CP3 v01 = p.point[1] - p.point[0];
 	CP3 v02 = p.point[2] - p.point[0];
-	vec = v01 * v02;
+	vec = v01 ^ v02;
 	return false;
 }
 

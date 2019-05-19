@@ -111,6 +111,6 @@ bool MathMatrix::toCP3(CP3* p)
 {
 	// TODO: 在此处添加实现代码.
 	for (int i = 0; i < lenx; ++i)
-		p[i] = CP3(round(matrix[i][0] / matrix[i][3]), round(matrix[i][1] / matrix[i][3]), round(matrix[i][2]) / matrix[i][3]);
+		p[i] = CP3((matrix[i][0] / matrix[i][3]), (matrix[i][1] / matrix[i][3]), (matrix[i][2]) / matrix[i][3]);
 	return false;
 }

@@ -9,7 +9,6 @@
 #include "MathMatrix.h"
 
 earth myearth;
-CVector S(CP3(0,0,-100));
 
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
@@ -35,6 +34,8 @@ BEGIN_MESSAGE_MAP(CMFCtest4View, CView)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
 	ON_WM_KEYDOWN()
+	ON_WM_LBUTTONDOWN()
+	ON_WM_RBUTTONDOWN()
 END_MESSAGE_MAP()
 
 // CMFCtest4View 构造/析构
@@ -44,6 +45,8 @@ CMFCtest4View::CMFCtest4View() noexcept
 	// TODO: 在此处添加构造代码
 	Theta = 90;
 	Phi = 0;
+	R = 1000;
+	d = 1000;
 	initk();
 }
 
@@ -91,13 +94,51 @@ void CMFCtest4View::OnDraw(CDC* pDC)
 	if(!myearth.R)
 		myearth.init(80, 80, 300);
 	if (myearth.R)
+	{
+		double** t = new double* [4];
+		for (int j = 0; j < 4; ++j)
+			t[j] = new double[4];
+
+
 		for (int i = 0; i < myearth.len; ++i)
 		{
-			CVector n;
+			CVector n, s;
 			n.init(myearth.que[i]);
-			if(n*S)
-				myearth.que[i].DrawCFace(&memDC);
+			s.init(CP3(0, 0, 1000) - myearth.que[i].point[0]);
+			if (n * s >= 0)
+			{
+				CFace f;
+				MathMatrix cub, T;
+				cub.init(myearth.que[i].En, 4, myearth.que[i].point);
+
+				Theta = 0;
+				Phi = 90;
+				initk();
+				t[0][0] = k[2];		t[0][1] = -k[7];	t[0][2] = 0;	t[0][3] = -k[5] / d;
+				t[1][0] = 0;		t[1][1] = k[1];		t[1][2] = 0;	t[1][3] = -k[3] / d;
+				t[2][0] = -k[0];	t[2][1] = -k[6];	t[2][2] = 0;	t[2][3] = -k[4] / d;
+				t[3][0] = 0;		t[3][1] = 0;		t[3][2] = 0;	t[3][3] = R / d;
+				T.init(4, 4, t);
+				cub = cub * T;
+				f.SetEn(myearth.que[i].En);
+				f.SetPair(myearth.que[i].Eque);
+				cub.toCP3(f.point);
+				cub.clear();
+				T.clear();
+				
+				//彩虹球
+				srand(i / 80 * 1000);
+				CPen pen(PS_SOLID, 1, RGB(rand() % 256, rand() % 256, rand() % 256));
+				memDC.SelectObject(pen);
+				f.DrawCFace(&memDC);
+				f.clear();
+				DeleteObject(pen);
+			}
 		}
+		for (int j = 0; j < 4; ++j)
+			delete[] t[j];
+		delete[] t;
+	}
 
 	pDC->BitBlt(rect.left, rect.top, rect.Width(), rect.Height(), &memDC, -rect.Width() / 2, -rect.Height() / 2, SRCCOPY);
 	memDC.SelectObject(pOldBitmap);//恢复位图
@@ -271,4 +312,72 @@ bool CMFCtest4View::initk()
 	k[6] = k[3] * k[2];
 	k[7] = k[3] * k[0];
 	return false;
+}
+
+
+void CMFCtest4View::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	MathMatrix cub;
+	MathMatrix T;
+	for (int i = 0; i < myearth.len; ++i)
+	{
+		cub.init(myearth.que[i].En, 4, myearth.que[i].point);
+		double** t = new double* [4];
+		for (int j = 0; j < 4; ++j)
+			t[j] = new double[4];
+		Theta = 10;
+		Phi = 0;
+		initk();
+		t[0][0] = 1;	t[0][1] = 0;		t[0][2] = 0;	t[0][3] = 0;
+		t[1][0] = 0;	t[1][1] = 1;		t[1][2] = 0;	t[1][3] = 0;
+		t[2][0] = 0;	t[2][1] = 0;		t[2][2] = 1;	t[2][3] = 0;
+		t[3][0] = 0;	t[3][1] = 0;		t[3][2] = 0;	t[3][3] = 0.9;
+		T.init(4, 4, t);
+		cub = cub * T;
+		cub.toCP3(myearth.que[i].point);
+		cub.clear();
+		T.clear();
+		for (int j = 0; j < 4; ++j)
+			delete[] t[j];
+		delete[] t;
+	}
+	CDC* pDC = GetDC();
+	OnDraw(pDC);
+	ReleaseDC(pDC);
+	CView::OnLButtonDown(nFlags, point);
+}
+
+
+void CMFCtest4View::OnRButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	MathMatrix cub;
+	MathMatrix T;
+	for (int i = 0; i < myearth.len; ++i)
+	{
+		cub.init(myearth.que[i].En, 4, myearth.que[i].point);
+		double** t = new double* [4];
+		for (int j = 0; j < 4; ++j)
+			t[j] = new double[4];
+		Theta = 10;
+		Phi = 0;
+		initk();
+		t[0][0] = 1;	t[0][1] = 0;		t[0][2] = 0;	t[0][3] = 0;
+		t[1][0] = 0;	t[1][1] = 1;		t[1][2] = 0;	t[1][3] = 0;
+		t[2][0] = 0;	t[2][1] = 0;		t[2][2] = 1;	t[2][3] = 0;
+		t[3][0] = 0;	t[3][1] = 0;		t[3][2] = 0;	t[3][3] = 1.1;
+		T.init(4, 4, t);
+		cub = cub * T;
+		cub.toCP3(myearth.que[i].point);
+		cub.clear();
+		T.clear();
+		for (int j = 0; j < 4; ++j)
+			delete[] t[j];
+		delete[] t;
+	}
+	CDC * pDC = GetDC();
+	OnDraw(pDC);
+	ReleaseDC(pDC);
+	CView::OnRButtonDown(nFlags, point);
 }

@@ -48,6 +48,10 @@ public:
 	double Theta;
 	double Phi;
 	double k[8];
+	double R;
+	double d;
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
 };
 
 #ifndef _DEBUG  // MFCtest4View.cpp 中的调试版本

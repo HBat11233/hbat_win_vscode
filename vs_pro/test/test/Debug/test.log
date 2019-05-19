@@ -1,30 +1,31 @@
-﻿  test.cpp
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(192): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(196): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(200): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(204): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(233): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(239): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(247): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(248): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(250): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(251): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(253): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(254): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(256): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(257): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(259): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(260): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(262): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(263): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(265): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(266): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(268): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(269): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(271): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(272): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(274): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(275): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(277): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\hbat\documents\github\hbat_win_vscode\vs_pro\test\test\test.cpp(278): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-  test.vcxproj -> C:\Users\HBat\Documents\GitHub\hbat_win_vscode\vs_pro\test\Debug\test.exe
+﻿  stdafx.cpp
+  test.cpp
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(192): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(196): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(200): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(204): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(233): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(239): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(247): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(248): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(250): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(251): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(253): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(254): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(256): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(257): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(259): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(260): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(262): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(263): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(265): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(266): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(268): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(269): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(271): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(272): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(274): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(275): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(277): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\hbat_win_vscode\vs_pro\test\test\test.cpp(278): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  test.vcxproj -> D:\hbat_win_vscode\vs_pro\test\Debug\test.exe

@@ -90,8 +90,8 @@ bool earth::CreateCFace(CP3** cp3)
 		//设置南极三角
 		que[i+n].SetEn(3);
 		t[0] = scp;
-		t[1] = cp3[m-2][(i) % n];
-		t[2] = cp3[m-2][(i + 1) % n];
+		t[1] = cp3[m - 2][(i + 1) % n];
+		t[2] = cp3[m - 2][i];
 		que[i+n].SetPoint(t);
 		que[i+n].SetPair(p);
 	}

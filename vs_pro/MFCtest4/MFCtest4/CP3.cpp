@@ -2,7 +2,7 @@
 #include "CP3.h"
 
 
-CP3::CP3(int x,int y,int z)
+CP3::CP3(double x, double y, double z)
 	:x(x),y(y),z(z)
 {
 }

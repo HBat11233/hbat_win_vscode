@@ -13,7 +13,7 @@ public:
 	CVector(CFace p);
 	~CVector();
 	bool init(CP3 p);
-	bool init(CFace face);
+	bool init(CFace& p);
 	CVector operator ^(const CVector& b);
 	int operator *(const CVector& b);
 };
