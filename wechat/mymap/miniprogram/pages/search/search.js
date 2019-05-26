@@ -88,8 +88,8 @@ Page({
             id: 0,
             latitude: res.latitude,
             longitude: res.longitude,
-            width: 50,
-            height: 50
+            width: 25,
+            height: 25
           }],
           circles:[{
             latitude:res.latitude,
@@ -98,6 +98,28 @@ Page({
             fillColor: '#0000ff'
           }]
         })
+      this.onGetData()
+      }
+    })
+  },
+
+  onGetData: function () {
+    // 调用云函数
+    wx.cloud.callFunction({
+      name: 'getcard',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: ', res.result.openid)
+        //app.globalData.openid = res.result.openid
+        //wx.navigateTo({
+        //  url: '../userConsole/userConsole',
+        //})
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+        //wx.navigateTo({
+        //  url: '../deployFunctions/deployFunctions',
+        //})
       }
     })
   }

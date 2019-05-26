@@ -1,13 +1,20 @@
 <!--pages/search/search.wxml-->
 <view class='container'>
-  <map 
-    id="map"
-    longitude='{{longitude}}'
-    latitude='{{latitude}}'
-    class='map'
-    show-compass='true'
-    markers="{{markers}}"
-    circles="{{circles}}"
-    ></map>
-  <button bindtap='updataLocation'>更新位置信息</button>
+<map 
+  id="map"
+  longitude='{{longitude}}'
+  latitude='{{latitude}}'
+  class='map'
+  show-compass='true'
+  markers="{{markers}}"
+  circles="{{circles}}"
+>
+</map>
+<button bindtap='updataLocation'>更新位置信息</button>
+<movable-area class='moview'>  
+  <movable-view class='card' direction='all' out-of-bounds='true' inerta='true' damping='20' friction='2'>
+    <view class='cardhead'></view>
+    <view class='cardbord'></view>
+  </movable-view>
+</movable-area>
 </view>
