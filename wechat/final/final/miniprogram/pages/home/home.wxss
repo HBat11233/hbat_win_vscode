@@ -1,0 +1,55 @@
+/* pages/home/home.wxss */
+.total{
+  height: 100vh;
+}
+
+.top-block{
+  width:100%;
+  height:40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo-avatar {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.center-block{
+  height:50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.record{
+  height: 250rpx;
+  width:250rpx;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px #aaa;
+}
+
+.search{
+  height: 250rpx;
+  width:250rpx;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px #aaa;
+}

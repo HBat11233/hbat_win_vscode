@@ -1,0 +1,23 @@
+<!--pages/home/home.wxml-->
+<view class="total">
+
+  <!--获取登录信息-->
+  <view class="top-block">
+    <view class="userinfo">
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+      <text class="userinfo-nickname">
+        {{nickname}}
+      </text>
+    </view>
+  </view>
+
+  <!--按钮-->
+  <view class="center-block">
+    <view class="record" bindtap='moveToRecord'>
+      <image src='/images/record.png' class="record"></image>
+    </view>
+    <view class="search" bindtap="moveToSearch">
+      <image src='/images/find.png' class="record"></image>
+    </view>
+  </view>
+</view>

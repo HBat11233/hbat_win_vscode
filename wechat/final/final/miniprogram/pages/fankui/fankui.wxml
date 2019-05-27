@@ -1,0 +1,16 @@
+<!--pages/fankui/fankui.wxml-->
+<form class="top_class">
+  <view class="top_view">
+    <text class="top_text" decode="{{true}}">&nbsp;&nbsp;反馈</text>
+    <input class="top_input" placeholder="请输入反馈标题" bindinput='title'>
+
+    </input>
+    <input class="top_input" placeholder='联系方式，选填，方便我们与您联系' bindinput='phone'>
+
+    </input>
+    <textarea class="top_input" placeholder='请输入反馈内容' maxlength='200' bindinput='content'>
+
+    </textarea>
+  </view>
+  <button class="push" bindtap='upload'>提交</button>
+</form>

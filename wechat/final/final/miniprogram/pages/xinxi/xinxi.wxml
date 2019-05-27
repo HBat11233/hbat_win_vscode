@@ -1,0 +1,19 @@
+<!--pages/xinxi/xinxi.wxml-->
+<view class="total">
+  <view class="top_block">
+    <view class="top">
+      <text>昵称</text>
+      <input value="{{nickname}}" bindinput='getValue'></input>
+    </view>
+    <view class="top">
+      <text>性别：</text>
+      <picker bindchange="bindPickerChange" value="{{sex}}" range="{{array}}">
+      {{array[sex]}}
+    </picker>
+    </view>
+  </view>
+
+  <view>
+    <button class="push" bindtap='push'>确认修改</button>
+  </view>
+</view>

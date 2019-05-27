@@ -1,0 +1,44 @@
+/* pages/xinxi/xinxi.wxss */
+.total{
+  height:100vh;
+  width:100%;
+}
+
+.top_block{
+  padding-top:5vh;
+  height:20vh;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top{
+  width:90%;
+  height:6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(212, 207, 207);
+}
+
+.top input{
+  width:70%;
+}
+
+.top picker{
+  width:70%;
+}
+.top text{
+  width:30%;
+}
+
+.push{
+  height:80rpx;
+  margin-left: 75%;
+  width:20%;
+  line-height: 80rpx;
+  background-color: #99ffcc;
+}

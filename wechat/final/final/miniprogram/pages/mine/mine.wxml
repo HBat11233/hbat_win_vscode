@@ -1,0 +1,25 @@
+<!--pages/mine/mine.wxml-->
+<view class="total">
+
+  <!--获取登录信息-->
+  <view class="top-block">
+    <view class="userinfo">
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+      <text class="userinfo-nickname">
+        {{nickname}}
+      </text>
+    </view>
+  </view>
+
+  <view class="center-block">
+    <view class="click" bindtap='xinxi'>
+      <text>我的信息</text>
+    </view>
+    <view bindtap="fankui" class="click">
+      <text>反馈</text>
+    </view>
+    <view class="click" bindtap="bangzhu">
+      <text>帮助</text>
+    </view>
+  </view>
+</view>

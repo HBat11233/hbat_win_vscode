@@ -1,0 +1,24 @@
+/* pages/fankui/fankui.wxss */
+.top_class{
+  height:70vh;
+  width:100%;
+}
+.top_view{
+margin-bottom: 70rpx;
+}
+
+.top_text{
+  color: #aaa;
+  font-size: 14px;
+}
+.top_input{
+  border: 1px solid #F5F5F5;
+  padding: 10rpx;
+  width:100%;
+}
+.push{
+  width:90%;
+  background-color: #99ffcc;
+  height:100rpx;
+  line-height: 100rpx;
+}

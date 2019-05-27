@@ -1,0 +1,51 @@
+/* pages/mine/mine.wxss */
+.total{
+  height: 100vh;
+}
+
+.top-block{
+  height:40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo-avatar {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.center-block{
+  height:40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.click{
+  width:90%;
+  height:100rpx;
+  background: #99ffcc;
+  border-radius: 20rpx/20rpx;
+  padding-left: 20rpx;
+}
+.click text{
+  line-height:100rpx;
+}

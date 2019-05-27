@@ -1,0 +1,60 @@
+<!--pages/record/record.wxml-->
+<!--导航条-->
+<view class="navbar">
+  <view class="item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">记录</view>
+  <view class="item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">秘密</view>
+</view>
+
+<!--滑动效果-->
+<swiper current="{{currentTab}}" duration="200" bindchange="swiperTab" class="topSwiper"
+easing-function="easeInOutCubic">
+  <swiper-item>
+  <!--记录-->
+    <view class="total">
+      <view class="block">
+        <textarea class='thetext' bindinput="input1" placeholder="分享你的动态，只有周围人可见哦"/>
+        <view class="image_content">
+          <view class='image' wx:for="{{img_url1}}">
+            <image class="moment_img" src="{{item}}"></image>
+          </view>
+          <view class='image' style='display:{{hideAdd1?"none":"block"}}'>
+            <image bindtap="chooseimage1" class="moment_img" src='../../images/add.jpg'></image>
+          </view>
+        </view>
+        <view>
+        </view>
+        <view class="find">
+          <text>发现难度:</text>
+          <picker bindchange="bindPickerChange1" value="{{find1}}" range="{{array}}">
+            {{array[find1]}}
+          </picker>
+        </view>
+        <button bindtap="send1" style='margin-right:10rpx;margin-left:10rpx'>发布</button>
+      </view>
+    </view>
+  </swiper-item>
+  
+  <!--秘密-->
+  <swiper-item>
+    <view class="total">
+      <view class="block">
+        <textarea class='thetext' bindinput="input2" placeholder="说个秘密吧，没人知道你是谁哦"/>
+        <view class="image_content">
+          <view class='image' wx:for="{{img_url2}}">
+            <image class="moment_img" src="{{item}}"></image>
+          </view>
+          <view class='image' style='display:{{hideAdd2?"none":"block"}}'>
+            <image bindtap="chooseimage2" class="moment_img" src='../../images/add.jpg'></image>
+          </view>
+        </view>
+        <view class="find">
+          <text>发现难度:</text>
+          <picker bindchange="bindPickerChange2" value="{{find2}}" range="{{array}}">
+            {{array[find2]}}
+          </picker>
+        </view>
+        <button bindtap="send2" style='margin-right:10rpx;margin-left:10rpx'>发布</button>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>
