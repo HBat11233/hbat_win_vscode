@@ -8,7 +8,9 @@ Page({
     latitude:'',
     longitude:'',
     speed:'',
-    accuracy:''
+    accuracy:'',
+    cardx:50,
+    cardy:50
   },
 
   /**
@@ -109,7 +111,10 @@ Page({
       name: 'getcard',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
+        console.log('data size: ', res.result.data.length)
+        this.setData({
+          clouddata:res.result
+        })
         //app.globalData.openid = res.result.openid
         //wx.navigateTo({
         //  url: '../userConsole/userConsole',

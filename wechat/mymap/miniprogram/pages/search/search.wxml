@@ -12,9 +12,19 @@
 </map>
 <button bindtap='updataLocation'>更新位置信息</button>
 <movable-area class='moview'>  
-  <movable-view class='card' direction='all' out-of-bounds='true' inerta='true' damping='20' friction='2'>
+  <movable-view wx:for="{{clouddata.data}}" x='{{cardx*index}}' y='{{cardy*index}}' class='card' scale='true' direction='all' out-of-bounds='true' inerta='true' damping='20' friction='2'>
     <view class='cardhead'></view>
-    <view class='cardbord'></view>
+    <view class='cardbord'>
+    "_id":{{item._id}}
+    "_openid":{{item._openid}}
+    "bool":{{item.bool}}
+    "content":{{item.content}}
+    "find":{{item.find}}
+    "length":{{item.length}}
+    "accuracy":{{item.location.accuracy}}
+    "latitude":{{item.location.latitude}}
+    "longitude":{{item.location.longitude}}
+    </view>
   </movable-view>
 </movable-area>
 </view>
