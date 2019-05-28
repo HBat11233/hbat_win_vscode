@@ -13,17 +13,19 @@
 <movable-area class='moview'>  
   <movable-view wx:for="{{clouddata.data}}" x='{{cardx*index}}' y='{{cardy*index}}' class='card' scale='true' direction='all' out-of-bounds='true' inerta='true' damping='20' friction='2'>
     <view class='cardhead'></view>
-    <view class='cardbord' class='weui-article'>
-      <view class='weui-article__h1'>留言</view>
-      <view class='weui-article__p'>{{item.content}}</view>
-      <view class="page__bd">
-        <view class="weui-grids">
-            <block wx:for="{{item.tempimindex}}" wx:for-index="fileidindex" wx:for-item='fileiditem'>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
-                    <cover-image src='{{tempimpath[fileiditem]}}'/>
-                </navigator>
+    <view class='cardbord'>
+      <view class='weui-article'>
+        <view class='weui-article__h1'>留言</view>
+        <scroll-view scroll-y="{{true}}" style='width:420rpx;height:440rpx;'>
+          <view class='weui-article__p'>{{item.content}}</view>
+          <view class="weui-grids">
+            <block wx:for="{{item.fileid}}" wx:for-index="fileidindex" wx:for-item='fileiditem'>
+              <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <image src='{{tempimpath[fileiditem]}}' style="width:100rpx;height:100rpx;"/>
+              </navigator>
             </block>
-        </view>
+          </view>
+        </scroll-view>
       </view>
     </view>
   </movable-view>

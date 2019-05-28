@@ -10,8 +10,7 @@ Page({
     speed:'',
     accuracy:'',
     cardx:50,
-    cardy:50,
-    grids: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    cardy:50
   },
 
   /**
@@ -113,7 +112,7 @@ Page({
       data: {},
       success: res => {
         console.log('data size: ', res.result.data.length)
-        var tempimpath=[]
+        var tempimpath={}
         for(var i=0;i<res.result.data.length;++i)
         {
           var temp={
@@ -125,48 +124,31 @@ Page({
             height: 25
           }
           //console.log(res.result.data[i].location)
-          for(var j=0;j<res.result.data[i].length;++j)
-          {
-            //console.log('i',i,'j',j,res.result.data[i])
-            var filename=res.result.data[i].fileid[j];
-            //console.log(filename)
-            wx.cloud.downloadFile({
-              fileID:filename,
-              success:res => {
-                console.log('获取图片成功')
-                tempimpath.push(res.tempFilePath)
-                this.setData({
-                  tempimpath:tempimpath
-                })
-                //console.log(tempimpath)
-              },
-              fail:err=>{
-                console.log('获取图片失败'+err.err)
-              }
-            })
-          }
+          wx.cloud.getTempFileURL({
+            fileList:res.result.data[i].fileid,
+            success: res => {
+              console.log('图片获取成功')
+              for(var k=0;k<res.fileList.length;++k)
+                tempimpath[res.fileList[k].fileID]=res.fileList[k].tempFileURL
+              this.setData({
+                tempimpath:tempimpath
+              })
+              console.log('gettempfileurl',tempimpath)
+            },
+            fail: err => {
+              console.log('图片获取失败')
+            }
+          })
           this.data.markers.push(temp)
-          console.log(tempimpath)
+          console.log('callfuncation:',tempimpath)
         }
         var temp=this.data.markers
         //console.log(temp)
-        var imindex=0
-        var tempclouddata=res.result
-        for(var i=0;i<tempclouddata.data.length;++i)
-        {
-          var arr=[]
-          for(var j=0;j<tempclouddata.data[i].length;++j)
-          {
-            arr.push(imindex)
-            imindex++
-          }
-          tempclouddata.data[i]['tempimindex']=arr
-        }
         this.setData({
           markers:temp,
-          clouddata:tempclouddata
+          clouddata:res.result
         })
-        
+
         //app.globalData.openid = res.result.openid
         //wx.navigateTo({
         //  url: '../userConsole/userConsole',
