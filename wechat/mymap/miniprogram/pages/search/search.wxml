@@ -7,23 +7,24 @@
   class='map'
   show-compass='true'
   markers="{{markers}}"
-  circles="{{circles}}"
 >
 </map>
 <button bindtap='updataLocation'>更新位置信息</button>
 <movable-area class='moview'>  
   <movable-view wx:for="{{clouddata.data}}" x='{{cardx*index}}' y='{{cardy*index}}' class='card' scale='true' direction='all' out-of-bounds='true' inerta='true' damping='20' friction='2'>
     <view class='cardhead'></view>
-    <view class='cardbord'>
-    "_id":{{item._id}}
-    "_openid":{{item._openid}}
-    "bool":{{item.bool}}
-    "content":{{item.content}}
-    "find":{{item.find}}
-    "length":{{item.length}}
-    "accuracy":{{item.location.accuracy}}
-    "latitude":{{item.location.latitude}}
-    "longitude":{{item.location.longitude}}
+    <view class='cardbord' class='weui-article'>
+      <view class='weui-article__h1'>留言</view>
+      <view class='weui-article__p'>{{item.content}}</view>
+      <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{item.tempimindex}}" wx:for-index="fileidindex" wx:for-item='fileiditem'>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <cover-image src='{{tempimpath[fileiditem]}}'/>
+                </navigator>
+            </block>
+        </view>
+      </view>
     </view>
   </movable-view>
 </movable-area>

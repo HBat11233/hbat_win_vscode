@@ -1,6 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view class="total">
 
+  <image src='../../images/bg2.jpg' class="background"></image>
   <!--获取登录信息-->
   <view class="top-block">
     <view class="userinfo">

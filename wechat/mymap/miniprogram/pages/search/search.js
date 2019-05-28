@@ -10,7 +10,8 @@ Page({
     speed:'',
     accuracy:'',
     cardx:50,
-    cardy:50
+    cardy:50,
+    grids: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   },
 
   /**
@@ -112,9 +113,60 @@ Page({
       data: {},
       success: res => {
         console.log('data size: ', res.result.data.length)
+        var tempimpath=[]
+        for(var i=0;i<res.result.data.length;++i)
+        {
+          var temp={
+            iconPath:'/ico/ddw.png',
+            id: i+1,
+            latitude: res.result.data[i].location.latitude,
+            longitude: res.result.data[i].location.longitude,
+            width: 25,
+            height: 25
+          }
+          //console.log(res.result.data[i].location)
+          for(var j=0;j<res.result.data[i].length;++j)
+          {
+            //console.log('i',i,'j',j,res.result.data[i])
+            var filename=res.result.data[i].fileid[j];
+            //console.log(filename)
+            wx.cloud.downloadFile({
+              fileID:filename,
+              success:res => {
+                console.log('获取图片成功')
+                tempimpath.push(res.tempFilePath)
+                this.setData({
+                  tempimpath:tempimpath
+                })
+                //console.log(tempimpath)
+              },
+              fail:err=>{
+                console.log('获取图片失败'+err.err)
+              }
+            })
+          }
+          this.data.markers.push(temp)
+          console.log(tempimpath)
+        }
+        var temp=this.data.markers
+        //console.log(temp)
+        var imindex=0
+        var tempclouddata=res.result
+        for(var i=0;i<tempclouddata.data.length;++i)
+        {
+          var arr=[]
+          for(var j=0;j<tempclouddata.data[i].length;++j)
+          {
+            arr.push(imindex)
+            imindex++
+          }
+          tempclouddata.data[i]['tempimindex']=arr
+        }
         this.setData({
-          clouddata:res.result
+          markers:temp,
+          clouddata:tempclouddata
         })
+        
         //app.globalData.openid = res.result.openid
         //wx.navigateTo({
         //  url: '../userConsole/userConsole',

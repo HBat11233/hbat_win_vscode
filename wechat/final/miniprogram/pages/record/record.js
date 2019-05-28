@@ -8,6 +8,7 @@ Page({
     currentTab: 0,
     img_url1: [],
     img_url2: [],
+    fileid:[],
     content1: '',
     content2: '',
     find1: 0,
@@ -30,14 +31,12 @@ Page({
     this.setData({
       id: app.globalData.openid,
       content1: e.detail.value,
-      find1: this.data.find
     })
   },
   input2: function (e) {
     this.setData({
       id: app.globalData.openid,
       content2: e.detail.value,
-      find2: this.data.find
     })
   },
   //选择图片
@@ -137,7 +136,8 @@ Page({
               latitude: that.data.latitude,
               longitude: that.data.longitude,
               accuracy: that.data.accuracy,
-            }
+            },
+            fileid: {},
           },
           success(res) {
             console.log(res)
@@ -157,6 +157,10 @@ Page({
     var count = 0;
     //let img_url_ok = [];
     //由于图片只能一张一张地上传，所以用循环
+    if(img_url.length==0)
+    {
+      wx.hideLoading();
+    }
     for (let i = 0; i < img_url.length; i++) {
       var filePath = img_url[i]
       var index1 = filePath.lastIndexOf(".");
@@ -171,7 +175,13 @@ Page({
         cloudPath,
         filePath,
         success: res => {
+          that.data.fileid.push(res.fileID)
           if (i == img_url.length-1) {
+            db.collection('record').doc(that.data.id).update({
+              data: {
+                fileid: that.data.fileid,
+              }
+            })
             wx.hideLoading();
             wx.showToast({
               title: '发布成功',
@@ -223,7 +233,8 @@ Page({
               latitude: that.data.latitude,
               longitude: that.data.longitude,
               accuracy: that.data.accuracy,
-            }
+            },
+            fileid:{},
           },
           success(res) {
             console.log(res)
@@ -243,6 +254,9 @@ Page({
     var count = 0;
     //let img_url_ok = [];
     //由于图片只能一张一张地上传，所以用循环
+    if (img_url.length == 0) {
+      wx.hideLoading();
+    }
     for (let i = 0; i < img_url.length; i++) {
       var filePath = img_url[i]
       var index1 = filePath.lastIndexOf(".");
@@ -257,7 +271,13 @@ Page({
         cloudPath,
         filePath,
         success: res => {
+          that.data.fileid.push(res.fileID)
           if (i == img_url.length - 1) {
+            db.collection('record').doc(that.data.id).update({
+              data:{
+                fileid:that.data.fileid,
+              }
+            })
             wx.hideLoading();
             wx.showToast({
               title: '发布成功',

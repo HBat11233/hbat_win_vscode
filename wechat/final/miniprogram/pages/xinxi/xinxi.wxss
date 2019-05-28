@@ -40,5 +40,5 @@
   margin-left: 75%;
   width:20%;
   line-height: 80rpx;
-  background-color: #99ffcc;
+  background-color: #f5f5f5;
 }
