@@ -18,9 +18,7 @@
                 </view>
                 <view class="weui-article__p">
                     <block wx:for="{{item.fileid}}" wx:for-index="imindex" wx:for-item="imitem">
-                        <view class="weui-grid" hover-class="weui-grid_active">
-                            <image class="weui-article__img" src="{{tempimpath[imitem]}}" mode="aspectFit" style="height: 180px" />
-                        </view>
+                        <image class="weui-article__img" src="{{tempimpath[imitem]}}" mode="aspectFit" style="height: 180px" />
                     </block>
                 </view>
             </view>
