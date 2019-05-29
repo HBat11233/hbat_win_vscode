@@ -20,7 +20,7 @@
           <view class='weui-article__p'>{{item.content}}</view>
           <view class="weui-grids">
             <block wx:for="{{item.fileid}}" wx:for-index="fileidindex" wx:for-item='fileiditem'>
-              <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+              <navigator url="/pages/showimage/showimage" class="weui-grid" hover-class="weui-grid_active" bindtap='toimage' id='{{tempimpath[fileiditem]}}'>
                 <image src='{{tempimpath[fileiditem]}}' style="width:100rpx;height:100rpx;"/>
               </navigator>
             </block>

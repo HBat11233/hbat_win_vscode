@@ -1,2 +1,42 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class='container'>
+
+<image src='../../images/bg2.jpg' class="background"></image>
+
+<map 
+  id="map"
+  longitude='{{longitude}}'
+  latitude='{{latitude}}'
+  class='map'
+  show-compass='true'
+  markers="{{markers}}"
+>
+</map>
+<view class="button-sp-area">
+  <button class="weui-btn" type="primary" bindtap='updataLocation'>更新位置信息</button>
+</view>
+<movable-area class='moview'>  
+  <movable-view wx:for="{{clouddata.data}}" x='{{cardx*index}}' y='{{cardy*index}}' class='card' scale='true' direction='all' out-of-bounds='true' inerta='true' damping='20' friction='2'>
+    <view class='cardhead weui-flex' />
+    <view class='cardbord'>
+      <view class='weui-article'>
+        <view class='weui-article__h1'>留言</view>
+        <scroll-view scroll-y="{{true}}" style='width:310rpx;height:290rpx;'>
+          <view class='weui-article__p'>{{item.content}}</view>
+          <view class="weui-grids">
+            <block wx:for="{{item.fileid}}" wx:for-index="fileidindex" wx:for-item='fileiditem'>
+              <navigator url="/pages/showimage/showimage" class="weui-grid" hover-class="weui-grid_active" bindtap='toimage' id='{{tempimpath[fileiditem]}}'>
+                <image src='{{tempimpath[fileiditem]}}' style="width:75rpx;height:75rpx;"/>
+              </navigator>
+            </block>
+          </view>
+          <navigator url="/pages/showWord/showWord" id='{{index}}' bindtap='toWord'>
+            <button class="weui-btn mini-btn" type="primary" size="mini">查看</button>
+          </navigator>
+        </scroll-view>
+        
+      </view>
+    </view>
+  </movable-view>
+</movable-area>
+</view>

@@ -1,4 +1,7 @@
 // pages/search/search.js
+
+const app = getApp()
+
 Page({
 
   /**
@@ -133,14 +136,14 @@ Page({
               this.setData({
                 tempimpath:tempimpath
               })
-              console.log('gettempfileurl',tempimpath)
+              //console.log('gettempfileurl',tempimpath)
             },
             fail: err => {
               console.log('图片获取失败')
             }
           })
           this.data.markers.push(temp)
-          console.log('callfuncation:',tempimpath)
+          //console.log('callfuncation:',tempimpath)
         }
         var temp=this.data.markers
         //console.log(temp)
@@ -161,5 +164,9 @@ Page({
         //})
       }
     })
+  },
+
+  toimage: function (res) {
+    app.globalData.imageid=res.currentTarget.id;
   }
 })
