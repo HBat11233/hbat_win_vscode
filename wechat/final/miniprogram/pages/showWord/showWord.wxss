@@ -1,2 +1,17 @@
 /* pages/showWord/showWord.wxss */
 @import "/style/weui.wxss";
+
+.head{
+    width:710rpx;
+    height:140rpx;
+    margin: 20rpx;
+    background-color: antiquewhite;
+    box-shadow: 10rpx 10rpx 5rpx #888888;
+}
+
+.body{
+    width:710rpx;
+    margin: 20rpx;
+    background-color: aquamarine;
+    box-shadow: 10rpx 10rpx 5rpx #888888;
+}
