@@ -1,7 +1,7 @@
 <!--pages/search/search.wxml-->
 <view class='container'>
 
-<image src='../../images/bg2.jpg' class="background"></image>
+<image src='../../images/bg3.jpg' class="background"></image>
 
 <map 
   id="map"

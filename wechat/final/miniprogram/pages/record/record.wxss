@@ -1,5 +1,4 @@
 /* pages/record/record.wxss */
-/* pages/record/record.wxss */
 .navbar{
   flex: none;
   display: flex;
@@ -12,9 +11,10 @@
   flex: auto;
   text-align: center;
   line-height: 80rpx;
+  color:#aaa;
 }
 .navbar .item.active{
-  color: #99ffcc;
+  color:black;
 }
 .navbar .item.active:after{
   content: "";
@@ -69,5 +69,5 @@
   margin-left: 10rpx;
 }
 .topSwiper{
-  height:93vh;
+  height:100vh;
 }

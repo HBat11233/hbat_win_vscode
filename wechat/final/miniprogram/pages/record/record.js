@@ -8,13 +8,13 @@ Page({
     currentTab: 0,
     img_url1: [],
     img_url2: [],
-    fileid:[],
+    fileid: [],
     content1: '',
     content2: '',
     find1: 0,
     find2: 0,
-    hideAdd1:0,
-    hideAdd2:0,
+    hideAdd1: 0,
+    hideAdd2: 0,
     array: ['简单', '中等', '困难'],
     latitude: '',
     longitude: '',
@@ -22,12 +22,13 @@ Page({
     id: ''
   },
 
-  onLoad: function(options) {
+  onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
 
   },
+
   //输入框
-  input1: function(e) {
+  input1: function (e) {
     this.setData({
       id: app.globalData.openid,
       content1: e.detail.value,
@@ -40,16 +41,16 @@ Page({
     })
   },
   //选择图片
-  chooseimage1: function() {
+  chooseimage1: function () {
     var that = this;
     wx.chooseImage({
-      count: 9, // 默认9 
+      count: 9-that.data.img_url1.length, // 默认9 
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
-      success: function(res) {
+      success: function (res) {
         if (res.tempFilePaths.length > 0) {
           //图如果满了9张，不显示加图
-          if (res.tempFilePaths.length == 9) {
+          if (res.tempFilePaths.length+that.data.img_url1.length == 9) {
             that.setData({
               hideAdd1: 1
             })
@@ -60,7 +61,7 @@ Page({
           }
           //把每次选择的图push进数组
           let img_url = that.data.img_url1;
-          for (let i = 0; i < res.tempFilePaths.length; i++)           {
+          for (let i = 0; i < res.tempFilePaths.length; i++) {
             img_url.push(res.tempFilePaths[i])
           }
           that.setData({
@@ -73,13 +74,13 @@ Page({
   chooseimage2: function () {
     var that = this;
     wx.chooseImage({
-      count: 9, // 默认9 
+      count: 9-that.data.img_url2.length, // 默认9 
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function (res) {
         if (res.tempFilePaths.length > 0) {
           //图如果满了9张，不显示加图
-          if (res.tempFilePaths.length == 9) {
+          if (res.tempFilePaths.length+that.data.img_url2.length == 9) {
             that.setData({
               hideAdd2: 1
             })
@@ -90,7 +91,7 @@ Page({
           }
           //把每次选择的图push进数组
           let img_url = that.data.img_url2;
-          for (let i = 0; i < res.tempFilePaths.length; i++)           {
+          for (let i = 0; i < res.tempFilePaths.length; i++) {
             img_url.push(res.tempFilePaths[i])
           }
           that.setData({
@@ -101,14 +102,14 @@ Page({
     })
   },
   //发布按钮事件
-  send1: function() {
+  send1: function () {
     var that = this;
     //var user_id = wx.getStorageSync('userid')
     if (that.data.content1 != '') {
       wx.showLoading({
         title: '上传中',
       })
-      this.text_upload1();
+      that.img_upload1();
     } else {
       wx.showToast({
         title: '内容不能为空哦',
@@ -116,11 +117,11 @@ Page({
     }
   },
   //文本上传
-  text_upload1: function() {
+  text_upload1: function () {
     var that = this;
     wx.getLocation({
-      type: 'wgs84',
-      success: function(res) {
+      type: 'gcj02',
+      success: function (res) {
         that.setData({
           latitude: res.latitude,
           longitude: res.longitude,
@@ -137,29 +138,36 @@ Page({
               longitude: that.data.longitude,
               accuracy: that.data.accuracy,
             },
-            fileid: {},
+            fileid: that.data.fileid,
+            avatarUrl: app.globalData.avatarUrl,
+            nickName:app.globalData.nickName
           },
           success(res) {
-            console.log(res)
-            that.setData({
-              id: res._id
+            wx.hideLoading();
+            wx.showToast({
+              title: '发布成功',
             })
-            that.img_upload1();
+          },
+          fail: e => {
+            wx.hideLoading();
+            wx.showToast({
+              title: '发布失败',
+            })
           }
         })
       },
     })
   },
   //图片上传
-  img_upload1: function() {
+  img_upload1: function () {
     var that = this;
     var img_url = that.data.img_url1;
     var count = 0;
-    //let img_url_ok = [];
+    var thetime=Date.now();
     //由于图片只能一张一张地上传，所以用循环
     if(img_url.length==0)
     {
-      wx.hideLoading();
+      that.text_upload1();
     }
     for (let i = 0; i < img_url.length; i++) {
       var filePath = img_url[i]
@@ -167,33 +175,17 @@ Page({
       var index2 = filePath.length;
       var postf = filePath.substring(index1, index2);
       // 上传图片
-      var cloudPath = 'my-image_' + i + '_' + that.data.id + postf
-      console.log(filePath)
-      console.log(cloudPath)
+      var cloudPath = thetime + '_'+i + '_' + that.data.id + postf
       wx.cloud.uploadFile({
         //路径填你上传图片方法的地址
         cloudPath,
         filePath,
         success: res => {
           that.data.fileid.push(res.fileID)
-          if (i == img_url.length-1) {
-            db.collection('record').doc(that.data.id).update({
-              data: {
-                fileid: that.data.fileid,
-              }
-            })
-            wx.hideLoading();
-            wx.showToast({
-              title: '发布成功',
-            })
+          if (i == img_url.length - 1) {
+            that.text_upload1();
           }
         },
-        fail:e=>{
-          wx.hideLoading();
-          wx.showToast({
-            title: '发布失败',
-          })
-        }
       })
     }
   },
@@ -205,7 +197,7 @@ Page({
       wx.showLoading({
         title: '上传中',
       })
-      this.text_upload2();
+      that.img_upload2();
     } else {
       wx.showToast({
         title: '内容不能为空哦',
@@ -216,7 +208,7 @@ Page({
   text_upload2: function () {
     var that = this;
     wx.getLocation({
-      type: 'wgs84',
+      type: 'gcj02',
       success: function (res) {
         that.setData({
           latitude: res.latitude,
@@ -234,17 +226,24 @@ Page({
               longitude: that.data.longitude,
               accuracy: that.data.accuracy,
             },
-            fileid:{},
+            fileid: that.data.fileid,
+            avatarUrl: app.globalData.avatarUrl,
+            nickName: app.globalData.nickName
           },
           success(res) {
-            console.log(res)
-            that.setData({
-              id: res._id
+            wx.hideLoading();
+            wx.showToast({
+              title: '发布成功',
             })
-            that.img_upload2();
+          },
+          fail: e => {
+            wx.hideLoading();
+            wx.showToast({
+              title: '发布失败',
+            })
           }
         })
-      },
+      }
     })
   },
   //图片上传
@@ -252,10 +251,10 @@ Page({
     var that = this;
     var img_url = that.data.img_url2;
     var count = 0;
-    //let img_url_ok = [];
+    var thetime = Date.now();
     //由于图片只能一张一张地上传，所以用循环
     if (img_url.length == 0) {
-      wx.hideLoading();
+      that.text_upload2();
     }
     for (let i = 0; i < img_url.length; i++) {
       var filePath = img_url[i]
@@ -263,9 +262,7 @@ Page({
       var index2 = filePath.length;
       var postf = filePath.substring(index1, index2);
       // 上传图片
-      var cloudPath = 'my-image_' + i + '_' + that.data.id + postf
-      console.log(filePath)
-      console.log(cloudPath)
+      var cloudPath = thetime +'_'+ i + '_' + that.data.id + postf
       wx.cloud.uploadFile({
         //路径填你上传图片方法的地址
         cloudPath,
@@ -273,28 +270,14 @@ Page({
         success: res => {
           that.data.fileid.push(res.fileID)
           if (i == img_url.length - 1) {
-            db.collection('record').doc(that.data.id).update({
-              data:{
-                fileid:that.data.fileid,
-              }
-            })
-            wx.hideLoading();
-            wx.showToast({
-              title: '发布成功',
-            })
+            that.text_upload2();
           }
         },
-        fail: e => {
-          wx.hideLoading();
-          wx.showToast({
-            title: '发布失败',
-          })
-        }
       })
     }
   },
 
-  clickTab: function(e) {
+  clickTab: function (e) {
     var that = this;
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
@@ -305,14 +288,14 @@ Page({
     }
   },
 
-  swiperTab: function(e) {
+  swiperTab: function (e) {
     var that = this;
     that.setData({
       currentTab: e.detail.current
     });
   },
 
-  bindPickerChange1: function(e) {
+  bindPickerChange1: function (e) {
     this.setData({
       find1: e.detail.value
     })
