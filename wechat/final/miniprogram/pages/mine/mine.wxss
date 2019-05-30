@@ -35,7 +35,7 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: black;
 }
 
 .center-block{
@@ -55,7 +55,15 @@
   background: white;
   border-radius: 20rpx/20rpx;
   padding-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .click text{
   line-height:100rpx;
+}
+
+.click image{
+  height:100rpx;
+  width:100rpx;
 }

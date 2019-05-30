@@ -15,3 +15,20 @@
     background-color: aquamarine;
     box-shadow: 10rpx 10rpx 5rpx #888888;
 }
+
+.imcard{
+  width:80%;
+  height: auto;
+  margin: 10%;
+  background-color: sandybrown;
+  box-shadow: 10rpx 10rpx 5rpx #888888;
+}
+
+.article{
+  width:80%;
+  height: auto;
+  margin: 10%;
+  background-color: whitesmoke;
+  box-shadow: 10rpx 10rpx 5rpx #888888;
+  border-radius:10rpx 10rpx 10rpx 10rpx;
+}

@@ -46,6 +46,7 @@ Page({
           logged: true,
           nickname: res.data.nickname,
         })
+        app.globalData.nickName=res.data.nickname
         wx.getSetting({
           success: res => {
             if (res.authSetting['scope.userInfo']) {
@@ -54,6 +55,7 @@ Page({
                   that.setData({
                     avatarUrl: res.userInfo.avatarUrl,
                   })
+                  app.globalData.avatarUrl = res.userInfo.avatarUrl
                 },
                 fail:e=>{
                   wx.showToast({
@@ -78,9 +80,12 @@ Page({
                     nickname: res.userInfo.nickName,
                     sex: res.userInfo.gender
                   })
+                  app.globalData.avatarUrl = res.userInfo.avatarUrl
+                  app.globalData.nickName = res.userInfo.nickName
                   db.collection("user").add({
                     data: {
                       _id: that.data.openid + "_name_sex",
+                      avatarUrl: res.userInfo.avatarUrl,
                       nickname: res.userInfo.nickName,
                       sex: res.userInfo.gender,
                     }

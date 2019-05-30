@@ -68,5 +68,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  
+  toimage: function (res) {
+    app.globalData.imageid = res.currentTarget.id;
   }
 })

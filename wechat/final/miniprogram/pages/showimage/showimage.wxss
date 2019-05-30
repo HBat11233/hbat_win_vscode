@@ -1,2 +1,10 @@
 /* pages/showimage/showimage.wxss */
 @import "/style/weui.wxss";
+
+.imcard{
+  width:80%;
+  height: auto;
+  margin: 10%;
+  background-color: sandybrown;
+  box-shadow: 10rpx 10rpx 5rpx #888888;
+}

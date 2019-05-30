@@ -1,9 +1,14 @@
 <!--pages/showWord/showWord.wxml-->
+<scroll-view scroll-into-view="{{'page'+wordid}}" scroll-y="true" style='height:100vh;'>
 <block wx:for="{{clouddata.data}}">
-<view class="page">
+<view class="page" id="{{'page'+index}}">
     <view class="page__hd weui-flex head">
-        <view style="width:100rpx;height:100rpx; margin:25rpx;"><open-data type="userAvatarUrl" /></view>
-        <open-data type="userNickName" lang="zh_CN" />
+        <view style="width:100rpx;height:100rpx; margin:25rpx;">
+          <image class="weui-article__img" mode="aspectFit" wx:if="{{item.bool===0}}" style="width:100rpx;height:100rpx;" src='{{item.avatarUrl}}' />
+          <image class="weui-article__img" mode="aspectFit" wx:if="{{item.bool===1}}" style="width:100rpx;height:100rpx;" src='/images/wode.png' />
+        </view>
+        <view class="weui-article__h1" wx:if="{{item.bool===0}}" >{{item.nickName}}</view>
+        <view class="weui-article__h1" wx:if="{{item.bool===1}}" >匿名用户</view>
     <!--
         <view class="page__title">Article</view>
         <view class="page__desc">文章</view>
@@ -13,12 +18,14 @@
         <view class="weui-article">
             <view class="weui-article__h1">留言</view>
             <view class="weui-article__section">
-                <view class="weui-article__p">
+                <view class="weui-article__p article">
                     {{item.content}}
                 </view>
                 <view class="weui-article__p">
                     <block wx:for="{{item.fileid}}" wx:for-index="imindex" wx:for-item="imitem">
+                      <navigator url="/pages/showimage/showimage" bindtap='toimage' id='{{tempimpath[imitem]}}' class='imcard weui-flex'>
                         <image class="weui-article__img" src="{{tempimpath[imitem]}}" mode="aspectFit" style="height: 180px" />
+                      </navigator>
                     </block>
                 </view>
             </view>
@@ -26,3 +33,4 @@
     </view>
 </view>
 </block>
+</scroll-view>
