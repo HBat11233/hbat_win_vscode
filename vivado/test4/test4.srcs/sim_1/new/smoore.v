@@ -21,20 +21,21 @@
 
 
 module smoore();
-    reg clock,resetn,w;
+    reg clock,resetn,ww;
     wire z;
-    moore m(.clock(clock),.resetn(resetn),.w(w),.z(z));
+    moore m(.clock(clock),.resetn(resetn),.w(ww),.z(z));
     
     initial begin
     clock=1;
     resetn=1;
+    ww=1;
     end
     
     always
         begin
             #25
             clock=~clock;
-            w={$random}%2;
+            ww={$random}%2;
         end
     
 endmodule
