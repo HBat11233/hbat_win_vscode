@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sim_main_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sim_main" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1434136289fs"></ZoomEndTime>
+      <Cursor1Time time="589815000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="159"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/sim_main/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/floor" type="array">
+      <obj_property name="ElementShortName">floor[4:0]</obj_property>
+      <obj_property name="ObjectShortName">floor[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/led" type="array">
+      <obj_property name="ElementShortName">led[4:0]</obj_property>
+      <obj_property name="ObjectShortName">led[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/se" type="array">
+      <obj_property name="ElementShortName">se[7:0]</obj_property>
+      <obj_property name="ObjectShortName">se[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/lednum" type="array">
+      <obj_property name="ElementShortName">lednum[6:0]</obj_property>
+      <obj_property name="ObjectShortName">lednum[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/m/t2/counter" type="array">
+      <obj_property name="ElementShortName">counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/m/t2/clk_out" type="logic">
+      <obj_property name="ElementShortName">clk_out</obj_property>
+      <obj_property name="ObjectShortName">clk_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/m/n_num" type="array">
+      <obj_property name="ElementShortName">n_num[2:0]</obj_property>
+      <obj_property name="ObjectShortName">n_num[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/m/tlednum" type="array">
+      <obj_property name="ElementShortName">tlednum[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tlednum[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_main/m/t1/hex" type="array">
+      <obj_property name="ElementShortName">hex[3:0]</obj_property>
+      <obj_property name="ObjectShortName">hex[3:0]</obj_property>
+   </wvobject>
+</wave_config>
