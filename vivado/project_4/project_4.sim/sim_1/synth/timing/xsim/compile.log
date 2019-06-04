@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.sim/sim_1/synth/timing/xsim/top_sim_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module moorefsm
+INFO: [VRFC 10-311] analyzing module par2ser
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/moorefsm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module moorefsm
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'moorefsm' [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/moorefsm.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sim_1/new/top_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_sim

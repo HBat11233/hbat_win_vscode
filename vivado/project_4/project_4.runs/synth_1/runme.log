@@ -1,0 +1,33 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 40292 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 429.848 ; gain = 97.559
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/top.v:22]
+INFO: [Synth 8-6157] synthesizing module 'par2ser' [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/par2ser.v:23]
+WARNING: [Synth 8-5788] Register data_buff_reg in module par2ser is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/par2ser.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'par2ser' (1#1) [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/par2ser.v:23]
+INFO: [Synth 8-6157] synthesizing module 'moorefsm' [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/moorefsm.v:21]
+	Parameter S0 bound to: 4'b0000 
+	Parameter S1 bound to: 4'b0001 
+	Parameter S2 bound to: 4'b0010 
+	Parameter S3 bound to: 4'b0011 
+	Parameter S4 bound to: 4'b0100 
+INFO: [Synth 8-6155] done synthesizing module 'moorefsm' (2#1) [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/moorefsm.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'top' (3#1) [C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4/project_4.srcs/sources_1/new/top.v:22]
+TclStackFree: incorrect freePtr. Call out of sequence?

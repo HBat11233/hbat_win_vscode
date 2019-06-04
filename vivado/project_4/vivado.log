@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Jun  2 10:35:34 2019
+# Process ID: 5648
+# Current directory: C:/Users/HBat/Desktop/20174170_武昊宇_实验四摩尔状态机序列检测器/project_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11176 C:\Users\HBat\Desktop\20174170_武昊宇_实验四摩尔状态机序列检测器\project_4\project_4.xpr
+# Log file: C:/Users/HBat/Desktop/20174170_武昊宇_实验四摩尔状态机序列检测器/project_4/vivado.log
+# Journal file: C:/Users/HBat/Desktop/20174170_武昊宇_实验四摩尔状态机序列检测器/project_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HBat/Desktop/20174170_武昊宇_实验四摩尔状态机序列检测器/project_4/project_4.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/HBat/Desktop/20174240黄敏轩_实验四摩尔状态机序列检测器/project_4' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 781.773 ; gain = 195.230
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  2 10:37:28 2019...
