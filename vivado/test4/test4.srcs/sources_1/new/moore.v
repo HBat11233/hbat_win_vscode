@@ -26,7 +26,7 @@ module moore(clock,resetn,w,z);
     reg [7:0] y,Y;
     parameter [2:0] A=3'b000, B=3'b001, C=3'b010, D=3'b011, E=3'b100;
     
-    always@(w,y)
+    always@(clock)
     case(y)
         A:if(w)Y=B;
           else Y=A;
