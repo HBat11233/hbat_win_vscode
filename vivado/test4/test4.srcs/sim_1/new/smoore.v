@@ -28,6 +28,38 @@ module smoore();
     initial begin
     clock=1;
     resetn=1;
+    ww=0;
+    #25
+    ww=0;
+    #25
+    ww=1;
+    #25
+    ww=1;
+    #25
+    ww=1;
+    #25
+    ww=0;
+    #25
+    ww=0;
+    #25
+    ww=1;
+    #25
+    ww=1;
+    #25
+    ww=1;
+    #25
+    ww=1;
+    #25
+    ww=1;
+    #25
+    ww=1;
+    #25
+    ww=0;
+    #25
+    ww=0;
+    #25
+    ww=1;
+    #25
     ww=1;
     end
     
@@ -35,7 +67,6 @@ module smoore();
         begin
             #25
             clock=~clock;
-            ww={$random}%2;
         end
     
 endmodule

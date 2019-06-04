@@ -23,9 +23,14 @@
 module moore(clock,resetn,w,z);
     input clock,resetn,w;
     output z;
-    reg [7:0] y,Y;
+    reg s;
     parameter [2:0] A=3'b000, B=3'b001, C=3'b010, D=3'b011, E=3'b100;
-    
+    reg [2:0] y,Y;
+    initial 
+    begin
+        y=0;
+        Y=0;
+    end
     always@(w,y)
     case(y)
         A:if(w)Y=B;
@@ -38,13 +43,17 @@ module moore(clock,resetn,w,z);
           else Y=A;
         E:if(w)Y=C;
           else Y=A;
-        default:if(w)Y=B;
-                else Y=A;
+        default:Y=A;
     endcase
     
     always@(negedge resetn,posedge clock)
+    begin
     if(resetn==0)y<=A;
     else y<=Y;
+    end
     
-    assign z=(y==E);
+   always@(resetn,y)
+   s<=(y==E);
+    
+    assign z=s;
 endmodule
