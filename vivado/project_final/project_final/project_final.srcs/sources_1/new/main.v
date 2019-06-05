@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2019/06/05 00:05:34
+// Create Date: 2019/06/04 14:04:00
 // Design Name: 
 // Module Name: main
 // Project Name: 
@@ -31,12 +31,10 @@ module main(
 
     //初始化
     reg [2:0] n_num;
-    reg [4:0] tled;
     initial
     begin
         n_num=1;
         led=0;
-        tled=0;
         se=8'b01111111;
         lednum=1;
     end
@@ -44,7 +42,7 @@ module main(
     //时间每秒
     wire tclk;
     time_adv t2(.clk(clk),.rst(~rst),.clk_out(tclk));
-    
+
     //消抖
     wire [4:0] tfloor;
     key_vibration t0(.mclk(clk),.rst_n(rst),.key(floor),.key_en(tfloor));
@@ -52,55 +50,31 @@ module main(
     //按下楼层呼叫，即电梯到达楼层处理
     always@(tfloor,n_num)
     begin
-        if(tfloor[0] && n_num!=1)
-            tled[0]=1;
-        if(tfloor[1] && n_num!=2)
-            tled[1]=1;
-        if(tfloor[2] && n_num!=3)
-            tled[2]=1;
-        if(tfloor[3] && n_num!=4)
-            tled[3]=1;
-        if(tfloor[4] && n_num!=5)
-            tled[5]=1;
+        if((tfloor&5'b00001)&&n_num!=1)
+            led<=led|5'b00001;
+        if((tfloor&5'b00010)&&n_num!=2)
+            led<=led|5'b00010;
+        if((tfloor&5'b00100)&&n_num!=3)
+            led<=led|5'b00100;
+        if((tfloor&5'b01000)&&n_num!=4)
+            led<=led|5'b01000;
+        if((tfloor&5'b10000)&&n_num!=5)
+            led<=led|5'b10000;
         case(n_num)
-        1:tled[0]=0;
-        2:tled[1]=1;
-        3:tled[2]=2;
-        4:tled[3]=3;
-        5:tled[4]=4;
-        endcase 
+        1:led<=led&5'b11110;
+        2:led<=led&5'b11101;
+        3:led<=led&5'b11011;
+        4:led<=led&5'b10111;
+        5:led<=led&5'b01111;
+        endcase
     end
-    
-    
-    always@(tled)
-        led=tled;
-    
+
     //电梯运行
-    
     reg [4:0] tn_num;
     always@(tclk)
     begin
-    /*
-        case(n_num)
-        1:begin
-            tn_num[4:1]=tled[4:1];
-            tn_num[0]=0;
-           end
-        2:begin
-            tn_num[4:2]=tled[4:2];
-            tn_num[1:0]=0;
-          end
-        3:begin
-            tn_num[4:3]=tled[4:3];
-            tn_num[2:0]=0;
-           end
-        4:begin
-            tn_num[4]=tled[4];
-            tn_num[3:0]=0;
-           end
-        5:tn_num[4:0]=0;
-        endcase*/
-        if(tled>(5'b00001<<n_num-1))
+        tn_num=led&(5'b11111<<n_num);
+        if(tn_num>0)
             n_num<=n_num+1;
         else
         begin
@@ -110,17 +84,14 @@ module main(
                 n_num<=n_num-1;
         end
     end
-    
-    
 
     //显示楼层
     //七段数码管转
-    
     wire [6:0] tlednum;
-    hexseg t1(.clk(clk),.hex(n_num),.segs(tlednum));
-    always@(clk)
+    hexseg t1(.hex(n_num),.segs(tlednum));
+    always@(tlednum)
     begin
-        lednum=tlednum;
+        lednum<=tlednum; 
     end
 
 

@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1586241653fs"></ZoomEndTime>
+      <ZoomEndTime time="1434136289fs"></ZoomEndTime>
       <Cursor1Time time="589815000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="159"></NameColumnWidth>
-      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="11" />
    <wvobject fp_name="/sim_main/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -61,11 +61,7 @@
       <obj_property name="ObjectShortName">tlednum[6:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/sim_main/m/t1/hex" type="array">
-      <obj_property name="ElementShortName">hex[2:0]</obj_property>
-      <obj_property name="ObjectShortName">hex[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/sim_main/m/tfloor" type="array">
-      <obj_property name="ElementShortName">tfloor[4:0]</obj_property>
-      <obj_property name="ObjectShortName">tfloor[4:0]</obj_property>
+      <obj_property name="ElementShortName">hex[3:0]</obj_property>
+      <obj_property name="ObjectShortName">hex[3:0]</obj_property>
    </wvobject>
 </wave_config>

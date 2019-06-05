@@ -21,11 +21,10 @@
 
 
 module hexseg(
-    input clk,
     input [2:0] hex,
     output reg [6:0] segs
     );
-    always@(clk)
+    always@(hex)
     case(hex)
     1: segs = 7'b100_1111;
     2: segs = 7'b001_0010;
