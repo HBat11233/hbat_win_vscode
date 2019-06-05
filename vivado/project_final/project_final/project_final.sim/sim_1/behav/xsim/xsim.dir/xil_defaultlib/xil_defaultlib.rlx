@@ -2,9 +2,9 @@
 2018.3
 Dec  7 2018
 00:33:28
-C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
-C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sim_1/new/sim_main.v,1559637519,verilog,,,,sim_main,,,,,,,,
-C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v,1559643637,verilog,,C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v,,hexseg,,,,,,,,
-C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v,1559638001,verilog,,C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v,,key_vibration,,,,,,,,
-C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v,1559643198,verilog,,C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v,,main,,,,,,,,
-C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v,1559637872,verilog,,C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sim_1/new/sim_main.v,,time_adv,,,,,,,,
+D:/hbat_win_vscode/vivado/project_final/project_final/project_final.sim/sim_1/behav/xsim/glbl.v,1559647493,verilog,,,,glbl,,,,,,,,
+D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sim_1/new/sim_main.v,1559650098,verilog,,,,sim_main,,,,,,,,
+D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v,1559653076,verilog,,D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v,,hexseg,,,,,,,,
+D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v,1559652791,verilog,,D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v,,key_vibration,,,,,,,,
+D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v,1559673390,verilog,,D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v,,main,,,,,,,,
+D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v,1559649954,verilog,,D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sim_1/new/sim_main.v,,time_adv,,,,,,,,

@@ -40,7 +40,11 @@ module sim_main(
     floor=0;
     
     floor=5'b01000;
+    #60
+    floor=0;
     #100
+    floor=5'b10000;
+    #60
     floor=0;
     
     end

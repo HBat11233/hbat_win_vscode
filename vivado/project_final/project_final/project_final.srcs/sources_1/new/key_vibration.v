@@ -26,7 +26,7 @@ module key_vibration(
 	input[4:0] key,
 	output reg [4:0] key_en
     );
-    parameter DURATION = 50_000;                           //��ʱ10ms	
+    parameter DURATION = 5;                           //��ʱ10ms	
 	reg [10:0] cnt; 
 	
 	initial
@@ -55,7 +55,7 @@ module key_vibration(
 	always @(posedge mclk or negedge rst_n) 
 	begin
 		if(!rst_n) key_en <= 5'd0;
-		else if(cnt==DURATION) key_en<=ken_enable;
+		else if(cnt==DURATION) key_en<=key;
 		else key_en<=key_en;
 	end
 endmodule

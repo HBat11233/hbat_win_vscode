@@ -21,7 +21,7 @@
 
 
 module time_adv#(
-parameter N = 1000_000_000,
+parameter N = 100,
 	       WIDTH = 7
 )
 (
