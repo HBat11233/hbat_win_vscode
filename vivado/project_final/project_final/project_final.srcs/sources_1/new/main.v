@@ -24,19 +24,21 @@ module main(
     input rst,
     input clk,
     input [4:0] floor,
-    output reg [4:0] led,
+    output [4:0] led,
     output reg [7:0] se,
-    output reg [6:0] lednum
+    output [6:0] lednum
     );
 
     //初始化
     reg [2:0] n_num;
+    reg [4:0] mled;
+    reg [6:0] mlednum;
     initial
     begin
         n_num=1;
-        led=0;
+        mled=0;
         se=8'b01111111;
-        lednum=1;
+        mlednum=1;
     end
     
     //时间每秒
@@ -50,22 +52,13 @@ module main(
     //按下楼层呼叫，即电梯到达楼层处理
     always@(tfloor,n_num)
     begin
-        if((tfloor&5'b00001)&&n_num!=1)
-            led<=led|5'b00001;
-        if((tfloor&5'b00010)&&n_num!=2)
-            led<=led|5'b00010;
-        if((tfloor&5'b00100)&&n_num!=3)
-            led<=led|5'b00100;
-        if((tfloor&5'b01000)&&n_num!=4)
-            led<=led|5'b01000;
-        if((tfloor&5'b10000)&&n_num!=5)
-            led<=led|5'b10000;
+        mled=mled|tfloor;
         case(n_num)
-        1:led<=led&5'b11110;
-        2:led<=led&5'b11101;
-        3:led<=led&5'b11011;
-        4:led<=led&5'b10111;
-        5:led<=led&5'b01111;
+        1:mled=mled&5'b11110;
+        2:mled=mled&5'b11101;
+        3:mled=mled&5'b11011;
+        4:mled=mled&5'b10111;
+        5:mled=mled&5'b01111;
         endcase
     end
 
@@ -73,7 +66,7 @@ module main(
     reg [4:0] tn_num;
     always@(tclk)
     begin
-        tn_num=led&(5'b11111<<n_num);
+        tn_num=mled&(5'b11111<<n_num);
         if(tn_num>0)
             n_num<=n_num+1;
         else
@@ -89,10 +82,12 @@ module main(
     //七段数码管转
     wire [6:0] tlednum;
     hexseg t1(.hex(n_num),.segs(tlednum));
-    always@(tlednum)
-    begin
-        lednum<=tlednum; 
-    end
+
+    always@(clk)
+        mlednum=tlednum;
+    
+    assign lednum=mlednum;
+    assign led=mled;
 
 
 
