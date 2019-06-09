@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Jun  5 13:04:11 2019
-# Process ID: 10172
-# Current directory: C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1
+# Start of session at: Wed Jun  5 17:24:21 2019
+# Process ID: 23012
+# Current directory: D:/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1
 # Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
-# Log file: C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1/main.vds
-# Journal file: C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1\vivado.jou
+# Log file: D:/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1/main.vds
+# Journal file: D:/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source main.tcl -notrace
 Command: synth_design -top main -part xc7a100tcsg324-1
@@ -15,27 +15,26 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8624 
+INFO: Helper process launched with PID 23772 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 432.379 ; gain = 99.293
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 430.270 ; gain = 97.953
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'main' [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:23]
-INFO: [Synth 8-6157] synthesizing module 'time_adv' [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v:23]
+INFO: [Synth 8-6157] synthesizing module 'main' [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:23]
+INFO: [Synth 8-6157] synthesizing module 'time_adv' [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v:23]
 	Parameter N bound to: 1000000000 - type: integer 
 	Parameter WIDTH bound to: 7 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v:44]
-INFO: [Synth 8-6155] done synthesizing module 'time_adv' (1#1) [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v:23]
-INFO: [Synth 8-6157] synthesizing module 'key_vibration' [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v:23]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'time_adv' (1#1) [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v:23]
+INFO: [Synth 8-6157] synthesizing module 'key_vibration' [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v:23]
 	Parameter DURATION bound to: 50000 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v:44]
-INFO: [Synth 8-6155] done synthesizing module 'key_vibration' (2#1) [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:56]
-WARNING: [Synth 8-567] referenced signal 'mled' should be on the sensitivity list [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:67]
-WARNING: [Synth 8-567] referenced signal 'n_num' should be on the sensitivity list [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:67]
-INFO: [Synth 8-6157] synthesizing module 'hexseg' [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'hexseg' (3#1) [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v:23]
-WARNING: [Synth 8-567] referenced signal 'tlednum' should be on the sensitivity list [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:86]
-INFO: [Synth 8-6155] done synthesizing module 'main' (4#1) [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:23]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'key_vibration' (2#1) [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:57]
+WARNING: [Synth 8-567] referenced signal 'mled' should be on the sensitivity list [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:68]
+WARNING: [Synth 8-567] referenced signal 'n_num' should be on the sensitivity list [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:68]
+INFO: [Synth 8-6157] synthesizing module 'hexseg' [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hexseg' (3#1) [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'main' (4#1) [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v:23]
 WARNING: [Synth 8-3917] design main has port se[7] driven by constant 0
 WARNING: [Synth 8-3917] design main has port se[6] driven by constant 1
 WARNING: [Synth 8-3917] design main has port se[5] driven by constant 1
@@ -50,7 +49,7 @@ WARNING: [Synth 8-3331] design key_vibration has unconnected port key[2]
 WARNING: [Synth 8-3331] design key_vibration has unconnected port key[1]
 WARNING: [Synth 8-3331] design key_vibration has unconnected port key[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 487.934 ; gain = 154.848
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 486.383 ; gain = 154.066
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -63,47 +62,48 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 487.934 ; gain = 154.848
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 486.383 ; gain = 154.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 487.934 ; gain = 154.848
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 486.383 ; gain = 154.066
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]
-Finished Parsing XDC File [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Parsing XDC File [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]
+Finished Parsing XDC File [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 799.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.438 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 799.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.438 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 799.617 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 799.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.438 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 797.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 799.617 ; gain = 466.531
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 797.438 ; gain = 465.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 799.617 ; gain = 466.531
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 797.438 ; gain = 465.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 799.617 ; gain = 466.531
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 797.438 ; gain = 465.121
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5587] ROM size for "segs" is below threshold of ROM address width. It will be mapped to LUTs
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 799.617 ; gain = 466.531
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 797.438 ; gain = 465.121
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -115,14 +115,12 @@ Report RTL Partitions:
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 2     
 +---Registers : 
 	                5 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   6 Input      7 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -132,10 +130,8 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module main 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 2     
 +---Muxes : 
-	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
 Module time_adv 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -164,6 +160,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5587] ROM size for "t1/segs" is below threshold of ROM address width. It will be mapped to LUTs
 WARNING: [Synth 8-3917] design main has port se[7] driven by constant 0
 WARNING: [Synth 8-3917] design main has port se[6] driven by constant 1
 WARNING: [Synth 8-3917] design main has port se[5] driven by constant 1
@@ -177,13 +174,13 @@ WARNING: [Synth 8-3331] design main has unconnected port floor[3]
 WARNING: [Synth 8-3331] design main has unconnected port floor[2]
 WARNING: [Synth 8-3331] design main has unconnected port floor[1]
 WARNING: [Synth 8-3331] design main has unconnected port floor[0]
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t0/key_en_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t0/key_en_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t0/key_en_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t0/key_en_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t0/key_en_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t0/key_en_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t0/key_en_reg[4] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 799.617 ; gain = 466.531
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 797.438 ; gain = 465.121
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -195,13 +192,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 824.711 ; gain = 491.625
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 823.063 ; gain = 490.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 824.785 ; gain = 491.699
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 823.137 ; gain = 490.820
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -213,7 +210,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -237,7 +234,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -250,7 +247,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -262,25 +259,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -296,10 +293,10 @@ Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
-|1     |LUT3 |     5|
-|2     |LUT4 |     8|
-|3     |LUT5 |     5|
-|4     |LUT6 |    13|
+|1     |LUT2 |     3|
+|2     |LUT3 |     9|
+|3     |LUT5 |     2|
+|4     |LUT6 |     1|
 |5     |OBUF |    20|
 +------+-----+------+
 
@@ -307,28 +304,28 @@ Report Instance Areas:
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |    51|
+|1     |top      |       |    35|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 834.875 ; gain = 190.105
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 834.875 ; gain = 501.789
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 833.324 ; gain = 189.953
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 833.324 ; gain = 501.008
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 846.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 843.625 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-24 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
+26 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 846.316 ; gain = 526.375
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 846.316 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 843.625 ; gain = 524.316
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 843.625 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1/main.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/hbat_win_vscode/vivado/project_final/project_final/project_final.runs/synth_1/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jun  5 13:04:44 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  5 17:24:42 2019...

@@ -17,24 +17,22 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.notrace 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.cache/wt [current_project]
-set_property parent.project_path C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.xpr [current_project]
+set_property webtalk.parent_dir D:/hbat_win_vscode/vivado/project_final/project_final/project_final.cache/wt [current_project]
+set_property parent.project_path D:/hbat_win_vscode/vivado/project_final/project_final/project_final.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.cache/ip [current_project]
+set_property ip_output_repo d:/hbat_win_vscode/vivado/project_final/project_final/project_final.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v
-  C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v
-  C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v
-  C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v
+  D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/hexseg.v
+  D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/key_vibration.v
+  D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/time_adv.v
+  D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/sources_1/new/main.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -44,8 +42,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc
-set_property used_in_implementation false [get_files C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]
+read_xdc D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc
+set_property used_in_implementation false [get_files D:/hbat_win_vscode/vivado/project_final/project_final/project_final.srcs/constrs_1/new/main.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

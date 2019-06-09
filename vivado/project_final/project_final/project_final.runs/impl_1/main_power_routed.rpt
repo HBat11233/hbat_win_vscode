@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Jun  5 13:06:29 2019
-| Host             : DESKTOP-7B8EHDG running 64-bit major release  (build 9200)
+| Date             : Wed Jun  5 17:25:35 2019
+| Host             : DESKTOP-91J4R11 running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 31.624 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                     |
-| Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 30.827                           |
-| Device Static (W)        | 0.797                            |
-| Effective TJA (C/W)      | 4.6                              |
-| Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
-| Confidence Level         | Medium                           |
-| Setting File             | ---                              |
-| Simulation Activity File | ---                              |
-| Design Nets Matched      | NA                               |
-+--------------------------+----------------------------------+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 5.613        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 5.484        |
+| Device Static (W)        | 0.128        |
+| Effective TJA (C/W)      | 4.6          |
+| Max Ambient (C)          | 59.4         |
+| Junction Temperature (C) | 50.6         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,13 +52,13 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.668 |       33 |       --- |             --- |
-|   LUT as Logic |     0.668 |       26 |     63400 |            0.04 |
+| Slice Logic    |     0.062 |       17 |       --- |             --- |
+|   LUT as Logic |     0.062 |       12 |     63400 |            0.02 |
 |   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |     0.862 |       31 |       --- |             --- |
-| I/O            |    29.298 |       20 |       210 |            9.52 |
-| Static Power   |     0.797 |          |           |                 |
-| Total          |    31.624 |          |           |                 |
+| Signals        |     0.049 |       15 |       --- |             --- |
+| I/O            |     5.374 |       20 |       210 |            9.52 |
+| Static Power   |     0.128 |          |           |                 |
+| Total          |     5.613 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,16 +68,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     2.092 |       1.530 |      0.563 |
-| Vccaux    |       1.800 |     1.166 |       1.074 |      0.093 |
-| Vcco33    |       3.300 |     8.296 |       8.292 |      0.004 |
+| Vccint    |       1.000 |     0.151 |       0.111 |      0.041 |
+| Vccaux    |       1.800 |     0.218 |       0.197 |      0.021 |
+| Vcco33    |       3.300 |     1.525 |       1.521 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.018 |       0.000 |      0.018 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -135,7 +135,7 @@ Table of Contents
 +------+-----------+
 | Name | Power (W) |
 +------+-----------+
-| main |    30.827 |
+| main |     5.484 |
 +------+-----------+
 
 

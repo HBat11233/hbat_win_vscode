@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="C:/Users/HBat/Documents/GitHub/hbat_win_vscode/vivado/project_final/project_final/project_final.xpr">
+<Project Version="7" Minor="39" Path="D:/hbat_win_vscode/vivado/project_final/project_final/project_final.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="d0f0accbf80f4b15bc1c2c188f3f17f9"/>

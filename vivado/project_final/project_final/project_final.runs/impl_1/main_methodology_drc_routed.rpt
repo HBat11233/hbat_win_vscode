@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Jun  5 13:06:28 2019
-| Host         : DESKTOP-7B8EHDG running 64-bit major release  (build 9200)
+| Date         : Wed Jun  5 17:25:35 2019
+| Host         : DESKTOP-91J4R11 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
 | Design       : main
 | Device       : xc7a100tcsg324-1
@@ -23,23 +23,28 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 3
 +-----------+----------+--------------------------+------------+
 | Rule      | Severity | Description              | Violations |
 +-----------+----------+--------------------------+------------+
-| TIMING-23 | Warning  | Combinational loop found | 2          |
+| TIMING-23 | Warning  | Combinational loop found | 3          |
 +-----------+----------+--------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 TIMING-23#1 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between led_OBUF[0]_inst_i_1/I4 and led_OBUF[0]_inst_i_1/O to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between led_OBUF[0]_inst_i_1/I1 and led_OBUF[0]_inst_i_1/O to disable the timing loop
 Related violations: <none>
 
 TIMING-23#2 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between led_OBUF[2]_inst_i_2/I2 and led_OBUF[2]_inst_i_2/O to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between led_OBUF[1]_inst_i_1/I1 and led_OBUF[1]_inst_i_1/O to disable the timing loop
+Related violations: <none>
+
+TIMING-23#3 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between led_OBUF[2]_inst_i_1/I1 and led_OBUF[2]_inst_i_1/O to disable the timing loop
 Related violations: <none>
 
 

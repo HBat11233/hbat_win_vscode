@@ -24,13 +24,13 @@ module main(
     input rst,
     input clk,
     input [4:0] floor,
-    output [4:0] led,
+    output[4:0] led,
     output reg [7:0] se,
     output [6:0] lednum
     );
 
     //初始化
-    reg [2:0] n_num;
+    reg [4:0] n_num;
     reg [4:0] mled;
     reg [6:0] mlednum;
     initial
@@ -50,31 +50,31 @@ module main(
     key_vibration t0(.mclk(clk),.rst_n(rst),.key(floor),.key_en(tfloor));
 
     //按下楼层呼叫，即电梯到达楼层处理
+    
     always@(tfloor,n_num)
     begin
         mled=mled|tfloor;
         case(n_num)
-        1:mled=mled&5'b11110;
-        2:mled=mled&5'b11101;
-        3:mled=mled&5'b11011;
-        4:mled=mled&5'b10111;
-        5:mled=mled&5'b01111;
+        1:mled[0]=0;
+        2:mled[1]=0;
+        4:mled[2]=0;
+        8:mled[3]=0;
+        16:mled[4]=0;
         endcase
     end
-
+    
+    
     //电梯运行
-    reg [4:0] tn_num;
     always@(tclk)
     begin
-        tn_num=mled&(5'b11111<<n_num);
-        if(tn_num>0)
-            n_num<=n_num+1;
+        if(mled>n_num)
+            n_num<=n_num<<1;
         else
         begin
             if(n_num==1)
                 n_num<=n_num;
             else
-                n_num<=n_num-1;
+                n_num<=n_num>>1;
         end
     end
 
@@ -83,7 +83,7 @@ module main(
     wire [6:0] tlednum;
     hexseg t1(.hex(n_num),.segs(tlednum));
 
-    always@(clk)
+    always@(tlednum)
         mlednum=tlednum;
     
     assign lednum=mlednum;

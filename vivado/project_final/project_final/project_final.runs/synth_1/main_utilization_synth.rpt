@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Jun  5 13:04:44 2019
-| Host         : DESKTOP-7B8EHDG running 64-bit major release  (build 9200)
+| Date         : Wed Jun  5 17:24:42 2019
+| Host         : DESKTOP-91J4R11 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
 | Design       : main
 | Device       : 7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   26 |     0 |     63400 |  0.04 |
-|   LUT as Logic          |   26 |     0 |     63400 |  0.04 |
+| Slice LUTs*             |   12 |     0 |     63400 |  0.02 |
+|   LUT as Logic          |   12 |     0 |     63400 |  0.02 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |    0 |     0 |    126800 |  0.00 |
 |   Register as Flip Flop |    0 |     0 |    126800 |  0.00 |
@@ -147,10 +147,10 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | OBUF     |   20 |                  IO |
-| LUT6     |   13 |                 LUT |
-| LUT4     |    8 |                 LUT |
-| LUT5     |    5 |                 LUT |
-| LUT3     |    5 |                 LUT |
+| LUT3     |    9 |                 LUT |
+| LUT2     |    3 |                 LUT |
+| LUT5     |    2 |                 LUT |
+| LUT6     |    1 |                 LUT |
 +----------+------+---------------------+
 
 
